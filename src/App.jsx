@@ -1,9 +1,10 @@
 import './App.css';
+import Button from './core/components/atoms/Button';
 
 function App() {
   return (
     <div className="App">
-      <p>Hey</p>
+      <Button title="Hey" />
     </div>
   );
 }
