@@ -1,0 +1,57 @@
+.thePage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 90vh;
+}
+
+.bigbox {
+    width: 50%;
+    min-width: 600px;
+    min-height: 400px;
+    background: white;
+    display: flex;
+}
+
+.box1 {
+    flex-basis: 40%;
+    padding: 0px 60px;
+    padding-bottom: 50px;
+}
+
+.createAccountButton {
+    margin: auto;
+    width: fit-content;
+}
+
+.box2 {
+    flex-basis: 40%;
+    background: url('../../assets/images/people on phone.svg');
+    color: white;
+    padding: 0px 60px;
+}
+
+.box2 h1 {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 64px;
+}
+
+.box1 input {
+    border: none;
+    border-bottom: 2px solid rgba(0, 0, 0, 0.54);
+    width: 100%;
+    outline: none;
+    font-size: 24px;
+    font-family: 'Commissioner';
+}
+
+.box1 legend {
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 24px;
+    line-height: 32px;
+    color: rgba(0, 0, 0, 0.54);
+}

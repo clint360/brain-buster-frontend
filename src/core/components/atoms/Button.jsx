@@ -14,6 +14,7 @@ function Button({ title, borderColor, color, background, onClick }) {
     fontWeight: 'bold',
     minWidth: '100px',
     textAlign: 'center',
+    cursor: 'pointer',
   };
   return (
     <button

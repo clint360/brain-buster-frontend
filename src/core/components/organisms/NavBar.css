@@ -1,0 +1,30 @@
+.pages {
+    font-family: 'Commissioner', sans-serif;
+    color: white !important;
+    width: 40%;
+}
+
+.pages ul {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+.pages ul li {
+    padding: 10px 20px;
+    font-size: 18px;
+    display: flex;
+    justify-content: center;
+    cursor: pointer;
+}
+
+.pages ul li:hover {
+    border-bottom: 2px solid white !important;
+}
+
+.buttons {
+    width: 18%;
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
