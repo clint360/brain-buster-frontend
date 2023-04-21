@@ -1,7 +1,7 @@
 {
   "env": {
-    "browser": true,
-    "es2021": true
+    "browser": false,
+    "es2021": false
   },
   "extends": [
     "plugin:react/recommended",
@@ -13,13 +13,18 @@
     "ecmaVersion": "latest",
     "sourceType": "module"
   },
-  "plugins": ["react"],
+  "plugins": [
+    "react"
+  ],
   "rules": {
     "react/react-in-jsx-scope": "off",
     "react/jsx-filename-extension": [
       1,
       {
-        "extensions": [".js", ".jsx"]
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ]
   }
