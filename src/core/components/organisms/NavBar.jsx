@@ -11,7 +11,7 @@ function NavBar() {
         justifyContent: 'space-between',
         margin: 'auto',
         padding: '20px 0',
-        width: '100%',
+        width: '80%',
       }}
     >
       <div>

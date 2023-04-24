@@ -1,7 +1,7 @@
 .pages {
     font-family: 'Commissioner', sans-serif;
     color: white !important;
-    width: 40%;
+    width: 30%;
 }
 
 .pages ul {
@@ -23,7 +23,8 @@
 }
 
 .buttons {
-    width: 18%;
+    width: 24%;
+    min-width: 300px;
     align-items: center;
     display: flex;
     justify-content: space-between;

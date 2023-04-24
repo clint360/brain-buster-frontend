@@ -1,0 +1,40 @@
+.sidenav {
+    min-height: 100vh;
+    background: #1D4645;
+    width: 250px;
+    color: white;
+    font-family: "Commissioner";
+}
+
+.pageslist {
+    padding-top: 40px;
+}
+
+.pageslist ul {
+    margin: 0;
+    padding: 0;
+}
+
+.pageslist ul li {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    line-height: 70px;
+    font-weight: 500;
+    font-size: 22px;
+    padding: 0 30px;
+}
+
+.pageslist ul li:hover {
+    background: rgba(161, 161, 161, 0.348);
+}
+
+.pageslist ul li i {
+    width: 30px;
+}
+
+.pageslist ul li:last-child {
+    position: absolute;
+    bottom: 50px;
+    width: 190px;
+}
