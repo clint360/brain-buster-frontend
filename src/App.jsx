@@ -1,5 +1,6 @@
 import './App.css';
-import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
+import Login from './view/pages/Login';
+// import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
 // import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
@@ -9,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <div className="Appdiv">
-        <AdminDashboard />
+        <Login />
       </div>
     </div>
   );

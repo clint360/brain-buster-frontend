@@ -2,7 +2,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 90vh;
+    min-height: 100vh;
+    background: #1D4645;
+}
+
+.box1 .form {
+    padding-bottom: 50px;
 }
 
 .bigbox {
@@ -26,7 +31,7 @@
 
 .box2 {
     flex-basis: 40%;
-    background: url('../../assets/images/people on phone.svg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/people on phone.svg');
     color: white;
     padding: 0px 60px;
 }
@@ -45,6 +50,8 @@
     outline: none;
     font-size: 24px;
     font-family: 'Commissioner';
+    font-weight: 600;
+    color: #1D4645;
 }
 
 .box1 legend {
@@ -54,4 +61,61 @@
     font-size: 24px;
     line-height: 32px;
     color: rgba(0, 0, 0, 0.54);
+}
+
+.bighead {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 52%;
+    top: 40px;
+    left: calc(36% - 250px);
+    text-align: center;
+    color: white;
+    font-size: 14px;
+}
+
+.bighead .imgdv {
+   width: 250px;
+   height: 100px;
+}
+.bighead .imgdv img {
+    width: 100%;
+    height: 100%;
+ }
+
+@media only screen and (max-width: 730px) {
+    .thePage {
+        padding: 150px 0;
+    }
+
+    .bighead {
+        zoom: 80%;
+        width: 75%;
+        left: calc(5% + 30px);
+        font-size: 18px;
+    }
+
+    .box1 {
+        padding: 0px 30px;
+        padding-bottom: 50px;
+        background: white;
+        border-radius: 15px;
+    }
+
+    .bigbox {
+        flex-direction: column;
+        min-width: 340px;
+        width: 70%;
+        zoom: 90%;
+        height: auto;
+        background: transparent;
+        gap: 50px
+    }
+
+    .box2 {
+        padding-bottom: 40px;
+        border-radius: 15px;
+    }
 }
