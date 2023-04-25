@@ -20,7 +20,7 @@ function UserInfo() {
             <span>Enter your information to get you started</span>
           </div>
           <div className="form">
-            <legend>Name</legend>
+            <legend>Full Name</legend>
             <input type="text" /> <br />
             <br />
             <legend>Email</legend>

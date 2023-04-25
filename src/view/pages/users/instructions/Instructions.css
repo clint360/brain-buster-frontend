@@ -57,6 +57,10 @@
     margin: 0;
 }
 
+.instructionsbox .instructions .inslist ul li {
+   line-height: 30px;
+}
+
 .instructionsbox .actions {
     display: flex;
     justify-content: space-between;

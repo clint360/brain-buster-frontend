@@ -1,3 +1,4 @@
+/* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import myLogo from '../../../../assets/images/logo.svg';
@@ -32,9 +33,17 @@ function Instructions() {
             <h1>Instructions</h1>
             <div className="inslist">
               <ul>
-                <li>Do not Cheat</li>
-                <li>Do not eat</li>
-                <li>Minimize time spent on one question</li>
+                <li>
+                  You only have <span style={{ color: 'red' }}>10 seconds</span>{' '}
+                  for each question.{' '}
+                </li>
+                <li>
+                  You have to select an option before you can go to the next
+                  question.
+                </li>
+                <li> There's no going back after selecting an option.</li>
+                <li>You cannot select an option once the timer goes off.</li>
+                <li>You cannot exit the quiz while playing.</li>
               </ul>
             </div>
           </div>
