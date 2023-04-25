@@ -1,0 +1,278 @@
+.landing {
+  width: 100%;
+  /*  background-color: yellow; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.firstcontainer {
+  width: 100%;
+  height: 90vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(180, 73, 73); */
+}
+
+.leftdetails {
+  width: 50%;
+  /*  background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.leftdetails__div1 {
+  width: 90%;
+  height: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  flex-direction: column;
+  font-family: 'Commissioner';
+  font-size: 78.5px;
+  font-weight: 700;
+  line-height: 90px;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #1d4645;
+}
+
+.leftdetails__div1 span {
+  color: #e8522a;
+}
+
+.leftdetails__divp {
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: Commissioner;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #3f3f3f;
+}
+
+.started {
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.rightdetails {
+  width: 40%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*   background-color: red; */
+}
+
+.rightdetails__img {
+  width: 780px;
+  height: 700px;
+  background-image: url('../../../assets/images/landing\ page\ main\ image.svg');
+  background-size: cover;
+  object-fit: cover;
+}
+
+.donate__cont {
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active__user {
+  width: 70%;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: rebeccapurple; */
+}
+
+.active__user h2 {
+  font-family: 'Commissioner';
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 5px;
+  letter-spacing: 0px;
+}
+
+.active__user p {
+  font-family: 'Commissioner';
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #e8522a;
+}
+
+.donation {
+  display: flex;
+  justify-content: center;
+  gap: 10%;
+  align-items: center;
+}
+
+.donation i {
+  font-size: 25px;
+}
+
+.donation i:hover {
+  cursor: pointer;
+  color: #2e7a79;
+}
+
+.donation h5 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0f5050;
+}
+
+.landing__secondContainer {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background: #1d4645;
+}
+
+.secondContainer__details {
+  width: 80%;
+  /* background-color: white; */
+}
+
+.secondContainer__details h1 {
+  font-family: 'Commissioner';
+  font-size: 66px;
+  font-weight: 700;
+  line-height: 64px;
+  letter-spacing: 0px;
+  color: white;
+}
+
+.secondContainer__details span {
+  color: #e8522a;
+}
+
+.imgcont {
+  width: 80%;
+  height: auto;
+  /*  background-color: white; */
+}
+
+.card2 {
+  margin-bottom: 2.4%;
+  border-radius: 8px;
+}
+
+.card3 {
+  margin-bottom: 4.8%;
+  border-radius: 8px;
+}
+
+.advertContainer {
+  width: 100%;
+  height: 45vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  background: #d9d9d9af;
+}
+
+.advertContainer h1 {
+  font-size: 3.7rem;
+  font-weight: 700;
+  color: #e8522a;
+}
+
+.ad__img {
+  width: 85%;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+.category {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.category h1 {
+  font-size: 66px;
+  font-weight: 700;
+  color: #1d4645;
+}
+
+@media (max-width: 768px) {
+  .rightdetails {
+    display: none;
+  }
+
+  .leftdetails {
+    width: 100%;
+    height: 50vh;
+    background-image: url('../../../assets/images/landing\ page\ main\ image.svg');
+    background-size: cover;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(8px) brightness(80%);
+    color: white;
+  }
+
+  .leftdetails {
+    height: 85%;
+  }
+
+  .firstcontainer {
+    backdrop-filter: blur(10px) brightness(60%);
+  }
+
+  .leftdetails__div1 {
+    color: rgb(245, 240, 240);
+  }
+
+  .leftdetails__divp {
+    margin-top: 7%;
+    color: white;
+  }
+
+  .active__user h2 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 5px;
+    letter-spacing: 0px;
+    padding-top: 5%;
+  }
+
+  .card1,
+  .card2,
+  .card3 {
+    width: 260px;
+    margin: 0;
+  }
+
+  .imgcont {
+    width: 100%;
+    display: flex;
+  }
+
+  .ad__img {
+    width: 100%;
+    flex-wrap: wrap;
+  }
+}

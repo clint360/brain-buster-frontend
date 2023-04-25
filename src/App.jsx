@@ -1,5 +1,5 @@
 import './App.css';
-import Login from './view/pages/Login';
+import Landing from './view/pages/landing/Landing';
 // import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
 // import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       <div className="Appdiv">
-        <Login />
+        <Landing />
       </div>
     </div>
   );
