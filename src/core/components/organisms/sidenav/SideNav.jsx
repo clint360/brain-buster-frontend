@@ -1,9 +1,13 @@
 import React from 'react';
 import './Sidenav.css';
+import myLogo from '../../../../assets/images/logo.svg';
 
 function SideNav() {
   return (
     <div className="sidenav">
+      <div className="logodiv">
+        <img src={myLogo} alt="logo" />
+      </div>
       <div className="pageslist">
         <ul type="none">
           <li>
