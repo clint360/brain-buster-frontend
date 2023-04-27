@@ -5,13 +5,13 @@ import Button from '../../../../core/components/atoms/Button';
 function UserInfo() {
   return (
     <div>
-      <div className="bighead">
+      <div className="logo_head">
         <div>
           <div className="imgdv">
             <img src={myLogo} alt="logo" />
           </div>
         </div>
-        <div className="menu">Home</div>
+        <div className="menu" />
       </div>
       <div className="thePage">
         <div className="instructionsbox">

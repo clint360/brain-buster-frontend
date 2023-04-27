@@ -9,13 +9,13 @@ import './Instructions.css';
 function Instructions() {
   return (
     <div>
-      <div className="bighead">
+      <div className="logo_head">
         <div>
           <div className="imgdv">
             <img src={myLogo} alt="logo" />
           </div>
         </div>
-        <div className="menu">Home</div>
+        <div className="menu" />
       </div>
       <div className="thePage">
         <div className="instructionsbox">
