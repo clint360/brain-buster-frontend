@@ -1,18 +1,18 @@
 import React from 'react';
-import Button from '../../core/components/atoms/Button';
-import './LS.css';
-import myLogo from '../../assets/images/logo.svg';
+import Button from '../../../core/components/atoms/Button';
+import './Auth.css';
+import myLogo from '../../../assets/images/logo.svg';
 
 function Login() {
   return (
     <div>
-      <div className="bighead">
+      <div className="logo_head">
         <div>
           <div className="imgdv">
             <img src={myLogo} alt="logo" />
           </div>
         </div>
-        <div className="menu">Home</div>
+        <div className="menu" />
       </div>
       <div className="thePage">
         <div className="bigbox">
