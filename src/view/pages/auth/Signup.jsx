@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Button from '../../../core/components/atoms/Button';
 import './Auth.css';
 import myLogo from '../../../assets/images/logo.svg';
@@ -42,7 +43,9 @@ function Signup() {
               </span>
             </div>
             <div className="createAccountButton">
-              <Button title="Log In" background="white" color="#1D4645" />
+              <Link to="/login">
+                <Button title="Log In" background="white" color="#1D4645" />
+              </Link>
             </div>
           </div>
         </div>
