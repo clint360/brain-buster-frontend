@@ -35,11 +35,11 @@ function Signup() {
             </div>
           </div>
           <div className="box2">
-            <div style={{ height: '75%' }}>
-              <h1 style={{ padding: '40px 0', margin: '0' }}>BRAIN BUSTER </h1>
-              <p style={{ fontSize: '22px' }}>
+            <div className="text">
+              <h1>BRAIN BUSTER </h1>
+              <span className="smalltext">
                 <b>We’ve made it easy for you to create your own assessement</b>
-              </p>
+              </span>
             </div>
             <div className="createAccountButton">
               <Button title="Log In" background="white" color="#1D4645" />
