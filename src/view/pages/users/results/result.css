@@ -1,0 +1,120 @@
+body {
+    background-color: rgba(29, 70, 69, 1);
+  }
+  
+  *{
+    box-sizing: border-box;
+  }
+  
+  .centered-div {
+    width: 40%;
+    height: auto;
+    margin: auto;
+    background-color: white;
+    padding: 20px;
+    margin-top: 50px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+  }
+  
+  .instructions {
+    color: black;
+  }
+  
+  .remark {
+    height: 8vh;
+    width: 8vh;
+    background-color: rgb(2, 88, 15);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    border-radius: 50%;
+  }
+  
+  .fa-solid {
+    color: white;
+    font-size: x-large;
+  }
+  
+  .feedback-message {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .message {
+    font-size: larger;
+    font-weight: bolder;
+    width: 75%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+  }
+  
+  .metrics-container {
+    gap: 50px;
+  }
+  
+  .metrics {
+    display: flex;
+    justify-content: space-between;
+    padding-right: 60px;
+    padding-left: 60px;
+  }
+  
+  .sub-number {
+    font-weight: bolder;
+  }
+  
+  .line {
+  color: rgb(107, 106, 106);
+  }
+  
+  .share-button {
+    margin-left: 60px;
+    padding: 8px 25px;
+    color: white;
+    background-color: rgba(29, 70, 69, 1);
+    border-radius: 6px;
+    border: none;
+  }
+  
+  .fa-solid {
+    color: white;
+  }
+  
+  .quiz-result-buttom {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .fa-solid fa-share-nodes {
+    color: red;
+  }
+  
+  .retake-button {
+    margin-left: 60px;
+    padding: 10px;
+    padding: 8px 25px;
+    color: white;
+    background-color: rgba(29, 70, 69, 1);
+    border-radius: 6px;
+    border: none;
+    margin-right: 50px;
+    padding: 13px 25px;
+  }
+  
+  @media screen and (max-width: 992px) {
+    .metrics {
+    padding-right: 10px 10px;
+    }
+  
+    .quiz-result-buttom {
+      width: 100%;
+      justify-content: space-around; 
+      align-items: center; 
+    }  
+  }
