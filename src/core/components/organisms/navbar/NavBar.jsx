@@ -1,3 +1,4 @@
+/* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import './navBar.css';
 import Logo from '../../../../assets/images/logo.svg';
@@ -24,7 +25,14 @@ function NavBar() {
           <div>
             <ButtonAtom titles="SignUp" className="signup" />
           </div>
-          <ButtonAtom titles="Login" className="login" />
+          <ButtonAtom
+            titles="Login"
+            backgroundColor="white"
+            border="2px solid green"
+            color="#333333"
+            width="135px"
+            cursor="pointer"
+          />
         </div>
       </div>
     </div>
