@@ -101,8 +101,8 @@
 
 .profile_pic_container .circle {
     border-radius: 50%;
-    background: pink;
-    width: 45%;
+    background: rgb(169, 169, 169);
+    width: 200px;
     margin: auto;
     height: 90%;
     color: rgb(78, 78, 78);

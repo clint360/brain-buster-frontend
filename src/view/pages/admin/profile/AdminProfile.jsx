@@ -23,7 +23,7 @@ function AdminProfile() {
         <div className="admininformation">
           <div className="column">
             <div className="profile_pic_container">
-              <div className="circle">A.C</div>
+              <div className="circle">J.D</div>
             </div>
             <div className="aboutyou">
               <legend>Bio</legend>
