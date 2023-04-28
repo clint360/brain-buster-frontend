@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './view/pages/auth/Login';
 import Instructions from './view/pages/users/instructions/Instructions';
 import UserInfo from './view/pages/users/userinfo/UserInfo';
@@ -13,11 +14,16 @@ import AdminProfile from './view/pages/admin/profile/AdminProfile';
 
 function App() {
   return (
-    <div className="App">
-      <div className="Appdiv">
-        <Login />
-      </div>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path="/admin">
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/profile" element={<AdminProfile />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
