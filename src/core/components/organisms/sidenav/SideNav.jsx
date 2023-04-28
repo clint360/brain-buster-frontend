@@ -1,8 +1,10 @@
-import React from 'react';
+/* eslint-disable react/prop-types */
+/* eslint-disable no-unused-vars */
+import React, { useEffect } from 'react';
 import './Sidenav.css';
 import myLogo from '../../../../assets/images/logo.svg';
 
-function SideNav() {
+function SideNav({ page }) {
   return (
     <div className="sidenav">
       <div className="logodiv">

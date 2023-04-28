@@ -19,7 +19,7 @@ function Login() {
         <div className="bigbox">
           <div className="box1">
             <h1 style={{ textAlign: 'center', padding: '40px 0', margin: '0' }}>
-              Sign Up{' '}
+              Sign In{' '}
             </h1>
             <div className="form">
               <legend>Email</legend>

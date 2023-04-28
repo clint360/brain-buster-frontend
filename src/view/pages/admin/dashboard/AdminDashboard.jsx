@@ -1,32 +1,40 @@
 import React from 'react';
-import Button from '../../../../core/components/atoms/Button';
-import SideNav from '../../../../core/components/organisms/sidenav/SideNav';
+import AdminQuizCard from '../../../../core/components/atoms/AdminQuizCard';
+import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import './AdminDashboard.css';
 
 function AdminDashboard() {
   return (
-    <div>
-      <div className="mobileviewnavbar">
-        <div>Three dots</div>
-      </div>
-      <div className="position_fixed">
-        <SideNav />
-      </div>
-      <div className="adminProfilePage">
-        <div className="adminnamebanner">
-          <h1>Welcome, John Doe</h1>
-          <span>
-            Here is your Dashboard, a place where you can view your analytics
-            and activity summary
-          </span>
-        </div>
-        <div className="admininformation">
+    <AdminTemplate
+      text="Here is your Dashboard, a place where you can view your analytics
+    and activity summary"
+      username="Clint"
+      page="AdminDashboard"
+    >
+      <div className="displayquizzes">
+        <h1>Your Quizzes</h1>
+        <div className="quizzesslides">
           <div>
-            <Button />
+            <AdminQuizCard quizName="F2 Biology Paper1" />
+          </div>
+          <div>
+            <AdminQuizCard quizName="F2 Biology Paper1" />
+          </div>
+          <div>
+            <AdminQuizCard quizName="F2 Biology Paper1" />
+          </div>
+          <div>
+            <AdminQuizCard quizName="F2 Biology Paper1" />
+          </div>
+        </div>
+        <div className="createnewquiz">
+          <div>
+            <i className="fa-sharp fa-solid fa-circle-plus fa-bounce" />
+            <div>Create New Quiz</div>
           </div>
         </div>
       </div>
-    </div>
+    </AdminTemplate>
   );
 }
 
