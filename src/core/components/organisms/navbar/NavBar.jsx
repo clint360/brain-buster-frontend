@@ -1,6 +1,7 @@
 /* eslint-disable react/jsx-no-bind */
 import React from 'react';
 import './navBar.css';
+import { Link } from 'react-router-dom';
 import Logo from '../../../../assets/images/logo.svg';
 import ButtonAtom from '../../atoms/button/ButtonAtom';
 
@@ -16,23 +17,32 @@ function NavBar() {
             <li>
               <i className="fa-solid fa-magnifying-glass" />
             </li>
-            <li>About</li>
-            <li>Quizzes</li>
+            <a href="#about">
+              <li>About</li>
+            </a>
+            <a href="#category">
+              <li>Quizzes</li>
+            </a>
+
             <li>Services</li>
           </ul>
         </div>
         <div className="navBtn">
           <div>
-            <ButtonAtom titles="SignUp" className="signup" />
+            <Link to="/signup">
+              <ButtonAtom titles="SignUp" className="signup" />
+            </Link>
           </div>
-          <ButtonAtom
-            titles="Login"
-            backgroundColor="white"
-            border="2px solid green"
-            color="#333333"
-            width="135px"
-            cursor="pointer"
-          />
+          <Link to="/login">
+            <ButtonAtom
+              titles="Login"
+              backgroundColor="white"
+              border="2px solid green"
+              color="#333333"
+              width="135px"
+              cursor="pointer"
+            />
+          </Link>
         </div>
       </div>
     </div>

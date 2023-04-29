@@ -11,13 +11,22 @@ function ButtonAtom({
   backgroundColor,
   color,
   cursor,
+  margin,
 }) {
   return (
     <div>
       <button
         className="mainButton"
         type="button"
-        style={{ width, height, border, backgroundColor, color, cursor }}
+        style={{
+          width,
+          height,
+          border,
+          backgroundColor,
+          color,
+          cursor,
+          margin,
+        }}
       >
         {titles}
       </button>

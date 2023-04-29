@@ -28,6 +28,11 @@
   font-weight: 400;
 }
 
+.navLinks a {
+  text-decoration: none;
+  color: black;
+}
+
 .navLinks li:hover {
   border-bottom: 4px solid #0a480a;
 }
@@ -41,17 +46,14 @@
 
 @media (max-width: 768px) {
   .navcont {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
   }
 
   .navLinks ul {
-    width: 280px;
-    display: flex;
-    align-items: center;
-    justify-content: space-evenly;
+    display: none;
   }
 
   .navLinks li {
@@ -61,5 +63,9 @@
 
   .navBtn {
     gap: 2%;
+  }
+
+  .logoCont {
+    display: none;
   }
 }
