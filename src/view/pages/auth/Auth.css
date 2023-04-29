@@ -16,7 +16,7 @@
     min-height: 400px;
     background: white;
     display: flex;
-    zoom: 80%;
+    zoom: 1;
 }
 
 .box1 {
@@ -43,10 +43,22 @@
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
+    margin: 0;
+    line-height: 60px;
+    padding-bottom: 25px;
+}
+
+.box2 .text {
+    padding-top: 25px;
+    height: 70%;
+}
+
+.box2 .text .smalltext {
+    font-size: 20px;
 }
 
 .box1 input,
-.form input{
+.form input {
     border: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.54);
     width: 100%;
@@ -81,13 +93,14 @@
 }
 
 .logo_head .imgdv {
-   width: 200px;
-   height: 100px;
+    width: 200px;
+    height: 100px;
 }
+
 .logo_head .imgdv img {
     width: 100%;
     height: 100%;
- }
+}
 
 @media only screen and (max-width: 730px) {
     .thePage {
@@ -121,5 +134,11 @@
     .box2 {
         padding-bottom: 40px;
         border-radius: 15px;
+    }
+
+    .box2 .text {
+        padding-top: 25px;
+        height: 70%;
+        padding-bottom: 50px;
     }
 }
