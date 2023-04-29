@@ -1,10 +1,18 @@
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 import './Sidenav.css';
 import myLogo from '../../../../assets/images/logo.svg';
 
 function SideNav({ page }) {
+  function activeBG(activePage) {
+    if (activePage === page) {
+      return 'rgba(50, 50, 50, 0.448)';
+    }
+    return 'transparent';
+  }
+
   return (
     <div className="sidenav">
       <div className="logodiv">
@@ -12,21 +20,30 @@ function SideNav({ page }) {
       </div>
       <div className="pageslist">
         <ul type="none">
-          <li>
-            <i className="fa-sharp fa-solid fa-table-columns"> </i>
-            <div>Dashboard</div>{' '}
+          {' '}
+          <li style={{ background: activeBG('AdminDashboard') }}>
+            <Link to="/admin/dashboard">
+              <i className="fa-sharp fa-solid fa-table-columns"> </i>
+              <div>Dashboard</div>{' '}
+            </Link>
           </li>
-          <li>
-            <i className="fa-solid fa-clipboard-question"> </i>
-            <div>Quizzes</div>{' '}
+          <li style={{ background: activeBG('AdminQuizzes') }}>
+            <Link to="/admin/quizzes">
+              <i className="fa-solid fa-clipboard-question"> </i>
+              <div>Quizzes</div>{' '}
+            </Link>
           </li>
-          <li>
-            <i className="fa-solid fa-list-check"> </i>
-            <div>Responses</div>{' '}
+          <li style={{ background: activeBG('AdminResponses') }}>
+            <Link to="/admin/responses">
+              <i className="fa-solid fa-list-check"> </i>
+              <div>Responses</div>{' '}
+            </Link>
           </li>
-          <li>
-            <i className="fa-solid fa-user" />
-            <div>Profile</div>{' '}
+          <li style={{ background: activeBG('AdminProfile') }}>
+            <Link to="/admin/profile">
+              <i className="fa-solid fa-user" />
+              <div>Profile</div>{' '}
+            </Link>
           </li>
           <li>
             <i className="fa-solid fa-right-from-bracket"> </i>

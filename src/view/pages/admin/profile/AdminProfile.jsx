@@ -8,7 +8,7 @@ function AdminProfile() {
       <AdminTemplate
         text="Welcome to your Profile page, you can view and make changes to your information details"
         username="Clint"
-        page="Admin Profile"
+        page="AdminProfile"
       >
         <div className="adminPage">
           <div className="admininformation">

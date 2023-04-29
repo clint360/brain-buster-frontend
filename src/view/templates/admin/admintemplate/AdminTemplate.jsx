@@ -9,24 +9,9 @@ import SideNav from '../../../../core/components/organisms/sidenav/SideNav';
 import './AdminTemplate.css';
 
 function AdminTemplate({ children, text, username, page }) {
-  const [sideNavPosition, setSideNavPosition] = useState('-250px');
-  const [pageMargin, setPageMargin] = useState('0px');
+  const [sideNavPosition, setSideNavPosition] = useState('0px');
+  const [pageMargin, setPageMargin] = useState('250px');
   const [deviceWidth, setDeviceWidth] = useState('0');
-
-  useEffect(() => {
-    const x = window.innerWidth;
-    setDeviceWidth(x);
-  });
-
-  const sideNavStyle = {
-    translate: sideNavPosition,
-    transition: 'translate 0.2s',
-  };
-
-  const pageStyle = {
-    translate: pageMargin,
-    transition: 'translate 0.2s',
-  };
 
   const closeNavBar = () => {
     setSideNavPosition('-250px');
@@ -36,6 +21,22 @@ function AdminTemplate({ children, text, username, page }) {
   const openNavBar = () => {
     setSideNavPosition('0');
     setPageMargin('250px');
+  };
+
+  useEffect(() => {
+    const x = window.innerWidth;
+    setDeviceWidth(x);
+    closeNavBar();
+  }, []);
+
+  const sideNavStyle = {
+    translate: sideNavPosition,
+    transition: 'translate 0.2s',
+  };
+
+  const pageStyle = {
+    translate: pageMargin,
+    transition: 'translate 0.2s',
   };
 
   return (
