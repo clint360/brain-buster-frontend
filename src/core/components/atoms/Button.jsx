@@ -12,7 +12,7 @@ function Button({ title, borderColor, color, background, onClick }) {
     background: background || '#1D4645',
     padding: '15px 40px',
     fontWeight: 'bold',
-    minWidth: '100px',
+    minWidth: '150px',
     textAlign: 'center',
     cursor: 'pointer',
   };

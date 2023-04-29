@@ -41,7 +41,7 @@ function AdminTemplate({ children, text, username, page }) {
   return (
     <div>
       <div className="mobileviewnavbar" style={{ width: deviceWidth }}>
-        <div onClick={openNavBar}>
+        <div onClick={openNavBar} title="Menu">
           <i className="fa-solid fa-bars" />
         </div>
       </div>
