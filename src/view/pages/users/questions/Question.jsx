@@ -9,7 +9,7 @@ function Question() {
           <div className="blank-div" />
           <div className="right-side-timer">
             <div className="left-right-div">
-              <p>Time left </p>
+              <p className="time-left">Time left </p>
             </div>
             <div className="right-left-div">
               <p className="seconds-left">15Sec</p>
@@ -17,7 +17,6 @@ function Question() {
             <div className="" />
           </div>
         </div>
-
         <hr />
 
         <div className="all-content">
@@ -44,7 +43,7 @@ function Question() {
 
           <div className="response2">
             <div className="response-text">
-              <p>Console.log()</p>
+              <p>document.write</p>
             </div>
             <div className="response-icon">
               <i className="fa-solid fa-circle-check" />
@@ -55,7 +54,7 @@ function Question() {
 
           <div className="response3">
             <div className="response-text">
-              <p>Console.log()</p>
+              <p>window.alert()</p>
             </div>
             <div className="response-icon" />
           </div>
@@ -64,7 +63,7 @@ function Question() {
 
           <div className="response4">
             <div className="response-text">
-              <p>Console.log()</p>
+              <p>return.alert()</p>
             </div>
             <div className="response-icon" />
           </div>

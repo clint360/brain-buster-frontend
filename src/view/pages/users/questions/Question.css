@@ -1,5 +1,6 @@
 body {
     background-color: rgba(29, 70, 69, 1);
+    font-family: Commissioner
   }
   
   *{
@@ -47,6 +48,10 @@ body {
     justify-content: center;
     border-radius: 6px;
     display: flex;
+}
+
+.time-left {
+    padding-left: 7px;
 }
 
 .seconds-left {
