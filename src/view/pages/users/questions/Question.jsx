@@ -33,7 +33,7 @@ function Question() {
             </p>
           </div>
 
-          <div className="response">
+          <div className="response1">
             <div className="response-text">
               <p>Console.log()</p>
             </div>
@@ -44,7 +44,7 @@ function Question() {
 
           <br />
 
-          <div className="response">
+          <div className="response2">
             <div className="response-text">
               <p>Console.log()</p>
             </div>
@@ -55,7 +55,7 @@ function Question() {
 
           <br />
 
-          <div className="response">
+          <div className="response3">
             <div className="response-text">
               <p>Console.log()</p>
             </div>
@@ -66,7 +66,7 @@ function Question() {
 
           <br />
 
-          <div className="response">
+          <div className="response4">
             <div className="response-text">
               <p>Console.log()</p>
             </div>

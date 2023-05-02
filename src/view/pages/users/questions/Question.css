@@ -55,18 +55,54 @@ body {
     color: black;
 }
 
-.response {
+.response1 {
     height: 40px;
     width: 100%;
-    background-color: blueviolet;
+    background-color: rgba(250, 216, 218, 1);
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-left: 20px;
     padding-right: 20px;
     border-radius: 10px;
-
 }
+
+.response2 {
+    height: 40px;
+    width: 100%;
+    background-color:rgba(146, 204, 164, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.response3 {
+    height: 40px;
+    width: 100%;
+    background-color:rgba(239, 248, 255, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
+.response4 {
+    height: 40px;
+    width: 100%;
+    background-color:rgba(239, 248, 255, 1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 10px;
+}
+
 .question-number-and-next {
     display: flex;
     justify-content: space-between;
