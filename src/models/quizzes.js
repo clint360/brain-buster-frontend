@@ -6,7 +6,7 @@ const response = {
 };
 
 const quiz = {
-  admin: '',
+  admin: 's',
   name: '',
   duration: '',
   responses: [response, response, response],
