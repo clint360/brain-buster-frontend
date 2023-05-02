@@ -6,9 +6,7 @@ function Question() {
     <div>
       <div className="centered-div">
         <div className="timer-container">
-          <div className="blank-div"> 
-
-          </div>  
+          <div className="blank-div" />
           <div className="right-side-timer">
             <div className="left-right-div">
               <p>Time left </p>
@@ -16,15 +14,15 @@ function Question() {
             <div className="right-left-div">
               <p className="seconds-left">15Sec</p>
             </div>
-            <div className=""></div>
+            <div className="" />
           </div>
         </div>
 
         <hr />
-        
+
         <div className="all-content">
           <div className="questions">
-            <p>
+            <p className="question-title">
               1. The following method can
               be used to display data
               in some form using javascript
@@ -49,7 +47,7 @@ function Question() {
               <p>Console.log()</p>
             </div>
             <div className="response-icon">
-              <i className="fa-regular fa-circle-xmark" />
+              <i className="fa-solid fa-circle-check" />
             </div>
           </div>
 
@@ -59,9 +57,7 @@ function Question() {
             <div className="response-text">
               <p>Console.log()</p>
             </div>
-            <div className="response-icon">
-              <i className="fa-regular fa-circle-xmark" />
-            </div>
+            <div className="response-icon" />
           </div>
 
           <br />
@@ -70,9 +66,7 @@ function Question() {
             <div className="response-text">
               <p>Console.log()</p>
             </div>
-            <div className="response-icon">
-              <i className="fa-regular fa-circle-xmark" />
-            </div>
+            <div className="response-icon" />
           </div>
 
           <div className="question-number-and-next">
