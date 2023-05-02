@@ -1,10 +1,12 @@
-body {
-    background-color: rgba(29, 70, 69, 1);
-    font-family: Commissioner
-  }
   
   *{
     box-sizing: border-box;
+  }
+
+  .whole-page {
+    height: 100%;
+    width: 100%;
+    background-color: rgba(29, 70, 69, 1);
   }
 
   .centered-div {
@@ -157,4 +159,11 @@ body {
     cursor: pointer;
 }
 
-
+@media only screen and (max-width: 730px) {
+    .centered-div {
+        width: 90%;
+        height: auto;
+        margin-top: 20vh;
+        
+      }
+  }

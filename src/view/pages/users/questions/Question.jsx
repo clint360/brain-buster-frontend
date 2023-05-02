@@ -4,6 +4,7 @@ import './Question.css';
 function Question() {
   return (
     <div>
+      <div className="whole-page">
       <div className="centered-div">
         <div className="timer-container">
           <div className="blank-div" />
@@ -78,6 +79,7 @@ function Question() {
           </div>
 
         </div>
+      </div>
       </div>
     </div>
   );
