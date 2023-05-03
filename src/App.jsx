@@ -7,6 +7,7 @@ import UserInfo from './view/pages/users/userinfo/UserInfo';
 import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
 import Signup from './view/pages/auth/Signup';
 import Question from './view/pages/users/questions/Question';
+import Result from './view/pages/users/results/Result';
 // import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
@@ -17,6 +18,7 @@ function App() {
     <div className="App">
       <div className="Appdiv">
         <Question />
+        <Result />
       </div>
     </div>
   );

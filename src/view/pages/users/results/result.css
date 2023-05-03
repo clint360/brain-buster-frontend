@@ -1,120 +1,160 @@
-body {
-    background-color: rgba(29, 70, 69, 1);
-  }
+
+*{
+  box-sizing: border-box;
+}
+
+.whole {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100%;
+  background-color: brown;
+}
+
+.centered-div {
+  width: 40%;
+  height: auto;
+  margin: auto;
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: chartreuse;
+}
+
+.instructions {
+  color: black;
+}
+
+.remark {
+  height: 8vh;
+  width: 8vh;
+  background-color: rgb(2, 88, 15);
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  align-items: center;
+  border-radius: 50%;
+}
+
+.fa-solid {
+  color: white;
+  font-size: x-large;
+}
+
+.feedback-message {
+  display: flex;
+  justify-content: center;
   
-  *{
-    box-sizing: border-box;
-  }
-  
+}
+
+.message {
+  font-size: larger;
+  font-weight: bolder;
+  width: 75%;
+  margin: auto;
+  padding-top: 20px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.metrics-container {
+  gap: 50px;
+}
+
+.metrics {
+  display: flex;
+  justify-content: space-between;
+  padding-right: 60px;
+  padding-left: 60px;
+}
+
+.sub-number {
+  font-weight: bolder;
+}
+
+.line {
+color: rgb(107, 106, 106);
+}
+
+.share-button {
+  padding: 8px 25px;
+  color: white;
+  background-color: coral;
+  border-radius: 6px;
+  border: none;
+}
+
+.share-button:hover {
+  cursor: pointer;
+  background-color: coral;
+}
+
+.fa-solid {
+  color: white;
+}
+
+.quiz-result-buttons {
+  display: flex;
+  gap: 39%;
+  justify-content: center;
+  align-items: center;
+
+}
+
+.fa-solid fa-share-nodes {
+  color: red;
+}
+
+.retake-button {
+  padding: 10px;
+  padding: 8px 25px;
+  color: white;
+  background-color: rgba(29, 70, 69, 1);
+  border-radius: 6px;
+  border: none;
+  padding: 13px 25px;
+}
+
+.retake-button {
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 730px) {
   .centered-div {
-    width: 40%;
-    height: auto;
-    margin: auto;
-    background-color: white;
-    padding: 20px;
-    margin-top: 50px;
-    border-radius: 10px;
-    margin-bottom: 15px;
-  }
-  
-  .instructions {
-    color: black;
-  }
-  
-  .remark {
-    height: 8vh;
-    width: 8vh;
-    background-color: rgb(2, 88, 15);
-    display: flex;
-    justify-content: center;
-    margin: auto;
-    align-items: center;
-    border-radius: 50%;
-  }
-  
-  .fa-solid {
-    color: white;
-    font-size: x-large;
-  }
-  
-  .feedback-message {
-    display: flex;
-    justify-content: center;
-    
-  }
-  
-  .message {
-    font-size: larger;
-    font-weight: bolder;
-    width: 75%;
-    margin: auto;
-    padding-top: 20px;
-    padding-bottom: 10px;
-    text-align: center;
-  }
-  
-  .metrics-container {
+      width: 90%;
+      height: auto;
+    }
+    .metrics {
+      padding: 10px;
+    }
+
+  .whole {
+      height: auto;
+  }  
+
+  .quiz-result-buttons {
     gap: 50px;
   }
-  
-  .metrics {
-    display: flex;
-    justify-content: space-between;
-    padding-right: 60px;
-    padding-left: 60px;
-  }
-  
-  .sub-number {
-    font-weight: bolder;
-  }
-  
-  .line {
-  color: rgb(107, 106, 106);
-  }
-  
-  .share-button {
-    margin-left: 60px;
-    padding: 8px 25px;
-    color: white;
-    background-color: rgba(29, 70, 69, 1);
-    border-radius: 6px;
-    border: none;
-  }
-  
-  .fa-solid {
-    color: white;
-  }
-  
-  .quiz-result-buttom {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-  }
-  
-  .fa-solid fa-share-nodes {
-    color: red;
-  }
-  
-  .retake-button {
-    margin-left: 60px;
-    padding: 10px;
-    padding: 8px 25px;
-    color: white;
-    background-color: rgba(29, 70, 69, 1);
-    border-radius: 6px;
-    border: none;
-    margin-right: 50px;
-    padding: 13px 25px;
-  }
-  
-  @media screen and (max-width: 992px) {
-    .metrics {
-    padding-right: 10px 10px;
+} 
+
+/* @media only screen and (max-width:820px ) {
+  .centered-div {
+      width: 70%;
+      height: auto;
     }
-  
-    .quiz-result-buttom {
-      width: 100%;
-      justify-content: space-around; 
-      align-items: center; 
-    }  
-  }
+}
+
+@media only screen and (max-width:912px ) {
+  .centered-div {
+      width: 70%;
+      height: auto;
+    }
+}
+
+@media only screen and (max-width:280px ) {
+  .centered-div {
+      width: 70%;
+      height: auto;
+    }
+} */
