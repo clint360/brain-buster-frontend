@@ -1,8 +1,8 @@
 import React from 'react';
 import './aboutCard.css';
-import card from '../../../assets/images/step one card.svg';
-import card2 from '../../../assets/images/step 2 card.svg';
-import card3 from '../../../assets/images/step 3 card.svg';
+import card from '../../../../assets/images/step one card.svg';
+import card2 from '../../../../assets/images/step 2 card.svg';
+import card3 from '../../../../assets/images/step 3 card.svg';
 
 function AboutCard() {
   return (

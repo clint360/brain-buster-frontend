@@ -1,10 +1,10 @@
 import React from 'react';
 import './advert.css';
-import Rebase from '../../../assets/images/rebase.svg';
-import Lenonovo from '../../../assets/images/lenovo.svg';
-import Mtn from '../../../assets/images/mtn.svg';
-import Cocacola from '../../../assets/images/cocacola.svg';
-import Camaico from '../../../assets/images/camairco.svg';
+import Rebase from '../../../../assets/images/rebase.svg';
+import Lenonovo from '../../../../assets/images/lenovo.svg';
+import Mtn from '../../../../assets/images/mtn.svg';
+import Cocacola from '../../../../assets/images/cocacola.svg';
+import Camaico from '../../../../assets/images/camairco.svg';
 
 function Advert() {
   return (

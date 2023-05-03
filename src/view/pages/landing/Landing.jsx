@@ -1,9 +1,9 @@
 import React from 'react';
 import './landing.css';
 import MainImg from '../../../assets/images/particles.svg';
-import AboutCard from '../../../core/components/AboutCard/AboutCard';
+import AboutCard from '../../../core/components/atoms/AboutCard/AboutCard';
 import ButtonAtom from '../../../core/components/atoms/button/ButtonAtom';
-import Advert from '../../../core/components/advert/Advert';
+import Advert from '../../../core/components/atoms/advert/Advert';
 import Category from '../../../core/components/category/Category';
 import Navbar from '../../../core/components/organisms/navbar/NavBar';
 import Footer from '../../../core/components/Footer/Footer';
