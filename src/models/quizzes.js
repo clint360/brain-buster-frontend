@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 const response = {
-  user: '',
+  username: '',
+  email: '',
   quiz: '',
   answerIndices: [],
 };

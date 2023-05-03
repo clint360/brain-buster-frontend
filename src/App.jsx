@@ -41,7 +41,7 @@ function App() {
             <Route path="/user/quiz">
               <Route index path="/user/quiz/test" element={<QuizPage />} />
             </Route>
-            <Route path="/user/results" element={<UserResults />} />
+            <Route path="/user/quiz/results" element={<UserResults />} />
           </Route>
         </Routes>
       </Router>
