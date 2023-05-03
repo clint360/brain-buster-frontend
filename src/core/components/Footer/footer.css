@@ -140,6 +140,7 @@
     padding-left: 5%;
     padding-right: 2%;
     grid-template-columns: 1fr 1fr 1fr;
+    overflow: hidden;
     /* background-color: yellow; */
   }
 

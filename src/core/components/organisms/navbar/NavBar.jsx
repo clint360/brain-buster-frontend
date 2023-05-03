@@ -24,7 +24,7 @@ function NavBar() {
               <li>Quizzes</li>
             </a>
 
-            <li>Services</li>
+            <li className="service">Services</li>
           </ul>
         </div>
         <div className="navBtn">

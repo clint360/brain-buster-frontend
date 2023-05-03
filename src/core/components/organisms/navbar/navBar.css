@@ -46,10 +46,14 @@
 
 @media (max-width: 768px) {
   .navcont {
-    width: 100%;
+    width: 90%;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+  }
+
+  .service {
+    display: none;
   }
 
   .navLinks li {
