@@ -1,0 +1,242 @@
+.category {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.category h1 {
+  font-size: 66px;
+  font-weight: 700;
+  color: #1d4645;
+}
+
+.category__cont {
+  width: 75%;
+  height: fit-content;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 2.5%;
+  /* background-color: red; */
+}
+
+.category__card1 {
+  height: 445px;
+  width: 400px;
+  background: #f66b49;
+  mix-blend-mode: normal;
+  /* opacity: 0.7; */
+  border-radius: 8px;
+  margin-bottom: 1%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.category__card1:hover {
+  background: #f3562f;
+  border: 2px solid whitesmoke;
+}
+
+.categorycard__img {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7.5%;
+  /*  background-color: rgb(144, 50, 50); */
+}
+
+.categorycard__text {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(144, 50, 50); */
+}
+
+.innertext__cont {
+  width: 90%;
+  /* background-color: rgb(191, 187, 187); */
+}
+
+.innertext__cont h1 {
+  font-family: 'Commissioner';
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #1d4645;
+}
+
+.innertext__cont p {
+  font-family: 'Commissioner';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #333333;
+  text-align: left;
+}
+
+.category__card2 {
+  height: 445px;
+  width: 400px;
+  background: #102f2e;
+  mix-blend-mode: normal;
+  /* opacity: 0.7; */
+  border-radius: 8px;
+  margin-bottom: 1%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.category__card2:hover {
+  background: #1e716e;
+  border: 2px solid whitesmoke;
+}
+
+.categorycard__img2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7.5%;
+  /*  background-color: rgb(144, 50, 50); */
+}
+
+.categorycard__text2 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(144, 50, 50); */
+}
+
+.innertext__cont2 {
+  width: 90%;
+  /* background-color: rgb(191, 187, 187); */
+}
+
+.innertext__cont2 h1 {
+  font-family: 'Commissioner';
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: left;
+  color: white;
+}
+
+.innertext__cont2 p {
+  font-family: 'Commissioner';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: white;
+  text-align: left;
+}
+
+.category__card3 {
+  height: 445px;
+  width: 400px;
+  background: #fccea3;
+  mix-blend-mode: normal;
+  /* opacity: 0.7; */
+  border-radius: 8px;
+  margin-bottom: 1%;
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.category__card3:hover {
+  background: #f3cba5;
+}
+
+.categorycard__img3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 7.5%;
+  /*  background-color: rgb(144, 50, 50); */
+}
+
+.categorycard__text3 {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color: rgb(144, 50, 50); */
+}
+
+.innertext__cont3 {
+  width: 90%;
+  /* background-color: rgb(191, 187, 187); */
+}
+
+.innertext__cont3 h1 {
+  font-family: 'Commissioner';
+  font-size: 36px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #1d4645;
+}
+
+.innertext__cont3 p {
+  font-family: 'Commissioner';
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  color: #333333;
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .category__cont {
+    width: 100%;
+  }
+
+  .category__card2 {
+    width: 323px;
+    margin-bottom: 2%;
+  }
+
+  .category__card1 {
+    width: 323px;
+    margin-bottom: 2%;
+  }
+
+  .category__card3 {
+    width: 323px;
+    margin-bottom: 2%;
+  }
+}
+
+@media (max-width: 400px) {
+  .category__card2 {
+    width: 300px;
+    height: 412px;
+    margin-bottom: 3%;
+  }
+
+  .category__card1 {
+    width: 300px;
+    height: 412px;
+    margin-bottom: 3%;
+  }
+
+  .category__card3 {
+    width: 300px;
+    height: 412px;
+    margin-bottom: 3%;
+  }
+
+  .category h1 {
+    font-size: 35px;
+    font-weight: 700;
+    text-align: center;
+    color: #1d4645;
+  }
+}
