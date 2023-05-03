@@ -139,18 +139,38 @@
     padding-top: 3%;
     padding-left: 5%;
     padding-right: 2%;
-    grid-template-columns:  1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr;
     /* background-color: yellow; */
   }
 
-
-.footer__logo {
-   display: none;
+  .footer__logo {
+    display: none;
   }
 
-  .footer_inputf button { 
+  .footer_inputf button {
     width: 208px;
     margin-top: 3%;
   }
+}
 
+@media (max-width: 400px) {
+.footer {
+    width: 90%;
+    height: fit-content;
+}
+
+.footer__container {
+    width: 90%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+  .footer__1container {
+    padding-top: 3%;
+    padding-left: 5%;
+    padding-right: 2%;
+    display: block;
+    /* background-color: yellow; */
+  }
 }

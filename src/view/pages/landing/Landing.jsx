@@ -5,13 +5,13 @@ import AboutCard from '../../../core/components/AboutCard/AboutCard';
 import ButtonAtom from '../../../core/components/atoms/button/ButtonAtom';
 import Advert from '../../../core/components/advert/Advert';
 import Category from '../../../core/components/category/Category';
-import Navbar from '../../../core/components/organisms/navbar/NavBar';
+/* import Navbar from '../../../core/components/organisms/navbar/NavBar'; */
 import Footer from '../../../core/components/Footer/Footer';
 
 function Landing() {
   return (
     <div className="landing">
-      <Navbar />
+      {/*  <Navbar /> */}
       <div className="firstcontainer">
         <div className="leftdetails">
           <div className="leftdetails__div1">
