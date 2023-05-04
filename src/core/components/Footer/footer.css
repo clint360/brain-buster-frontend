@@ -155,19 +155,24 @@
 }
 
 @media (max-width: 400px) {
-.footer {
-    width: 90%;
-    height: fit-content;
-}
+  .footer {
+    width: 92%;
+    height: 160vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+  }
 
-.footer__container {
-    width: 90%;
-    height: fit-content;
+  .footer__container {
+    width: 100%;
+    height: 96%;
     display: flex;
     justify-content: center;
     align-items: center;
-}
+  }
   .footer__1container {
+    height: 81%;
     padding-top: 3%;
     padding-left: 5%;
     padding-right: 2%;
