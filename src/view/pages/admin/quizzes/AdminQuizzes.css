@@ -214,3 +214,21 @@ text-align: center;
   border-right: none;
   border-bottom: 1px solid gray;
 }
+
+.sub__btn {
+  margin-top: 2%;
+  width: 150px;
+  height: 45px;
+  padding: 2%;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  background-color: #6657ed;
+  cursor: pointer;
+}
+
+.sub__btn:hover{
+  background-color: #4343ed;
+  transition: all 0.3s ease;
+}

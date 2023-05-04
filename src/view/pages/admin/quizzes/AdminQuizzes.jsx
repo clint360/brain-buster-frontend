@@ -66,6 +66,11 @@ function AdminQuizzes() {
                 <input type="text" placeholder="write question here" />
               </div>
             </div>
+            <div>
+              <button type="submit" className="sub__btn">
+                Submit
+              </button>
+            </div>
           </div>
         </div>
       </div>
