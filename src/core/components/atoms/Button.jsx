@@ -1,8 +1,9 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './Button.css';
 
-function Button({ title, borderColor, color, background, onClick }) {
+function Button({ title, borderColor, color, background, type }) {
   const buttonStyle = {
     fontFamily: 'Inter',
     border: borderColor ? `1px solid ${borderColor}` : `1px solid #1D4645`,
@@ -17,12 +18,7 @@ function Button({ title, borderColor, color, background, onClick }) {
     cursor: 'pointer',
   };
   return (
-    <button
-      className="mainButton"
-      type="button"
-      onClick={onClick}
-      style={buttonStyle}
-    >
+    <button className="mainButton" type={type} style={buttonStyle}>
       {title}
     </button>
   );
