@@ -26,28 +26,44 @@ function AdminQuizzes() {
               <input type="time" list="limittimesList" step="0.00" />
             </div>
           </div>
-        </div>
-        <div className="each__question_container">
-          <div className="firstQuestion">
-            <div className="firstQuestion__title">Question title : </div> <hr />
-            <div className="option">
-              <div className="option__container">
-                <div className="chooseOption">
-                  <input type="radio" value="add1" />
-                  <p>Option 1</p>
-                </div>
-                <input
-                  type="text"
-                  placeholder="write your question here"
-                  className="chooseOption__input"
-                />
+          <div className="each__question_container">
+            <div className="firstQuestion__title">
+              <h2>Quiz Title</h2>
+            </div>
+            <div className="firstquestion">
+              <div className="question__radio">
+                <input type="radio" name="option1" id="option1" />
+                <p>Option1</p>
               </div>
-              <div>
-                <div>
-                  <input type="radio" value="add1" />
-                  Add Option <i className="fa-solid fa-circle-plus" />
-                </div>
-                <input type="text" placeholder="write your question here" />
+              <div className=" option1__input ">
+                <input type="text" placeholder="write question here" />
+              </div>
+            </div>
+            <div className="firstquestion">
+              <div className="question__radio">
+                <input type="radio" name="option1" id="option1" />
+                <p>Option2</p>
+              </div>
+              <div className=" option1__input ">
+                <input type="text" placeholder="write question here" />
+              </div>
+            </div>
+            <div className="firstquestion">
+              <div className="question__radio">
+                <input type="radio" name="option1" id="option1" />
+                <p>Option3</p>
+              </div>
+              <div className=" option1__input ">
+                <input type="text" placeholder="write question here" />
+              </div>
+            </div>
+            <div className="firstquestion">
+              <div className="question__radio">
+                <input type="radio" name="option1" id="option1" />
+                <p>Option4</p>
+              </div>
+              <div className=" option1__input ">
+                <input type="text" placeholder="write question here" />
               </div>
             </div>
           </div>
