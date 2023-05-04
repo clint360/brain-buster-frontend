@@ -38,6 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
+  padding: 2%;
 }
 
 .imgUrl__img {
@@ -172,7 +173,7 @@
   flex-direction: column;
   margin-top: 1%;
   padding: 2%;
-  background-color: white;
+  background-color: #fffafa;
 }
 
 .firstquestion {
@@ -214,6 +215,7 @@ text-align: center;
 .option1__input input {
   width: 100%;
   padding: 2%;
+  font-size: 18px;
   outline: none;
   color: black;
   border-top: none;
