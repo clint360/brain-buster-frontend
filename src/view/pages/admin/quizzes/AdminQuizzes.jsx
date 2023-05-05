@@ -1,13 +1,11 @@
-/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import React from 'react';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import { setQuiz } from '../../../../api/auth';
-import AuthGuard from '../profile/AuthGuard';
 import './AdminQuizzes.css';
 
-function AdminQuizzes({ user }) {
+function AdminQuizzes() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -75,14 +73,6 @@ function AdminQuizzes({ user }) {
                     type="text"
                     placeholder="write first option here"
                   />
-                  <div className="option__btn">
-                    <button type="button" className="wrongAnswer">
-                      <i className="fa-solid fa-xmark" />
-                    </button>
-                    <button type="button" className="CorrectAnswer">
-                      <i className="fa-solid fa-check" />
-                    </button>
-                  </div>
                 </div>
               </div>
               <div className="firstquestion">
@@ -96,14 +86,6 @@ function AdminQuizzes({ user }) {
                     type="text"
                     placeholder="write second option here"
                   />
-                  <div className="option__btn">
-                    <button type="button" className="wrongAnswer">
-                      <i className="fa-solid fa-xmark" />
-                    </button>
-                    <button type="button" className="CorrectAnswer">
-                      <i className="fa-solid fa-check" />
-                    </button>
-                  </div>
                 </div>
               </div>
               <div className="firstquestion">
@@ -117,14 +99,6 @@ function AdminQuizzes({ user }) {
                     type="text"
                     placeholder="write third option here"
                   />
-                  <div className="option__btn">
-                    <button type="button" className="wrongAnswer">
-                      <i className="fa-solid fa-xmark" />
-                    </button>
-                    <button type="button" className="CorrectAnswer">
-                      <i className="fa-solid fa-check" />
-                    </button>
-                  </div>
                 </div>
               </div>
               <div className="firstquestion">
@@ -138,27 +112,22 @@ function AdminQuizzes({ user }) {
                     type="text"
                     placeholder="write forth option here"
                   />
-                  <div className="option__btn">
-                    <button type="button" className="wrongAnswer">
-                      <i className="fa-solid fa-xmark" />
-                    </button>
-                    <button type="button" className="CorrectAnswer">
-                      <i className="fa-solid fa-check" />
-                    </button>
-                  </div>
                 </div>
               </div>
               <div className="correctquestion">
                 <div className="question__radio">
-                  <p>User id</p>
+                  <p>Correct Answer</p>
                 </div>
-                <div className=" option1__input ">
-                  <input
-                    type="text"
-                    placeholder="write the correct answer here"
-                  />
+                <div className=" select__correctanswer ">
+                  <select name="Select correct answer" id="correctAnswer">
+                    <option value="">Select correct option</option>
+                    <option value="option1">Option1</option>
+                    <option value="option2">Option2</option>
+                    <option value="option3">Option3</option>
+                    <option value="option4">Option4</option>
+                  </select>
                 </div>
-              </div> */}
+              </div>
               <div className="btn__container">
                 <button type="submit" className="next__btn">
                   Next Question
@@ -175,4 +144,4 @@ function AdminQuizzes({ user }) {
   );
 }
 
-export default AuthGuard(AdminQuizzes);
+export default AdminQuizzes;
