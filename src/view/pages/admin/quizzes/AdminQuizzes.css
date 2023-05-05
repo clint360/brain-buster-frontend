@@ -1,6 +1,6 @@
 .quiz {
   width: 100%;
-  height: 120vh;
+  height: 125vh;
   /* background-color: yellow !important; */
   /* background-color: rgb(83, 182, 8); */
   display: flex;
@@ -15,7 +15,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-  /* background-color: #df7272d7; */
+  background-color: #df7272d7;
   padding: 2%;
 }
 
@@ -196,10 +196,18 @@
   border-bottom: 1px solid gray;
 }
 
+.btn__container {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+}
+
 .sub__btn {
   margin-top: 15%;
   width: 150px;
-  height: 45px;
+  height: 50px;
   padding: 2%;
   font-size: 18px;
   color: white;
@@ -207,6 +215,24 @@
   border-radius: 3px;
   background-color: #6657ed;
   cursor: pointer;
+}
+
+.next__btn {
+  margin-top: 2%;
+  width: 170px;
+  height: 50px;
+  padding: 2%;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  background-color: #0ab282;
+  cursor: pointer;
+}
+
+.next__btn:hover {
+  background-color: #086b4f;
+  transition: all 0.2s ease;
 }
 
 .sub__btn:hover {

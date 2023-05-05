@@ -132,7 +132,10 @@ function AdminQuizzes() {
                   />
                 </div>
               </div>
-              <div>
+              <div className="btn__container">
+                <button type="submit" className="next__btn">
+                  Next Question
+                </button>
                 <button type="submit" className="sub__btn">
                   Next Question
                 </button>
