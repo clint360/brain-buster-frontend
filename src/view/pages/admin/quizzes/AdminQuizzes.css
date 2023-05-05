@@ -1,6 +1,6 @@
 .quiz {
   width: 100%;
-  height: 120vh;
+  height: 110vh;
   /* background-color: yellow !important; */
   /* background-color: rgb(83, 182, 8); */
   display: flex;
@@ -28,13 +28,14 @@
   flex-wrap: wrap;
   background-color: #f9f3f3;
   border-radius: 5px;
-  box-shadow: -1px 3px 27px -4px rgba(0, 0, 0, 0.78);
-  -webkit-box-shadow: -1px 3px 27px -4px rgba(0, 0, 0, 0.78);
-  -moz-box-shadow: -1px 3px 27px -4px rgba(0, 0, 0, 0.78);
+  box-shadow: -1px 3px 20px -4px rgba(0, 0, 0, 0.78);
+  -webkit-box-shadow: -1px 3px 20px -4px rgba(0, 0, 0, 0.78);
+  -moz-box-shadow: -1px 3px 20px -4px rgba(0, 0, 0, 0.78);
 }
 
 .quiz__setterContianer1 {
   height: 220px;
+  /* height: 300px; */
   width: 90%;
   display: flex;
   align-items: center;
@@ -89,6 +90,7 @@
   border: none;
   outline: none;
   border-radius: 2px;
+  border-radius: 0px;
 }
 
 .question__timer h2 {
@@ -117,7 +119,7 @@
 
 .each__question_container {
   width: 900px;
-  height: 500px;
+  height: 560px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -125,7 +127,7 @@
   margin-top: 0;
   margin-bottom: 5%;
   padding: 2% 2% 5%;
-  background-color: #fffafa;
+  background-color: #fcfbfb;
 }
 
 .firstquestion {
@@ -162,10 +164,72 @@
 
 .option1__input {
   width: 650px;
+  display: flex;
+  align-items: center;
   /* background-color: gold; */
 }
 
-.option1__input input {
+.input__option {
+  width: 85%;
+  padding: 2%;
+  font-size: 18px;
+  outline: none;
+  color: black;
+  border-top: none;
+  border-left: none;
+  border-right: none;
+  border-bottom: 1px solid gray;
+}
+
+.option__btn {
+  width: 15%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 4%;
+}
+
+.wrongAnswer {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  /* outline: none; */
+  background-color: #f31f1f;
+}
+
+.wrongAnswer i {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.wrongAnswer:hover {
+  background-color: #b61515;
+  transition: all 0.5s ease;
+}
+
+.CorrectAnswer {
+  width: 40px;
+  height: 40px;
+  border: none;
+  cursor: pointer;
+  background-color: #128712;
+}
+
+
+.CorrectAnswer i {
+  color: white;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.CorrectAnswer:hover {
+  background-color: #115011;
+  transition: all 0.5s ease;
+}
+
+.input__question {
   width: 100%;
   padding: 2%;
   font-size: 18px;
@@ -177,10 +241,34 @@
   border-bottom: 1px solid gray;
 }
 
+.btn__container {
+  width: 100%;
+  height: 200px;
+  margin-top: 2%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5%;
+  /*  background-color: red; */
+}
+
 .sub__btn {
-  margin-top: 15%;
+  margin-top: 2%;
   width: 150px;
-  height: 45px;
+  height: 50px;
+  padding: 2%;
+  font-size: 18px;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  background-color: #0ab282;
+  cursor: pointer;
+}
+
+.next__btn {
+  margin-top: 2%;
+  width: 170px;
+  height: 50px;
   padding: 2%;
   font-size: 18px;
   color: white;
@@ -188,6 +276,11 @@
   border-radius: 3px;
   background-color: #6657ed;
   cursor: pointer;
+}
+
+.next__btn:hover {
+  background-color: #086b4f;
+  transition: all 0.2s ease;
 }
 
 .sub__btn:hover {
