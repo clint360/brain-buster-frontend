@@ -34,11 +34,7 @@
 }
 
 .quiz__setterContianer1 {
-<<<<<<< HEAD
   height: 220px;
-=======
-  height: 300px;
->>>>>>> 6f6e4c0ab46a3bb6c85113f99addbba2a96944aa
   width: 90%;
   display: flex;
   align-items: center;
@@ -50,11 +46,7 @@
 .quiz__tittle {
   width: 400px;
   text-align: center;
-<<<<<<< HEAD
   /*  background-color: aquamarine; */
-=======
-  /* background-color: aquamarine; */
->>>>>>> 6f6e4c0ab46a3bb6c85113f99addbba2a96944aa
 }
 
 .quiz__tittle h2 {
@@ -72,20 +64,13 @@
   padding: 2%;
   border: none;
   outline: none;
-<<<<<<< HEAD
   border-radius: 2px;
-=======
-  border-radius: 0px;
->>>>>>> 6f6e4c0ab46a3bb6c85113f99addbba2a96944aa
 }
 
 .quiz__img {
   width: 400px;
   text-align: center;
-<<<<<<< HEAD
   /*  background-color: aquamarine; */
-=======
->>>>>>> 6f6e4c0ab46a3bb6c85113f99addbba2a96944aa
 }
 
 .quiz__img h2 {
@@ -103,11 +88,7 @@
   padding: 2%;
   border: none;
   outline: none;
-<<<<<<< HEAD
   border-radius: 2px;
-=======
-  border-radius: 0px;
->>>>>>> 6f6e4c0ab46a3bb6c85113f99addbba2a96944aa
 }
 
 .question__timer h2 {

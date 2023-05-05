@@ -17,7 +17,7 @@ function Signup() {
     console.log(values);
     await register(values);
     console.log(values);
-    navigate('/admin/dashboard');
+    navigate('/');
   };
   return (
     <div>

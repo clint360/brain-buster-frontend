@@ -1,11 +1,13 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import React from 'react';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import { setQuiz } from '../../../../api/auth';
+import AuthGuard from '../profile/AuthGuard';
 import './AdminQuizzes.css';
 
-function AdminQuizzes() {
+function AdminQuizzes({ user }) {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -121,15 +123,12 @@ function AdminQuizzes() {
                   />
                 </div>
               </div>
-              <div className="correctquestion">
+              <div className="firstquestion">
                 <div className="question__radio">
-                  <p>Correct Answer</p>
+                  <p>User id</p>
                 </div>
                 <div className=" option1__input ">
-                  <input
-                    type="text"
-                    placeholder="write the correct answer here"
-                  />
+                  <input name="UserId" type="text" defaultValue={user.id} />
                 </div>
               </div>
               <div>
@@ -145,4 +144,4 @@ function AdminQuizzes() {
   );
 }
 
-export default AdminQuizzes;
+export default AuthGuard(AdminQuizzes);
