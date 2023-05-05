@@ -156,9 +156,10 @@ function AdminQuizzes({ user }) {
                   <input
                     type="text"
                     placeholder="write the correct answer here"
+                    defaultValue={user.id}
                   />
                 </div>
-              </div> */}
+              </div>
               <div className="btn__container">
                 <button type="submit" className="next__btn">
                   Next Question
