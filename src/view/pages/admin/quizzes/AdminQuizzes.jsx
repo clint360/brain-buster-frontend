@@ -1,5 +1,3 @@
-/* eslint-disable no-console */
-/* eslint-disable no-undef */
 import React from 'react';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import './AdminQuizzes.css';
