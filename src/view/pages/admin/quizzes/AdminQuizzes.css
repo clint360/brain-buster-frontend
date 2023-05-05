@@ -206,7 +206,11 @@
   border: none;
   outline: none;
   font-size: 18px;
+  font-family: "cursive", sans-serif;
+  outline: 0;
+  padding: 4px;
 }
+
 
 .btn__container {
   width: 100%;
