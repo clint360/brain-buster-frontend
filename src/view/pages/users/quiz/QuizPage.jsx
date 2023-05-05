@@ -15,18 +15,65 @@ function QuizPage() {
   const { questions, setUserResponses, userResponses } = useContext(AppContext);
   const [timer, setTimer] = useState(15);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const [quizTimePerQuestion, setQuizTimePerQuestion] = useState(20);
+  const quizTimePerQuestion = 20;
+  const [userAnswerIndex, setUserAnswerIndex] = useState(null);
   const [optionsBackgroundColor, setOptionsBackgroundColor] = useState(
     new Array(4).fill(null)
   );
   const navigate = useNavigate();
   const correctAnswerBackground = 'rgba(146, 204, 164, 1)';
   const wrongAnswerBackground = 'rgba(250, 216, 218, 1)';
+  const [answered, setAnswered] = useState(false);
 
   const onOptionSelect = (index) => {
-    setUserResponses((prev) => [...prev, index]);
-    const response = document.querySelector('.options');
-    response.disable = true;
+    setUserAnswerIndex(index);
+    console.log('index', userAnswerIndex);
+  };
+
+  useEffect(() => {
+    if (userAnswerIndex !== null) {
+      switch (userAnswerIndex) {
+        case 0:
+          setOptionsBackgroundColor([
+            'rgba(146, 224, 164, 1)',
+            null,
+            null,
+            null,
+          ]);
+          break;
+        case 1:
+          setOptionsBackgroundColor([
+            null,
+            'rgba(146, 224, 164, 1)',
+            null,
+            null,
+          ]);
+          break;
+        case 2:
+          setOptionsBackgroundColor([
+            null,
+            null,
+            'rgba(146, 224, 164, 1)',
+            null,
+          ]);
+          break;
+        case 3:
+          setOptionsBackgroundColor([
+            null,
+            null,
+            null,
+            'rgba(146, 224, 164, 1)',
+          ]);
+          break;
+        default:
+          setOptionsBackgroundColor([null, null, null, null]);
+      }
+    }
+  }, [userAnswerIndex]);
+
+  const onNext = () => {
+    setUserResponses((prev) => [...prev, userAnswerIndex]);
+    const index = userAnswerIndex;
     if (index === questions[currentQuestionIndex].answerIndex) {
       optionsBackgroundColor[index] = correctAnswerBackground;
       setOptionsBackgroundColor(optionsBackgroundColor);
@@ -37,6 +84,12 @@ function QuizPage() {
         correctAnswerBackground;
       setOptionsBackgroundColor(optionsBackgroundColor);
     }
+    const timeStamp = setTimeout(() => {
+      setCurrentQuestionIndex(currentQuestionIndex + 1);
+    }, 2000);
+    console.log(userResponses);
+    setUserAnswerIndex(null);
+    return () => clearTimeout(timeStamp);
   };
 
   useEffect(() => {
@@ -53,7 +106,8 @@ function QuizPage() {
     if (timer !== 0) {
       timeStamp = setTimeout(() => setTimer((time) => time - 1), 1000);
     } else {
-      setCurrentQuestionIndex(currentQuestionIndex + 1);
+      onNext();
+      setAnswered(false);
     }
     return () => clearTimeout(timeStamp);
   }, [timer]);
@@ -80,62 +134,63 @@ function QuizPage() {
             </div>
           </div>
           <hr />
+          {currentQuestionIndex < questions.length ? (
+            <div className="all-content">
+              <div className="questions">
+                <p className="question-title">
+                  {currentQuestionIndex + 1}.
+                  {questions[currentQuestionIndex].question}
+                </p>
+              </div>
 
-          <div className="all-content">
-            <div className="questions">
-              <p className="question-title">
-                {currentQuestionIndex + 1}.
-                {questions[currentQuestionIndex].question}
-              </p>
-            </div>
-
-            <div className="options">
-              {questions[currentQuestionIndex].options.map((item, index) => {
-                return (
-                  <div>
-                    <div
-                      className="response1"
-                      style={{ background: optionsBackgroundColor[index] }}
-                      onClick={() => onOptionSelect(index)}
-                    >
-                      <div className="response-text">
-                        <p>{item}</p>
-                      </div>
-                      {optionsBackgroundColor[index] ? (
-                        <div className="response-icon">
-                          {optionsBackgroundColor[index] ===
-                          wrongAnswerBackground ? (
-                            <i className="fa-regular fa-circle-xmark" />
-                          ) : (
-                            <i className="fa-solid fa-circle-check" />
-                          )}
+              <div className="options">
+                {questions[currentQuestionIndex].options.map((item, index) => {
+                  return (
+                    <div key={item}>
+                      <div
+                        className="response1"
+                        style={{ background: optionsBackgroundColor[index] }}
+                        onClick={() => onOptionSelect(index)}
+                      >
+                        <div className="response-text">
+                          <p>{item}</p>
                         </div>
-                      ) : (
-                        <div />
-                      )}
+                        {optionsBackgroundColor[index] ===
+                          wrongAnswerBackground ||
+                        optionsBackgroundColor[index] ===
+                          correctAnswerBackground ? (
+                          <div className="response-icon">
+                            {optionsBackgroundColor[index] ===
+                            wrongAnswerBackground ? (
+                              <i className="fa-regular fa-circle-xmark" />
+                            ) : (
+                              <i className="fa-solid fa-circle-check" />
+                            )}
+                          </div>
+                        ) : (
+                          <div />
+                        )}
+                      </div>
+                      <br />
                     </div>
-                    <br />
-                  </div>
-                );
-              })}
-            </div>
+                  );
+                })}
+              </div>
 
-            <div className="question-number-and-next">
-              <div className="question-number">
-                <h3>
-                  {currentQuestionIndex + 1} of {questions.length} Questions{' '}
-                </h3>
-              </div>
-              <div className="next">
-                <Button
-                  title="Next"
-                  onClick={() => {
-                    setCurrentQuestionIndex(currentQuestionIndex + 1);
-                  }}
-                />
+              <div className="question-number-and-next">
+                <div className="question-number">
+                  <h3>
+                    {currentQuestionIndex + 1} of {questions.length} Questions{' '}
+                  </h3>
+                </div>
+                <div className="next">
+                  <Button title="Next" onClick={onNext} />
+                </div>
               </div>
             </div>
-          </div>
+          ) : (
+            <div />
+          )}
         </div>
       </div>
     </div>
