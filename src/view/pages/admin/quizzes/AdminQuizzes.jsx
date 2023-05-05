@@ -121,7 +121,7 @@ function AdminQuizzes() {
                 <div className=" select__correctanswer ">
                   <select name="Select correct answer" id="correctAnswer">
                     <option value="">
-                      Select correct Answer from the option above
+                      Select correct Answer from the options above
                     </option>
                     <option value="option1">Option1</option>
                     <option value="option2">Option2</option>
