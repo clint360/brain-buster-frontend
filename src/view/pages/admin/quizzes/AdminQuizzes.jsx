@@ -56,6 +56,7 @@ function AdminQuizzes() {
                 <div className=" option1__input ">
                   <input
                     name="question"
+                    className="input__question"
                     type="text"
                     placeholder="write question here"
                   />
@@ -67,10 +68,19 @@ function AdminQuizzes() {
                 </div>
                 <div className=" option1__input ">
                   <input
+                    className="input__option"
                     name="option1"
                     type="text"
                     placeholder="write first option here"
                   />
+                  <div className="option__btn">
+                    <button type="button" className="wrongAnswer">
+                      <i className="fa-solid fa-xmark" />
+                    </button>
+                    <button type="button" className="CorrectAnswer">
+                      <i className="fa-solid fa-check" />
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="firstquestion">
@@ -79,10 +89,19 @@ function AdminQuizzes() {
                 </div>
                 <div className=" option1__input ">
                   <input
+                    className="input__option"
                     name="option2"
                     type="text"
                     placeholder="write second option here"
                   />
+                  <div className="option__btn">
+                    <button type="button" className="wrongAnswer">
+                      <i className="fa-solid fa-xmark" />
+                    </button>
+                    <button type="button" className="CorrectAnswer">
+                      <i className="fa-solid fa-check" />
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="firstquestion">
@@ -91,10 +110,19 @@ function AdminQuizzes() {
                 </div>
                 <div className=" option1__input ">
                   <input
+                    className="input__option"
                     name="option3"
                     type="text"
                     placeholder="write third option here"
                   />
+                  <div className="option__btn">
+                    <button type="button" className="wrongAnswer">
+                      <i className="fa-solid fa-xmark" />
+                    </button>
+                    <button type="button" className="CorrectAnswer">
+                      <i className="fa-solid fa-check" />
+                    </button>
+                  </div>
                 </div>
               </div>
               <div className="firstquestion">
@@ -103,41 +131,39 @@ function AdminQuizzes() {
                 </div>
                 <div className=" option1__input ">
                   <input
+                    className="input__option"
                     name="option4"
                     type="text"
                     placeholder="write forth option here"
                   />
+                  <div className="option__btn">
+                    <button type="button" className="wrongAnswer">
+                      <i className="fa-solid fa-xmark" />
+                    </button>
+                    <button type="button" className="CorrectAnswer">
+                      <i className="fa-solid fa-check" />
+                    </button>
+                  </div>
                 </div>
               </div>
-              <div className="firstquestion">
+              {/* <div className="correctquestion">
                 <div className="question__radio">
                   <p>Correct Answer</p>
                 </div>
                 <div className=" option1__input ">
                   <input
-                    name="answer"
-                    type="text"
-                    placeholder="write correct answer here"
-                  />
-                </div>
-              </div>
-              <div className="correctquestion">
-                <div className="question__radio">
-                  <p>Correct Answer</p>
-                </div>
-                <div className=" option1__input ">
-                  <input
+                    className="input__option"
                     type="text"
                     placeholder="write the correct answer here"
                   />
                 </div>
-              </div>
+              </div> */}
               <div className="btn__container">
                 <button type="submit" className="next__btn">
                   Next Question
                 </button>
                 <button type="submit" className="sub__btn">
-                  Next Question
+                  submit
                 </button>
               </div>
             </div>
