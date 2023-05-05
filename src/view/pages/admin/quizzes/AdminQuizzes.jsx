@@ -121,6 +121,17 @@ function AdminQuizzes() {
                   />
                 </div>
               </div>
+              <div className="correctquestion">
+                <div className="question__radio">
+                  <p>Correct Answer</p>
+                </div>
+                <div className=" option1__input ">
+                  <input
+                    type="text"
+                    placeholder="write the correct answer here"
+                  />
+                </div>
+              </div>
               <div>
                 <button type="submit" className="sub__btn">
                   Next Question
