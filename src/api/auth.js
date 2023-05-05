@@ -15,3 +15,7 @@ export function getCurrentUser() {
 export function updateUser(userUpdate) {
   return httpClient.put(`user/${userUpdate.id}`, userUpdate);
 }
+
+export function setQuiz(quiz) {
+  return httpClient.post('quiz/addQuiz', quiz);
+}
