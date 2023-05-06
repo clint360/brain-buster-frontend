@@ -1,18 +1,39 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import React from 'react';
+import React, { useState } from 'react';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
+import AuthGuard from '../profile/AuthGuard';
 import { setQuiz } from '../../../../api/auth';
 import './AdminQuizzes.css';
 
-function AdminQuizzes() {
+function AdminQuizzes({ user }) {
+  const [question, setQuestion] = useState('');
+  const [option1, setOption1] = useState('');
+  const [option2, setOption2] = useState('');
+  const [option3, setOption3] = useState('');
+  const [option4, setOption4] = useState('');
+  const [disabled, setDisabled] = useState(false);
+  const [selected, setSelected] = useState(false);
+  const [num, setNum] = useState(1);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const values = Object.fromEntries(data.entries());
-    console.log(values);
     await setQuiz(values);
-    console.log(values);
+    setQuestion('');
+    setOption1('');
+    setOption2('');
+    setOption3('');
+    setOption4('');
+    setNum(num + 1);
+
+    console.log(values, selected, setSelected);
+
+    if (num === 10) {
+      setDisabled(true);
+    }
   };
   return (
     <AdminTemplate page="AdminQuizzes">
@@ -33,6 +54,7 @@ function AdminQuizzes() {
                 <input
                   name="quizName"
                   type="text"
+                  required
                   placeholder="enter Quiz-Title"
                 />
               </div>
@@ -41,13 +63,14 @@ function AdminQuizzes() {
                 <input
                   name="quizTimer"
                   type="text"
+                  required
                   placeholder="set timer in seconds 0:45s"
                 />
               </div>
             </div>
             <div className="each__question_container">
               <div className="firstQuestion__title">
-                <h2>Question No.1</h2>
+                <h2>Question No.{num}</h2>
               </div>
               <div className="firstquestion">
                 <div className="question__radio">
@@ -58,6 +81,9 @@ function AdminQuizzes() {
                     name="question"
                     className="input__question"
                     type="text"
+                    required
+                    onChange={(event) => setQuestion(event.target.value)}
+                    value={question}
                     placeholder="write question here"
                   />
                 </div>
@@ -71,6 +97,9 @@ function AdminQuizzes() {
                     className="input__option"
                     name="option1"
                     type="text"
+                    required
+                    onChange={(event) => setOption1(event.target.value)}
+                    value={option1}
                     placeholder="write first option here"
                   />
                 </div>
@@ -84,6 +113,9 @@ function AdminQuizzes() {
                     className="input__option"
                     name="option2"
                     type="text"
+                    required
+                    onChange={(event) => setOption2(event.target.value)}
+                    value={option2}
                     placeholder="write second option here"
                   />
                 </div>
@@ -97,6 +129,9 @@ function AdminQuizzes() {
                     className="input__option"
                     name="option3"
                     type="text"
+                    required
+                    onChange={(event) => setOption3(event.target.value)}
+                    value={option3}
                     placeholder="write third option here"
                   />
                 </div>
@@ -110,6 +145,9 @@ function AdminQuizzes() {
                     className="input__option"
                     name="option4"
                     type="text"
+                    required
+                    onChange={(event) => setOption4(event.target.value)}
+                    value={option4}
                     placeholder="write forth option here"
                   />
                 </div>
@@ -119,24 +157,38 @@ function AdminQuizzes() {
                   <p>Correct Answer</p>
                 </div>
                 <div className=" select__correctanswer ">
-                  <select name="Select correct answer" id="correctAnswer">
-                    <option value="">
-                      Select correct Answer from the option above
+                  <select required name="answer">
+                    <option value={selected}>
+                      Select correct Answer from the options below
                     </option>
-                    <option value="option1">Option1</option>
-                    <option value="option2">Option2</option>
-                    <option value="option3">Option3</option>
-                    <option value="option4">Option4</option>
+                    <option value={option1}>{option1}</option>
+                    <option value={option2}>{option2}</option>
+                    <option value={option3}>{option3}</option>
+                    <option value={option4}>{option4}</option>
                   </select>
                 </div>
               </div>
               <div className="btn__container">
-                <button type="submit" className="next__btn">
+                <button type="submit" disabled={disabled} className="next__btn">
                   Next Question
                 </button>
-                <button type="submit" className="sub__btn">
+                {/*  <button type="submit" className="sub__btn">
                   submit
-                </button>
+                </button> */}
+              </div>
+              <div className="firstquestion">
+                <div className="question__radio">
+                  <p hidden>UserId</p>
+                </div>
+                <div className=" option1__input ">
+                  <input
+                    className="input__option"
+                    name="UserId"
+                    type="number"
+                    hidden
+                    defaultValue={user.id}
+                  />
+                </div>
               </div>
             </div>
           </form>
@@ -146,4 +198,4 @@ function AdminQuizzes() {
   );
 }
 
-export default AdminQuizzes;
+export default AuthGuard(AdminQuizzes);
