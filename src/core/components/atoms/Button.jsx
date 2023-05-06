@@ -13,8 +13,12 @@ function Button({ title, borderColor, color, background, onClick, type }) {
     background: background || '#1D4645',
     padding: '15px 40px',
     fontWeight: 'bold',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
     minWidth: '150px',
     textAlign: 'center',
+    width: 'auto',
     cursor: 'pointer',
   };
   return (
