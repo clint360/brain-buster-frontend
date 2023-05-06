@@ -57,7 +57,12 @@ function App() {
           <Route path="/admin">
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/profile" element={<AdminProfile />} />
-            <Route path="/admin/quizzes" element={<AdminQuizzes />} />
+            <Route
+              path="/admin/quizzes"
+              element={
+                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions" />
+              }
+            />
             <Route path="/admin/responses" element={<AdminResponses />} />
             <Route path="/admin/createQuiz" element={<CreateQuiz />} />
           </Route>
