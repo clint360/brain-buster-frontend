@@ -1,0 +1,84 @@
+.instructionsbox {
+    width: 500px;
+    min-width: 350px;
+    height: auto;
+    background: white;
+    border-radius: 15px;
+    padding: 30px;
+    padding-bottom: 50px;
+    font-size: 20px;
+    font-weight: 500;
+    font-family: 'Commissioner';
+}
+
+.instructionsbox .header {
+   text-align: center;
+   padding-bottom: 40px;
+   color: #1D4645;
+}
+
+.instructionsbox .form {
+    padding-bottom: 40px;
+}
+
+
+.instructionsbox h1 {
+    padding: 10px;
+    margin: 0px;
+    zoom: 90%;
+}
+
+.instructionsbox .aboutquiz h1 {
+    text-align: center;
+    color: #E8522A;
+}
+
+.instructionsbox .aboutquiz .someinfo {
+    display: flex;
+    justify-content: space-between;
+}
+
+.instructionsbox .aboutquiz .authordiv {
+    width: 100%;
+    padding: 7px 0;
+    text-align: right;
+    color: #1D4645;
+}
+
+.instructionsbox .instructions h1 {
+    color: #1D4645;
+    font-size: 35px;
+}
+
+.instructionsbox .instructions .inslist ul {
+    padding: 0;
+    padding-left: 30px;
+    padding-bottom: 30px;
+    margin: 0;
+}
+
+.instructionsbox .instructions .inslist ul li {
+   line-height: 30px;
+}
+
+.instructionsbox .actions {
+    display: flex;
+    justify-content: space-between;
+    zoom: 90%;
+    width: 80%;
+    margin: auto;
+}
+
+@media only screen and (max-width: 730px) {
+    .instructionsbox {
+        padding: 15px;
+        padding-bottom: 40px;
+        min-width: 350px;
+        zoom: 90%;
+        width: 95%;
+    }
+    .instructionsbox .actions {
+     zoom: 80%;
+     width: 90%;
+    }
+}

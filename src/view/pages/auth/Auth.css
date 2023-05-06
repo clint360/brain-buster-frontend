@@ -16,6 +16,7 @@
     min-height: 400px;
     background: white;
     display: flex;
+    zoom: 1;
 }
 
 .box1 {
@@ -31,7 +32,8 @@
 
 .box2 {
     flex-basis: 40%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../assets/images/people on phone.svg');
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../assets/images/people on phone.svg');
+    background-size: cover;
     color: white;
     padding: 0px 60px;
 }
@@ -41,9 +43,22 @@
     font-style: normal;
     font-weight: 700;
     font-size: 64px;
+    margin: 0;
+    line-height: 60px;
+    padding-bottom: 25px;
 }
 
-.box1 input {
+.box2 .text {
+    padding-top: 25px;
+    height: 70%;
+}
+
+.box2 .text .smalltext {
+    font-size: 20px;
+}
+
+.box1 input,
+.form input {
     border: none;
     border-bottom: 2px solid rgba(0, 0, 0, 0.54);
     width: 100%;
@@ -54,7 +69,8 @@
     color: #1D4645;
 }
 
-.box1 legend {
+.box1 legend,
+.form legend {
     font-family: 'Commissioner';
     font-style: normal;
     font-weight: 700;
@@ -63,34 +79,35 @@
     color: rgba(0, 0, 0, 0.54);
 }
 
-.bighead {
+.logo_head {
     position: absolute;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 52%;
-    top: 40px;
+    top: 0Cpx;
     left: calc(36% - 250px);
     text-align: center;
     color: white;
     font-size: 14px;
 }
 
-.bighead .imgdv {
-   width: 250px;
-   height: 100px;
+.logo_head .imgdv {
+    width: 200px;
+    height: 100px;
 }
-.bighead .imgdv img {
+
+.logo_head .imgdv img {
     width: 100%;
     height: 100%;
- }
+}
 
 @media only screen and (max-width: 730px) {
     .thePage {
         padding: 150px 0;
     }
 
-    .bighead {
+    .logo_head {
         zoom: 80%;
         width: 75%;
         left: calc(5% + 30px);
@@ -117,5 +134,11 @@
     .box2 {
         padding-bottom: 40px;
         border-radius: 15px;
+    }
+
+    .box2 .text {
+        padding-top: 25px;
+        height: 70%;
+        padding-bottom: 50px;
     }
 }

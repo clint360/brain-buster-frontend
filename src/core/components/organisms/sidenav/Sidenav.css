@@ -6,8 +6,17 @@
     font-family: "Commissioner";
 }
 
+.sidenav .logodiv {
+    padding-top: 20px;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
 .pageslist {
-    padding-top: 40px;
+    padding-top: 0px;
 }
 
 .pageslist ul {
@@ -15,7 +24,7 @@
     padding: 0;
 }
 
-.pageslist ul li {
+.pageslist ul li a {
     align-items: center;
     display: flex;
     gap: 20px;
@@ -34,7 +43,15 @@
 }
 
 .pageslist ul li:last-child {
+    align-items: center;
+    display: flex;
+    gap: 20px;
+    line-height: 70px;
+    font-weight: 500;
+    font-size: 22px;
+    padding: 0 30px;
     position: absolute;
     bottom: 50px;
     width: 190px;
+    cursor: pointer;
 }

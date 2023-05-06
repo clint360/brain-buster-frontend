@@ -5,3 +5,7 @@
 .Appdiv {
   margin: auto;
 }
+
+.position_fixed {
+  position: fixed;
+}

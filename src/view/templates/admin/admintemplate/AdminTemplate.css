@@ -1,0 +1,177 @@
+.adminPage {
+    background: rgb(217, 217, 217);
+    overflow: hidden;
+    padding-top: 50px;
+    min-height: 100vh;
+}
+
+.mobileviewnavbar {
+    background: #1D4645;
+    height: 50px;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 35px;
+    padding-left: 30px;
+    position: fixed;
+    z-index: 999;
+}
+
+.navbar_div {
+    position: fixed;
+    z-index: 999999;
+    height: fit-content;
+}
+
+.adminPage .adminnamebanner {
+    width: 100%;
+    height: 140px;
+    background: url('../../../../assets/images/image 8.png');
+    font-family: 'Commissioner';
+    font-style: normal;
+    color: white;
+    padding: 20px 30px;
+}
+
+.adminPage .adminnamebanner h1 {
+    margin: 0;
+    font-size: 40px;
+}
+
+.adminPage .adminnamebanner span {
+    margin: 0;
+    font-weight: 400;
+    font-size: 1.3rem;
+    font-weight: semi-bold;
+}
+
+.admininformation {
+    background: white;
+    border-radius: 10px;
+    padding: 10px;
+    margin: 20px;
+    display: flex;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.admininformation .column {
+    flex-basis: 31%;
+    padding: 10px;
+    min-width: 315px;
+}
+
+.column .field {
+    padding: 10px 0;
+}
+
+.column .field legend {
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.column .field .input_block {
+    background: rgb(206, 206, 206);
+    color: rgb(78, 78, 78);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.column .field .input_block input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    min-width: 100px;
+    width: 70%;
+    font-weight: 700;
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+}
+
+.profile_pic_container {
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutyou legend {
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.profile_pic_container .circle {
+    border-radius: 50%;
+    background: rgb(169, 169, 169);
+    width: 200px;
+    margin: auto;
+    height: 200px;
+    color: rgb(78, 78, 78);
+    display: flex;
+    font-family: 'Commissioner';
+    font-weight: 700;
+    font-size: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutyou .textareadiv textarea {
+    padding: 10px;
+    width: 90%;
+    height: 230px;
+    background: rgb(206, 206, 206);
+    font-size: 20px;
+    font-family: 'Commissioner';
+    border-radius: 15px;
+    border: none;
+}
+
+.column3 legend {
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.column3 .action {
+    padding: 20px 0;
+}
+
+@media only screen and (max-width: 730px) {
+    .adminPage .adminnamebanner {
+        width: calc(100% - 15%);
+        height: 140px;
+    }
+}
+
+@media only screen and (max-width: 730px) {
+    .admininformation {
+        background: transparent;
+        padding: 0;
+    }
+
+    .admininformation .column {
+        flex-basis: 100%;
+        min-width: 315px;
+        padding: 10px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+    }
+}

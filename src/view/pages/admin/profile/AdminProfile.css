@@ -1,0 +1,114 @@
+.admininformation .column {
+    flex-basis: 31%;
+    padding: 10px;
+    min-width: 315px;
+}
+
+.column .field {
+    padding: 10px 0;
+}
+
+.column .field legend {
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.column .field .input_block {
+    background: rgb(206, 206, 206);
+    color: rgb(78, 78, 78);
+    padding: 10px 20px;
+    font-size: 20px;
+    font-weight: 500;
+    border-radius: 10px;
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.column .field .input_block input {
+    border: none;
+    outline: none;
+    background: transparent;
+    font-size: 20px;
+    min-width: 100px;
+    width: 70%;
+    font-weight: 700;
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+}
+
+.profile_pic_container {
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutyou legend {
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.profile_pic_container .circle {
+    border-radius: 50%;
+    background: rgb(169, 169, 169);
+    width: 200px;
+    margin: auto;
+    height: 10px;
+    color: rgb(78, 78, 78);
+    display: flex;
+    font-family: 'Commissioner';
+    font-weight: 700;
+    font-size: 80px;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutyou .textareadiv textarea {
+    padding: 10px;
+    width: 90%;
+    height: 230px;
+    background: rgb(206, 206, 206);
+    font-size: 20px;
+    font-family: 'Commissioner';
+    border-radius: 15px;
+    border: none;
+}
+
+.column3 legend {
+    color: rgb(78, 78, 78);
+    font-family: 'Commissioner';
+    font-style: normal;
+    font-weight: 700;
+    font-size: 25px;
+    padding-bottom: 10px;
+}
+
+.column3 .action {
+    padding: 20px 0;
+}
+
+
+@media only screen and (max-width: 730px) {
+    .admininformation {
+        background: transparent;
+        padding: 0;
+    }
+
+    .admininformation .column {
+        flex-basis: 100%;
+        min-width: 315px;
+        padding: 10px;
+        background: white;
+        padding: 20px;
+        border-radius: 15px;
+    }
+}

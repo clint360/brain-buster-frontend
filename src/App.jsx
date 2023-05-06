@@ -1,28 +1,79 @@
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import './App.css';
+/* eslint-disable no-unused-vars */
 import Landing from './view/pages/landing/Landing';
-import Login from './view/pages/Login';
-import SignUp from './view/pages/Signup';
-
+import { useState } from 'react';
+import './App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import Login from './view/pages/auth/Login';
+import Instructions from './view/pages/users/instructions/Instructions';
+import UserInfo from './view/pages/users/userinfo/UserInfo';
 import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
+import Signup from './view/pages/auth/Signup';
+import AdminProfile from './view/pages/admin/profile/AdminProfile';
+import AdminQuizzes from './view/pages/admin/quizzes/AdminQuizzes';
+import AdminResponses from './view/pages/admin/responses/AdminResponses';
+import QuizPage from './view/pages/users/quiz/QuizPage';
+import UserResults from './view/pages/users/results/UserResults';
+import { AppContext, Provider } from './core/data/Context';
+import questionsModel from './core/data/questionsModel';
+import ErrorPage from './view/pages/errorpages/ErrorPage';
+// import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
 // import NavBar from './core/components/organisms/NavBar';
 
 function App() {
+  const [userResponses, setUserResponses] = useState([]);
+  const [quizInfo, setQuizInfo] = useState({
+    admin: 'Chia Clint Animbom',
+    name: 'JavaScript Excercise',
+    durationPerQuestion: 20,
+    quizImageURL: '',
+  });
+  const [questions, setQuestions] = useState(questionsModel);
+  const [quizTaker, setQuizTaker] = useState({
+    username: null,
+    emailAddress: null,
+  });
+
   return (
-    <div className="App">
-      <div className="Appdiv">
-        <BrowserRouter>
-          <Routes>
-            <Route index element={<Landing />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="/signup" element={<SignUp />} />
-            <Route path="/adminDashboard" element={<AdminDashboard />} />
-          </Routes>
-        </BrowserRouter>
-      </div>
-    </div>
+    <Provider
+      value={{
+        userResponses,
+        setUserResponses,
+        questions,
+        quizTaker,
+        setQuizTaker,
+        quizInfo,
+      }}
+    >
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/admin">
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/profile" element={<AdminProfile />} />
+            <Route path="/admin/quizzes" element={<AdminQuizzes />} />
+            <Route path="/admin/responses" element={<AdminResponses />} />
+          </Route>
+          <Route path="/user">
+            <Route path="/user/quiz/instructions" element={<Instructions />} />
+            <Route path="/user/info" element={<UserInfo />} />
+            {quizTaker.username ? (
+              <>
+                <Route path="/user/quiz">
+                  <Route index path="/user/quiz/test" element={<QuizPage />} />
+                </Route>
+                <Route path="/user/quiz/results" element={<UserResults />} />
+              </>
+            ) : (
+              <Route path="*" element={<ErrorPage />} />
+            )}
+          </Route>
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 
