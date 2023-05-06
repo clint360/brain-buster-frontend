@@ -4,11 +4,13 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
+  margin-top: 6%;
 }
 
 .category h1 {
   font-size: 66px;
   font-weight: 700;
+  margin-bottom: 4%;
   color: #1d4645;
 }
 

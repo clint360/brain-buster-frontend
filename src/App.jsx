@@ -42,23 +42,50 @@ function App() {
   });
 
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Landing />} />
-        <Route path="/login " element={<Login />} />
-        <Route path="/signup" element={<Signup />} />
-        <Route path="/admin">
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="/admin/profile" element={<AdminProfile />} />
-          <Route
-            path="/admin/quizzes"
-            element={<AdminQuizzes copyText="https://google.com" />}
-          />
-          <Route path="admin/createQuiz" element={<CreateQuiz />} />
-          <Route path="admin/responses" element={<AdminResponses />} />
-        </Route>
-      </Routes>
-    </Router>
+    <Provider
+      value={{
+        userResponses,
+        setUserResponses,
+        questions,
+        quizTaker,
+        setQuizTaker,
+        quizInfo,
+      }}
+    >
+      <Router>
+        <Routes>
+          <Route path="/" element={<Landing />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signup" element={<Signup />} />
+          <Route path="/admin">
+            <Route path="/admin/dashboard" element={<AdminDashboard />} />
+            <Route path="/admin/profile" element={<AdminProfile />} />
+            <Route
+              path="/admin/quizzes"
+              element={
+                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions" />
+              }
+            />
+            <Route path="/admin/responses" element={<AdminResponses />} />
+            <Route path="/admin/createQuiz" element={<CreateQuiz />} />
+          </Route>
+          <Route path="/user">
+            <Route path="/user/quiz/instructions" element={<Instructions />} />
+            <Route path="/user/info" element={<UserInfo />} />
+            {quizTaker.username ? (
+              <>
+                <Route path="/user/quiz">
+                  <Route index path="/user/quiz/test" element={<QuizPage />} />
+                </Route>
+                <Route path="/user/quiz/results" element={<UserResults />} />
+              </>
+            ) : (
+              <Route path="*" element={<ErrorPage />} />
+            )}
+          </Route>
+        </Routes>
+      </Router>
+    </Provider>
   );
 }
 

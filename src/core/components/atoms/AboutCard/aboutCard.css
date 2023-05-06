@@ -6,6 +6,7 @@
   justify-content: center;
   flex-direction: column;
   background: #1d4645;
+  margin-top: 3%;
 }
 
 .secondContainer__details {
