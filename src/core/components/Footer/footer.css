@@ -1,16 +1,17 @@
 .footer {
   width: 100%;
-  height: 90vh;
-  /* background-color: red; */
-  margin-top: 2%;
+  height: 60vh;
+ /*  background-color: red; */
+  margin-top: 5%;
   display: flex;
   justify-content: center;
   align-items: center;
+  overflow: hidden;
 }
 
 .footer__container {
   width: 100%;
-  height: 85%;
+  height: 100%;
   background-image: url('../../../assets/images/Rectangle.png');
   object-fit: cover;
   background-repeat: no-repeat;
@@ -104,7 +105,7 @@
 .footer_inputf input {
   width: 208px;
   height: 38px;
-  border-radius: 12px;
+  border-radius: 3px;
   border: none;
   color: grey;
   text-align: center;
@@ -112,11 +113,11 @@
 }
 
 .footer_inputf button {
-  width: 107px;
+  width: 110px;
   height: 38px;
   background-color: #e8522a;
   color: white;
-  border-radius: 12px;
+  border-radius: 3px;
   border: none;
   margin-left: 2%;
   font-size: 14px;
