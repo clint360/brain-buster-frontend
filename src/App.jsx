@@ -1,3 +1,5 @@
+/* eslint-disable import/no-unresolved */
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-unused-vars */
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -11,6 +13,7 @@ import AdminQuizzes from './view/pages/admin/quizzes/AdminQuizzes';
 import AdminResponses from './view/pages/admin/responses/AdminResponses';
 import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
 import Notfound from './core/components/notfound/Notfound';
+import Loading from './core/components/notfound/loading/Loading';
 // import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
@@ -23,13 +26,12 @@ function App() {
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/notfound" element={<Notfound />} />
-        <Route path="/admin">
-          <Route path="/admin/dashboard" element={<AdminDashboard />} />
-          <Route path="/admin/profile" element={<AdminProfile />} />
-          <Route path="/admin/quizzes" element={<AdminQuizzes />} />
-          <Route path="/admin/createQuiz" element={<CreateQuiz />} />
-          <Route path="/admin/responses" element={<AdminResponses />} />
-        </Route>
+        <Route path="/admin/dashboard" element={<AdminDashboard />} />
+        <Route path="/admin/profile" element={<AdminProfile />} />
+        <Route path="/admin/quizzes" element={<AdminQuizzes />} />
+        <Route path="/admin/createQuiz" element={<CreateQuiz />} />
+        <Route path="/admin/responses" element={<AdminResponses />} />
+        <Route path="/loading" element={<Loading />} />
       </Routes>
     </Router>
   );
