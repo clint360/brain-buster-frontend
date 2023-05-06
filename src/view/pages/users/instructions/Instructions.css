@@ -73,12 +73,12 @@
     .instructionsbox {
         padding: 15px;
         padding-bottom: 40px;
-        width: 320px;
-        margin-top: -300px;
+        min-width: 350px;
         zoom: 90%;
+        width: 95%;
     }
     .instructionsbox .actions {
-     zoom: 85%;
+     zoom: 80%;
      width: 90%;
     }
 }

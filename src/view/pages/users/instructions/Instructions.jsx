@@ -1,12 +1,30 @@
+/* eslint-disable no-undef */
+/* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, { useContext, useState, useEffect } from 'react';
+import { useNavigate } from 'react-router-dom';
 import myLogo from '../../../../assets/images/logo.svg';
 import Button from '../../../../core/components/atoms/Button';
+import { AppContext } from '../../../../core/data/Context';
 
 import './Instructions.css';
 
 function Instructions() {
+  const { questions, quizInfo } = useContext(AppContext);
+  const redirect = useNavigate();
+  const [quizDuration, setQuizDuration] = useState();
+  useEffect(() => {
+    const d = ((quizInfo.durationPerQuestion * questions.length) / 60).toFixed(
+      2
+    );
+    setQuizDuration(d);
+  }, []);
+
+  const startQuiz = () => {
+    redirect('/user/info');
+  };
+
   return (
     <div>
       <div className="logo_head">
@@ -20,21 +38,24 @@ function Instructions() {
       <div className="thePage">
         <div className="instructionsbox">
           <div className="aboutquiz">
-            <h1>Biology Test</h1>
+            <h1>{quizInfo.name}</h1>
             <div className="someinfo">
-              <div>19 Questions</div>{' '}
+              <div>{questions.length} Questions</div>{' '}
               <div>
-                <i className="fa-regular fa-clock" /> 9 mins
+                <i className="fa-regular fa-clock" /> {quizDuration} mins
               </div>{' '}
             </div>
-            <div className="authordiv">By Christopher Che</div>
+            <div className="authordiv">By {quizInfo.admin}</div>
           </div>
           <div className="instructions">
             <h1>Instructions</h1>
             <div className="inslist">
               <ul>
                 <li>
-                  You only have <span style={{ color: 'red' }}>10 seconds</span>{' '}
+                  You only have{' '}
+                  <span style={{ color: 'red' }}>
+                    {quizInfo.durationPerQuestion} seconds
+                  </span>{' '}
                   for each question.{' '}
                 </li>
                 <li>
@@ -53,10 +74,17 @@ function Instructions() {
                 title="Exit Quiz"
                 background="#E8522A"
                 borderColor="#E8522A"
+                onClick={() => {
+                  window.close();
+                }}
               />{' '}
             </div>
             <div>
-              <Button title="Start Quiz" background="#1D4645" />
+              <Button
+                title="Start Quiz"
+                background="#1D4645"
+                onClick={startQuiz}
+              />
             </div>
           </div>
         </div>

@@ -1,8 +1,9 @@
+/* eslint-disable react/button-has-type */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import './Button.css';
 
-function Button({ title, borderColor, color, background, onClick }) {
+function Button({ title, borderColor, color, background, onClick, type }) {
   const buttonStyle = {
     fontFamily: 'Inter',
     border: borderColor ? `1px solid ${borderColor}` : `1px solid #1D4645`,
@@ -19,7 +20,7 @@ function Button({ title, borderColor, color, background, onClick }) {
   return (
     <button
       className="mainButton"
-      type="button"
+      type={type}
       onClick={onClick}
       style={buttonStyle}
     >
