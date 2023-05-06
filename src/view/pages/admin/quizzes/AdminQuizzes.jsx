@@ -1,91 +1,77 @@
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import React from 'react';
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import ReactModal from 'react-modal';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
-import { setQuiz } from '../../../../api/auth';
 import './AdminQuizzes.css';
 
-function AdminQuizzes() {
-  const handleSubmit = async (event) => {
-    event.preventDefault();
-    const data = new FormData(event.currentTarget);
-    const values = Object.fromEntries(data.entries());
-    console.log(values);
-    await setQuiz(values);
-    console.log(values);
+// eslint-disable-next-line react/prop-types
+function AdminQuizzes({ copyText }) {
+  console.log(copyText);
+  const [isOpen, setIsOpen] = useState(false);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToclipBoard = () => {
+    setIsCopied(copyText);
+    navigator.clipboard.writeText(copyText);
+    console.log(setIsCopied);
+  };
+
+  const customStyles = {
+    content: {
+      backgroundColor: 'gold',
+      top: '40%',
+      left: '5%',
+      margin: '0 auto',
+      width: '400px',
+      height: ' 100px',
+    },
   };
   return (
     <AdminTemplate page="AdminQuizzes">
-      <div className="quiz">
-        <div className="admin__container">
-          <form onSubmit={handleSubmit} className="quiz__setterContianer">
-            <div className="quiz__setterContianer1">
-              <div className="quiz__img">
-                <h2>Image Url</h2>
-                <input
-                  name="quizImageUrl"
-                  type="url"
-                  placeholder="set quiz image url"
-                />
-              </div>
-              <div className="quiz__tittle">
-                <h2>Quiz Title</h2>
-                <input
-                  name="quizName"
-                  type="text"
-                  placeholder="enter Quiz-Title"
-                />
-              </div>
-              <div className="question__timer">
-                <h2>Timer for Questions</h2>
-                <input
-                  name="quizTimer"
-                  type="text"
-                  placeholder="set timer in seconds 0:45s"
-                />
-              </div>
+      <div className="quizPage">
+        <h1>Feel Free, Let your imagination go Wild.</h1>
+        <div className="createQuiz">
+          <div className="createQuiz__cont">
+            <div className="createQuizText">
+              <h3>create you quiz here</h3>
+              <i className="fa-solid fa-arrow-right" />
             </div>
-            <div className="each__question_container">
-              <div className="firstQuestion__title">
-                <h2>Question No.1</h2>
-              </div>
-              <div className="firstquestion">
-                <div className="question__radio">
-                  <p>Question</p>
-                </div>
-                <div className=" option1__input ">
-                  <input
-                    name="question"
-                    className="input__question"
-                    type="text"
-                    placeholder="write question here"
-                  />
-                </div>
+            <Link to="/admin/createQuiz">
+              <button type="submit">
+                <i className="fa-solid fa-plus" />
+                Create Quiz
+              </button>
+            </Link>
+          </div>
+        </div>
+        <div className="quizPage__Historycontainer">
+          <h1>Recent Quiz Created </h1>
+          <div className="history__mainCont">
+            <div className="historycont1">
+              <div className="quiz_img">
+                <div className="imgquiz">London Test</div>
               </div>
               <div className="quiz_details">
                 <div className="quiz_details__maintitile">
                   <h2>Quiz name</h2>
                 </div>
-                <div className=" option1__input ">
-                  <input
-                    className="input__option"
-                    name="option1"
-                    type="text"
-                    placeholder="write first option here"
-                  />
+                <p>Form 4 middle term Test</p>
+                <div className="testSubject">
+                  <span> subject: </span>
+                  <p>History</p>
                 </div>
               </div>
-              <div className="firstquestion">
-                <div className="question__radio">
-                  <p>Option2</p>
-                </div>
-                <div className=" option1__input ">
-                  <input
-                    className="input__option"
-                    name="option2"
-                    type="text"
-                    placeholder="write second option here"
-                  />
+            </div>
+            <div className="historycont2">
+              <div className="historycont2__innercontainer">
+                <div className="time__interval">
+                  <div>
+                    <h3>Recent Activity</h3>
+                  </div>
+                  <p>1 dag ago</p>
                 </div>
                 <div className="number__question">
                   <div>
@@ -93,50 +79,52 @@ function AdminQuizzes() {
                   </div>
                   <p>10 questions</p>
                 </div>
-                <div className=" option1__input ">
-                  <input
-                    className="input__option"
-                    name="option3"
-                    type="text"
-                    placeholder="write third option here"
-                  />
+                <div className="time_frame">
+                  <div>
+                    <h3>Time frame per Questions</h3>
+                  </div>
+                  <p>0.29 sec</p>
                 </div>
               </div>
-              <div className="firstquestion">
-                <div className="question__radio">
-                  <p>Option4</p>
-                </div>
-                <div className=" option1__input ">
-                  <input
-                    className="input__option"
-                    name="option4"
-                    type="text"
-                    placeholder="write forth option here"
-                  />
-                </div>
-              </div>
-              <div className="correctquestion">
-                <div className="question__radio">
-                  <p>Correct Answer</p>
-                </div>
-                <div className=" select__correctanswer ">
-                  <select name="Select correct answer" id="correctAnswer">
-                    <option value="">
-                      Select correct Answer from the option above
-                    </option>
-                    <option value="option1">Option1</option>
-                    <option value="option2">Option2</option>
-                    <option value="option3">Option3</option>
-                    <option value="option4">Option4</option>
-                  </select>
-                </div>
-              </div>
-              <div className="btn__container">
-                <button type="submit" className="next__btn">
-                  Next Question
+              <div className="innercontainer__action">
+                <button type="submit" className="edit">
+                  Edit
+                  <i className="fa-solid fa-pen-to-square" />
                 </button>
-                <button type="submit" className="sub__btn">
-                  submit
+                <div>
+                  <button
+                    type="submit"
+                    className="share"
+                    onClick={() => setIsOpen(true)}
+                  >
+                    Share
+                    <i className="fa-solid fa-share" />
+                  </button>
+                  <ReactModal
+                    isOpen={isOpen}
+                    contentLabel="Example Modal"
+                    onRequestClose={() => setIsOpen(false)}
+                    style={customStyles}
+                  >
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      value={copyText}
+                      readOnly
+                      placeholder="copy link address"
+                    />
+                    <button
+                      type="submit"
+                      onClick={() => copyToclipBoard(copyToclipBoard)}
+                    >
+                      <span>{isCopied ? 'Copied!' : 'Copy'}</span>
+                    </button>
+                  </ReactModal>
+                </div>
+                <button type="submit" className="delete">
+                  <i className="fa-solid fa-trash-xmark" />
+                  Delete
                 </button>
               </div>
             </div>
@@ -147,4 +135,4 @@ function AdminQuizzes() {
   );
 }
 
-export default AuthGuard(AdminQuizzes);
+export default AdminQuizzes;

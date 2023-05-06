@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable no-unused-vars */
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
