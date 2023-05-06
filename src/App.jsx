@@ -1,9 +1,9 @@
 /* eslint-disable no-unused-vars */
-import Landing from './view/pages/landing/Landing';
 import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Login from './view/pages/auth/Login';
+import Landing from './view/pages/landing/Landing';
 import Instructions from './view/pages/users/instructions/Instructions';
 import UserInfo from './view/pages/users/userinfo/UserInfo';
 import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
