@@ -1,11 +1,23 @@
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import ReactModal from 'react-modal';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import './AdminQuizzes.css';
 
-function AdminQuizzes() {
+// eslint-disable-next-line react/prop-types
+function AdminQuizzes({ copyText }) {
+  console.log(copyText);
   const [isOpen, setIsOpen] = useState(false);
+
+  const [isCopied, setIsCopied] = useState(false);
+
+  const copyToclipBoard = () => {
+    setIsCopied(copyText);
+    navigator.clipboard.writeText(copyText);
+    console.log(setIsCopied);
+  };
 
   const customStyles = {
     content: {
@@ -94,7 +106,20 @@ function AdminQuizzes() {
                     onRequestClose={() => setIsOpen(false)}
                     style={customStyles}
                   >
-                    <input type="text" disabled placeholder="copy link" />
+                    <input
+                      type="text"
+                      name=""
+                      id=""
+                      value={copyText}
+                      readOnly
+                      placeholder="copy link address"
+                    />
+                    <button
+                      type="submit"
+                      onClick={() => copyToclipBoard(copyToclipBoard)}
+                    >
+                      <span>{isCopied ? 'Copied!' : 'Copy'}</span>
+                    </button>
                   </ReactModal>
                 </div>
                 <button type="submit" className="delete">
