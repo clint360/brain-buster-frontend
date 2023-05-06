@@ -20,6 +20,10 @@ import questionsModel from './core/data/questionsModel';
 import ErrorPage from './view/pages/errorpages/ErrorPage';
 import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
 // import Login from './view/pages/Login';
+
+/* import Landing from './view/pages/landing/Landing'; */
+// import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
+import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
 // import NavBar from './core/components/organisms/NavBar';
@@ -39,45 +43,23 @@ function App() {
   });
 
   return (
-    <Provider
-      value={{
-        userResponses,
-        setUserResponses,
-        questions,
-        quizTaker,
-        setQuizTaker,
-        quizInfo,
-      }}
-    >
-      <Router>
-        <Routes>
-          <Route path="/" element={<Landing />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
-          <Route path="/admin">
-            <Route path="/admin/dashboard" element={<AdminDashboard />} />
-            <Route path="/admin/profile" element={<AdminProfile />} />
-            <Route path="/admin/quizzes" element={<AdminQuizzes />} />
-            <Route path="/admin/responses" element={<AdminResponses />} />
-            <Route path="/admin/createQuiz" element={<CreateQuiz />} />
-          </Route>
-          <Route path="/user">
-            <Route path="/user/quiz/instructions" element={<Instructions />} />
-            <Route path="/user/info" element={<UserInfo />} />
-            {quizTaker.username ? (
-              <>
-                <Route path="/user/quiz">
-                  <Route index path="/user/quiz/test" element={<QuizPage />} />
-                </Route>
-                <Route path="/user/quiz/results" element={<UserResults />} />
-              </>
-            ) : (
-              <Route path="*" element={<ErrorPage />} />
-            )}
-          </Route>
-        </Routes>
-      </Router>
-    </Provider>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Login />} />
+        <Route path="/signup" element={<Signup />} />
+        <Route path='/landing' element={<Landing />} />
+        <Route path="/admin">
+          <Route path="/admin/dashboard" element={<AdminDashboard />} />
+          <Route path="/admin/profile" element={<AdminProfile />} />
+          <Route
+            path="/admin/quizzes"
+            element={<AdminQuizzes copyText="https://google.com" />}
+          />
+          <Route path="/admin/createQuiz" element={<CreateQuiz />} />
+          <Route path="/admin/responses" element={<AdminResponses />} />
+        </Route>
+      </Routes>
+    </Router>
   );
 }
 
