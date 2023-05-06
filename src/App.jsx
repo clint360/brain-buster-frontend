@@ -44,9 +44,9 @@ function App() {
   return (
     <Router>
       <Routes>
-        <Route path="/" element={<Login />} />
+        <Route path="/" element={<Landing />} />
+        <Route path="/login " element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path="/Landing" element={<Landing />} />
         <Route path="/admin">
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/profile" element={<AdminProfile />} />
@@ -54,8 +54,8 @@ function App() {
             path="/admin/quizzes"
             element={<AdminQuizzes copyText="https://google.com" />}
           />
-          <Route path="/admin/createQuiz" element={<CreateQuiz />} />
-          <Route path="/admin/responses" element={<AdminResponses />} />
+          <Route path="admin/createQuiz" element={<CreateQuiz />} />
+          <Route path="admin/responses" element={<AdminResponses />} />
         </Route>
       </Routes>
     </Router>
