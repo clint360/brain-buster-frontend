@@ -60,7 +60,7 @@ function App() {
             <Route path="/admin/quizzes" element={<AdminQuizzes />} />
             <Route path="/admin/responses" element={<AdminResponses />} />
             <Route path="/admin/createQuiz" element={<CreateQuiz />} />
-            </Route>
+          </Route>
           <Route path="/user">
             <Route path="/user/quiz/instructions" element={<Instructions />} />
             <Route path="/user/info" element={<UserInfo />} />
