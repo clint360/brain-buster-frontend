@@ -53,7 +53,7 @@ function Login() {
                 <input name="emailAddress" type="email" required /> <br />
                 <br />
                 <label>Password</label>
-                <input name="password" type="password" required /> <br />
+                <input name="password" type="password" min={8} required /> <br />
               </div>
               {isLoading && <p>Loading...</p>}
               {error && <p className="error">{error}</p>}

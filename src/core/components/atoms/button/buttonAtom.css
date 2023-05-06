@@ -1,0 +1,16 @@
+.mainButton {
+  background: #1d4645;
+  width: 140px;
+  height: 50px;
+  border-radius: 7px;
+  border: none;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  .mainButton {
+    background: #1d4645;
+    width: 120px;
+    height: 50px;
+  }
+}
