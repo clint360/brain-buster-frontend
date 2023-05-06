@@ -23,7 +23,6 @@ import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
 
 /* import Landing from './view/pages/landing/Landing'; */
 // import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
-import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
 // import NavBar from './core/components/organisms/NavBar';
@@ -47,7 +46,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
-        <Route path='/landing' element={<Landing />} />
+        <Route path="/Landing" element={<Landing />} />
         <Route path="/admin">
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/profile" element={<AdminProfile />} />
