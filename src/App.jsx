@@ -10,6 +10,7 @@ import AdminProfile from './view/pages/admin/profile/AdminProfile';
 import AdminQuizzes from './view/pages/admin/quizzes/AdminQuizzes';
 import AdminResponses from './view/pages/admin/responses/AdminResponses';
 import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
+import Notfound from './core/components/notfound/Notfound';
 // import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
@@ -21,6 +22,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
+        <Route path="/notfound" element={<Notfound />} />
         <Route path="/admin">
           <Route path="/admin/dashboard" element={<AdminDashboard />} />
           <Route path="/admin/profile" element={<AdminProfile />} />
