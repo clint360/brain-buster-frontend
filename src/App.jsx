@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+import Landing from './view/pages/landing/Landing';
 import { useState } from 'react';
 import './App.css';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
@@ -15,7 +16,7 @@ import UserResults from './view/pages/users/results/UserResults';
 import { AppContext, Provider } from './core/data/Context';
 import questionsModel from './core/data/questionsModel';
 import ErrorPage from './view/pages/errorpages/ErrorPage';
-// import Login from './view/pages/Login';0
+// import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
 // import NavBar from './core/components/organisms/NavBar';
@@ -47,6 +48,7 @@ function App() {
     >
       <Router>
         <Routes>
+          <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/admin">
