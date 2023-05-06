@@ -69,8 +69,8 @@
     color: #1D4645;
 }
 
-.box1 legend,
-.form legend {
+.box1 label,
+.form label {
     font-family: 'Commissioner';
     font-style: normal;
     font-weight: 700;

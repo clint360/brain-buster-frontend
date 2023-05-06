@@ -1,3 +1,5 @@
+/* eslint-disable import/no-named-as-default-member */
+/* eslint-disable import/no-named-as-default */
 /* eslint-disable no-unused-vars */
 import { useState } from 'react';
 import './App.css';
@@ -16,6 +18,7 @@ import UserResults from './view/pages/users/results/UserResults';
 import { AppContext, Provider } from './core/data/Context';
 import questionsModel from './core/data/questionsModel';
 import ErrorPage from './view/pages/errorpages/ErrorPage';
+import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
 // import Login from './view/pages/Login';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
@@ -56,7 +59,8 @@ function App() {
             <Route path="/admin/profile" element={<AdminProfile />} />
             <Route path="/admin/quizzes" element={<AdminQuizzes />} />
             <Route path="/admin/responses" element={<AdminResponses />} />
-          </Route>
+            <Route path="/admin/createQuiz" element={<CreateQuiz />} />
+            </Route>
           <Route path="/user">
             <Route path="/user/quiz/instructions" element={<Instructions />} />
             <Route path="/user/info" element={<UserInfo />} />
