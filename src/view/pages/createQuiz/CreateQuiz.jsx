@@ -1,11 +1,12 @@
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import React from 'react';
-import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
-import { setQuiz } from '../../../../api/auth';
-import './AdminQuizzes.css';
 
-function AdminQuizzes() {
+import React from 'react';
+import './createQuiz.css';
+import { setQuiz } from '../../../api/auth';
+import AdminTemplate from '../../templates/admin/admintemplate/AdminTemplate';
+
+function CreateQuiz() {
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -15,7 +16,7 @@ function AdminQuizzes() {
     console.log(values);
   };
   return (
-    <AdminTemplate page="AdminQuizzes">
+    <AdminTemplate>
       <div className="quiz">
         <div className="admin__container">
           <form onSubmit={handleSubmit} className="quiz__setterContianer">
@@ -62,9 +63,9 @@ function AdminQuizzes() {
                   />
                 </div>
               </div>
-              <div className="quiz_details">
-                <div className="quiz_details__maintitile">
-                  <h2>Quiz name</h2>
+              <div className="firstquestion">
+                <div className="question__radio">
+                  <p>Option1</p>
                 </div>
                 <div className=" option1__input ">
                   <input
@@ -87,11 +88,10 @@ function AdminQuizzes() {
                     placeholder="write second option here"
                   />
                 </div>
-                <div className="number__question">
-                  <div>
-                    <h3>number of Questions</h3>
-                  </div>
-                  <p>10 questions</p>
+              </div>
+              <div className="firstquestion">
+                <div className="question__radio">
+                  <p>Option3</p>
                 </div>
                 <div className=" option1__input ">
                   <input
@@ -122,7 +122,7 @@ function AdminQuizzes() {
                 <div className=" select__correctanswer ">
                   <select name="Select correct answer" id="correctAnswer">
                     <option value="">
-                      Select correct Answer from the option above
+                      Select correct Answer from the options above
                     </option>
                     <option value="option1">Option1</option>
                     <option value="option2">Option2</option>
@@ -140,11 +140,11 @@ function AdminQuizzes() {
                 </button>
               </div>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </AdminTemplate>
   );
 }
 
-export default AuthGuard(AdminQuizzes);
+export default CreateQuiz;
