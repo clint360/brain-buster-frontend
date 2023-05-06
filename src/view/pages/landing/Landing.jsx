@@ -11,7 +11,7 @@ import Footer from '../../../core/components/Footer/Footer';
 function Landing() {
   return (
     <div className="landing">
-      {/*   <Navbar /> */}
+      {/*   <Navbar  /> */}
       <div className="firstcontainer">
         <div className="leftdetails">
           <div className="leftdetails__div1">
