@@ -1,0 +1,139 @@
+*{
+    box-sizing: border-box;
+  }
+  
+  .whole {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+    background-color: rgba(29, 70, 69, 1);
+    font-family: 'Commissioner';
+  }
+  
+  .centered-div {
+      width: 40%;
+      min-width: 500px;
+      max-width: 700px;
+      margin: auto;
+      background-color: white;
+      padding: 25px;
+      border-radius: 10px;
+      font-size: 20px;
+  }
+  
+  .instructions {
+    color: black;
+  }
+  
+  .remark {
+    height: 50px;
+    width: 50px;
+    background-color: rgb(2, 88, 15);
+    display: flex;
+    justify-content: center;
+    margin: auto;
+    align-items: center;
+    border-radius: 50%;
+    font-weight: 700;
+  }
+  
+  .remark .fa-solid {
+    color: white;
+    font-size: x-large;
+  }
+  
+  .feedback-message {
+    display: flex;
+    justify-content: center;
+    
+  }
+  
+  .message {
+    font-size: larger;
+    font-weight: bolder;
+    width: 75%;
+    margin: auto;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    text-align: center;
+    color: rgba(29, 70, 69, 1);
+  }
+  
+
+  .metrics {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+  }
+  
+  .sub-number {
+    font-weight: bolder;
+  }
+  
+  .line {
+  color: rgb(107, 106, 106);
+  }
+  
+  .share-button {
+    padding: 8px 25px;
+    color: white;
+    background-color: coral;
+    border-radius: 6px;
+    border: none;
+  }
+  
+  .share-button:hover {
+    cursor: pointer;
+    background-color: coral;
+  }
+  
+  .fa-solid {
+    color: white;
+  }
+  
+  .quiz-result-buttons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .quiz-result-buttons button {
+    font-size: 20px;
+    font-family: 'Commissioner';
+    font-weight: 700;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    gap: 10px
+  }
+  
+  .fa-solid fa-share-nodes {
+    color: red;
+  }
+  
+  .retake-button {
+    padding: 10px;
+    padding: 8px 25px;
+    color: white;
+    background-color: rgba(29, 70, 69, 1);
+    border-radius: 6px;
+    border: none;
+    padding: 13px 25px;
+  }
+  
+  .retake-button {
+    cursor: pointer;
+  }
+  
+  @media only screen and (max-width: 730px) {
+
+      .centered-div {
+          width: 90%;
+          min-width: 340px;
+          height: auto;
+          font-size: 110%;
+      }
+  }

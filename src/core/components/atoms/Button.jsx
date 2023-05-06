@@ -3,7 +3,7 @@
 import React from 'react';
 import './Button.css';
 
-function Button({ title, borderColor, color, background, type }) {
+function Button({ title, borderColor, color, background, onClick, type }) {
   const buttonStyle = {
     fontFamily: 'Inter',
     border: borderColor ? `1px solid ${borderColor}` : `1px solid #1D4645`,
@@ -18,7 +18,12 @@ function Button({ title, borderColor, color, background, type }) {
     cursor: 'pointer',
   };
   return (
-    <button className="mainButton" type={type} style={buttonStyle}>
+    <button
+      className="mainButton"
+      type={type}
+      onClick={onClick}
+      style={buttonStyle}
+    >
       {title}
     </button>
   );
