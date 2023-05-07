@@ -4,12 +4,12 @@
     align-items: center;
     height: 100vh;
     width: 100%;
-    background-color: rgba(29, 70, 69, 1);
+    background-color: rgb(33, 83, 83), 1);
   }
 
   .loader {
     border: 5px solid #f3f3f3;
-    border-top: 4px solid #3498db;
+    border-top: 4px solid #2e93d7;
     border-radius: 50%;
     width: 150px;
     height: 150px;
