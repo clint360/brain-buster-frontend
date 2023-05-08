@@ -223,3 +223,13 @@
   background-color: #a61010;
   cursor: pointer;
 }
+
+.modalinput {
+  width: 250px;
+  padding: 3%;
+}
+
+.modalbtn {
+  padding: 3%;
+  background-color: #06a172;
+}

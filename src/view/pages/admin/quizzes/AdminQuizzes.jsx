@@ -21,13 +21,17 @@ function AdminQuizzes({ copyText }) {
 
   const customStyles = {
     content: {
-      backgroundColor: 'gold',
+      backgroundColor: '#f5f7fa',
       top: '40%',
       left: '5%',
       margin: '0 auto',
-      width: '400px',
-      height: ' 100px',
+      width: '510px',
+      height: ' 150px',
       borderRadius: '5px',
+      dispalay: 'flex',
+      alignItems: 'center',
+      justifyContent: 'center',
+      padding: '69px',
     },
   };
   return (
@@ -114,8 +118,10 @@ function AdminQuizzes({ copyText }) {
                       value={copyText}
                       readOnly
                       placeholder="copy link address"
+                      className="modalinput"
                     />
                     <button
+                      className="modalbtn"
                       type="submit"
                       onClick={() => copyToclipBoard(copyToclipBoard)}
                     >

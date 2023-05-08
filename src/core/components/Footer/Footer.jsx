@@ -21,7 +21,7 @@ function Footer() {
               <li>Contact</li>
             </ul>
           </div>
-          <div className="footer__service">
+          <div className="footer__service" id="service">
             <h1>SERVICE</h1>
             <ul>
               <li>Planning</li>
@@ -33,7 +33,7 @@ function Footer() {
           <div className="footer__conected">
             <h1>Lets stay connected</h1>
             <p>Enter your email to recieve update</p>
-            <p>about our services</p>
+            <p>About our Services</p>
 
             <div className="footer_inputf">
               <input type="text" placeholder="enter your email" />

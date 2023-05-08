@@ -65,7 +65,7 @@ function App() {
             <Route
               path="/admin/quizzes"
               element={
-                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions/1/biology test" />
+                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions" />
               }
             />
             <Route path="/admin/responses" element={<AdminResponses />} />
