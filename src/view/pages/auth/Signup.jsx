@@ -47,7 +47,9 @@ function Signup() {
                 <input type="password" name="password" required /> <br />
               </div>
               <div className="createAccountButton">
-                <Button type="submit" title="Create Account" />
+                <Link to="/login">
+                  <Button type="submit" title="Create Account" />
+                </Link>
               </div>
             </form>
           </div>
