@@ -14,6 +14,7 @@ import AdminProfile from './view/pages/admin/profile/AdminProfile';
 import AdminQuizzes from './view/pages/admin/quizzes/AdminQuizzes';
 import AdminResponses from './view/pages/admin/responses/AdminResponses';
 import QuizPage from './view/pages/users/quiz/QuizPage';
+import Loading from './view/pages/loading/Loading';
 import UserResults from './view/pages/users/results/UserResults';
 import { AppContext, Provider } from './core/data/Context';
 import questionsModel from './core/data/questionsModel';
@@ -56,6 +57,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Landing />} />
           <Route path="/login" element={<Login />} />
+          <Route path="/loading" element={<Loading />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/admin">
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
@@ -63,7 +65,7 @@ function App() {
             <Route
               path="/admin/quizzes"
               element={
-                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions" />
+                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions/1/biology test" />
               }
             />
             <Route path="/admin/responses" element={<AdminResponses />} />
