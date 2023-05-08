@@ -7,8 +7,9 @@ import React, { useState, useEffect } from 'react';
 import Button from '../../../../core/components/atoms/Button';
 import SideNav from '../../../../core/components/organisms/sidenav/SideNav';
 import './AdminTemplate.css';
+import AuthGuard from '../../../pages/admin/profile/AuthGuard';
 
-function AdminTemplate({ children, text, username, page }) {
+function AdminTemplate({ children, text, page, user }) {
   const [sideNavPosition, setSideNavPosition] = useState('0px');
   const [pageMargin, setPageMargin] = useState('250px');
   const [deviceWidth, setDeviceWidth] = useState('0');
@@ -51,7 +52,7 @@ function AdminTemplate({ children, text, username, page }) {
       </div>
       <div className="adminPage" onClick={closeNavBar} style={pageStyle}>
         <div className="adminnamebanner">
-          <h1>Hi, {username}</h1>
+          <h1>Hi, {user.fullName}</h1>
           <span>{text}</span>
         </div>
         {children}
@@ -60,4 +61,4 @@ function AdminTemplate({ children, text, username, page }) {
   );
 }
 
-export default AdminTemplate;
+export default AuthGuard(AdminTemplate);

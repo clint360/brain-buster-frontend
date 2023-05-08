@@ -66,7 +66,7 @@ function AdminQuizzes({ copyText }) {
                 <p>Form 4 middle term Test</p>
                 <div className="testSubject">
                   <span> subject: </span>
-                  <p>History</p>
+                  <p>Computer Science</p>
                 </div>
               </div>
             </div>
@@ -76,7 +76,7 @@ function AdminQuizzes({ copyText }) {
                   <div>
                     <h3>Recent Activity</h3>
                   </div>
-                  <p>1 dag ago</p>
+                  <p>Now</p>
                 </div>
                 <div className="number__question">
                   <div>
@@ -88,14 +88,14 @@ function AdminQuizzes({ copyText }) {
                   <div>
                     <h3>Time frame per Questions</h3>
                   </div>
-                  <p>0.29 sec</p>
+                  <p>20 sec</p>
                 </div>
               </div>
               <div className="innercontainer__action">
-                <button type="submit" className="edit">
+                {/* <button type="submit" className="edit">
                   Edit
                   <i className="fa-solid fa-pen-to-square" />
-                </button>
+                </button> */}
                 <div>
                   <button
                     type="submit"
@@ -129,10 +129,10 @@ function AdminQuizzes({ copyText }) {
                     </button>
                   </ReactModal>
                 </div>
-                <button type="submit" className="delete">
+                {/* <button type="submit" className="delete">
                   <i className="fa-solid fa-trash-xmark" />
                   Delete
-                </button>
+                </button> */}
               </div>
             </div>
           </div>

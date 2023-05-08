@@ -42,7 +42,7 @@ function Instructions() {
             <div className="someinfo">
               <div>{questions.length} Questions</div>{' '}
               <div>
-                <i className="fa-regular fa-clock" /> {quizDuration} mins
+                <i className="fa-regular fa-clock" /> 20 sec
               </div>{' '}
             </div>
             <div className="authordiv">By {quizInfo.admin}</div>
