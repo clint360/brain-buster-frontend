@@ -1,14 +1,16 @@
+/* eslint-disable react/prop-types */
 import React from 'react';
 import AdminQuizCard from '../../../../core/components/atoms/AdminQuizCard';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import './AdminDashboard.css';
+import AuthGuard from '../profile/AuthGuard';
 
-function AdminDashboard() {
+function AdminDashboard({ user }) {
   return (
     <AdminTemplate
       text="Here is your Dashboard, a place where you can view your analytics
     and activity summary"
-      username="Clint"
+      username={user.fullName}
       page="AdminDashboard"
     >
       <div className="displayquizzes">
@@ -38,4 +40,4 @@ function AdminDashboard() {
   );
 }
 
-export default AdminDashboard;
+export default AuthGuard(AdminDashboard);

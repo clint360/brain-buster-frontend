@@ -1,144 +1,152 @@
+.error {
+  color: red;
+  font-size: 22px;
+  font-weight: bold;
+  margin-top: -15px;
+}
+
 .thePage {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-    background: #1D4645;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1d4645;
 }
 
 .box1 .form {
-    padding-bottom: 50px;
+  padding-bottom: 50px;
 }
 
 .bigbox {
-    width: 50%;
-    min-width: 600px;
-    min-height: 400px;
-    background: white;
-    display: flex;
-    zoom: 1;
+  width: 50%;
+  min-width: 600px;
+  min-height: 400px;
+  background: white;
+  display: flex;
+  zoom: 1;
 }
 
 .box1 {
-    flex-basis: 50%;
-    padding: 0px 60px;
-    padding-bottom: 50px;
+  flex-basis: 50%;
+  padding: 0px 60px;
+  padding-bottom: 50px;
 }
 
 .createAccountButton {
-    margin: auto;
-    width: fit-content;
+  margin: auto;
+  width: fit-content;
 }
 
 .box2 {
-    flex-basis: 50%;
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../../../assets/images/people on phone.svg');
-    background-size: cover;
-    color: white;
-    padding: 0px 60px;
+  flex-basis: 50%;
+  background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+    url('../../../assets/images/people on phone.svg');
+  background-size: cover;
+  color: white;
+  padding: 0px 60px;
 }
 
 .box2 h1 {
-    font-family: 'Commissioner';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 64px;
-    margin: 0;
-    line-height: 60px;
-    padding-bottom: 25px;
+  font-family: 'Commissioner';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 64px;
+  margin: 0;
+  line-height: 60px;
+  padding-bottom: 25px;
 }
 
 .box2 .text {
-    padding-top: 25px;
-    height: 70%;
+  padding-top: 25px;
+  height: 70%;
 }
 
 .box2 .text .smalltext {
-    font-size: 20px;
+  font-size: 20px;
 }
 
 .box1 input,
 .form input {
-    border: none;
-    border-bottom: 2px solid rgba(0, 0, 0, 0.54);
-    width: 100%;
-    outline: none;
-    font-size: 24px;
-    font-family: 'Commissioner';
-    font-weight: 600;
-    color: #1D4645;
+  border: none;
+  border-bottom: 2px solid rgba(0, 0, 0, 0.54);
+  width: 100%;
+  outline: none;
+  font-size: 24px;
+  font-family: 'Commissioner';
+  font-weight: 600;
+  color: #1d4645;
 }
 
 .box1 label,
 .form label {
-    font-family: 'Commissioner';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 24px;
-    line-height: 32px;
-    color: rgba(0, 0, 0, 0.54);
+  font-family: 'Commissioner';
+  font-style: normal;
+  font-weight: 700;
+  font-size: 24px;
+  line-height: 32px;
+  color: rgba(0, 0, 0, 0.54);
 }
 
 .logo_head {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    width: 52%;
-    top: 0Cpx;
-    left: calc(36% - 250px);
-    text-align: center;
-    color: white;
-    font-size: 14px;
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 52%;
+  top: 0Cpx;
+  left: calc(36% - 250px);
+  text-align: center;
+  color: white;
+  font-size: 14px;
 }
 
 .logo_head .imgdv {
-    width: 200px;
-    height: 100px;
+  width: 200px;
+  height: 100px;
 }
 
 .logo_head .imgdv img {
-    width: 100%;
-    height: 100%;
+  width: 100%;
+  height: 100%;
 }
 
 @media only screen and (max-width: 730px) {
-    .thePage {
-        padding: 150px 0;
-    }
+  .thePage {
+    padding: 150px 0;
+  }
 
-    .logo_head {
-        zoom: 80%;
-        width: 75%;
-        left: calc(5% + 30px);
-        font-size: 18px;
-    }
+  .logo_head {
+    zoom: 80%;
+    width: 75%;
+    left: calc(5% + 30px);
+    font-size: 18px;
+  }
 
-    .box1 {
-        padding: 0px 30px;
-        padding-bottom: 50px;
-        background: white;
-        border-radius: 15px;
-    }
+  .box1 {
+    padding: 0px 30px;
+    padding-bottom: 50px;
+    background: white;
+    border-radius: 15px;
+  }
 
-    .bigbox {
-        flex-direction: column;
-        min-width: 340px;
-        width: 70%;
-        zoom: 90%;
-        height: auto;
-        background: transparent;
-        gap: 50px
-    }
+  .bigbox {
+    flex-direction: column;
+    min-width: 340px;
+    width: 70%;
+    zoom: 90%;
+    height: auto;
+    background: transparent;
+    gap: 50px;
+  }
 
-    .box2 {
-        padding-bottom: 40px;
-        border-radius: 15px;
-    }
+  .box2 {
+    padding-bottom: 40px;
+    border-radius: 15px;
+  }
 
-    .box2 .text {
-        padding-top: 25px;
-        height: 70%;
-        padding-bottom: 50px;
-    }
+  .box2 .text {
+    padding-top: 25px;
+    height: 70%;
+    padding-bottom: 50px;
+  }
 }
