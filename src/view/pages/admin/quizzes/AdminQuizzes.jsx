@@ -27,6 +27,7 @@ function AdminQuizzes({ copyText }) {
       margin: '0 auto',
       width: '400px',
       height: ' 100px',
+      borderRadius: '5px',
     },
   };
   return (
