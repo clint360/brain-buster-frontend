@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */ /* eslint-disable no-console */ /*
 eslint-disable no-undef */
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import AdminTemplate from '../../templates/admin/admintemplate/AdminTemplate';
 import './createQuiz.css';
 import { setQuiz } from '../../../api/auth';
@@ -168,7 +169,11 @@ function CreateQuiz({ user }) {
                 <button type="submit" disabled={disabled} className="next__btn">
                   Next Question
                 </button>
-                {/* <button type="submit" className="sub__btn">submit</button> */}
+                <Link to="/admin/quizzes">
+                  <button type="button" className="sub__btn">
+                    submit
+                  </button>
+                </Link>
               </div>
               <div className="firstquestion">
                 <div className="question__radio">
