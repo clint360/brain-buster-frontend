@@ -20,6 +20,9 @@ import questionsModel from './core/data/questionsModel';
 import ErrorPage from './view/pages/errorpages/ErrorPage';
 import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
 // import Login from './view/pages/Login';
+
+/* import Landing from './view/pages/landing/Landing'; */
+// import AdminDashboard from './view/pages/admin/dashboard/AdminDashboard';
 // import Signup from './view/pages/Signup';
 // import Button from './core/components/atoms/Button';
 // import NavBar from './core/components/organisms/NavBar';
@@ -57,7 +60,12 @@ function App() {
           <Route path="/admin">
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/profile" element={<AdminProfile />} />
-            <Route path="/admin/quizzes" element={<AdminQuizzes />} />
+            <Route
+              path="/admin/quizzes"
+              element={
+                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions" />
+              }
+            />
             <Route path="/admin/responses" element={<AdminResponses />} />
             <Route path="/admin/createQuiz" element={<CreateQuiz />} />
           </Route>

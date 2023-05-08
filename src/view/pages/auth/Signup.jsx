@@ -59,7 +59,7 @@ function Signup() {
               </span>
             </div>
             <div className="createAccountButton">
-              <Link to="/">
+              <Link to="/login">
                 <Button title="Log In" background="white" color="#1D4645" />
               </Link>
             </div>

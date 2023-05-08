@@ -1,5 +1,6 @@
 import React from 'react';
 import './landing.css';
+import { Link } from 'react-router-dom';
 import MainImg from '../../../assets/images/particles.svg';
 import AboutCard from '../../../core/components/atoms/AboutCard/AboutCard';
 import ButtonAtom from '../../../core/components/atoms/button/ButtonAtom';
@@ -25,7 +26,9 @@ function Landing() {
             </p>
           </div>
           <div className="started">
-            <ButtonAtom titles="Get Started" margin="0px 0px 5px 0px" />
+            <Link to="/login">
+              <ButtonAtom titles="Get Started" margin="0px 0px 5px 0px" />
+            </Link>
           </div>
         </div>
         <div className="rightdetails">

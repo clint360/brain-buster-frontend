@@ -9,7 +9,6 @@ import React, { useState, useEffect, useContext } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Button from '../../../../core/components/atoms/Button';
 import { AppContext } from '../../../../core/data/Context';
-import handleMouseClick from '../../errorpages/actions';
 import './QuizPage.css';
 
 function QuizPage() {
@@ -77,7 +76,6 @@ function QuizPage() {
   }, [userAnswerIndex]);
 
   const onNext = () => {
-    handleMouseClick(true);
     setUserResponses((prev) => [...prev, userAnswerIndex]);
     const index = userAnswerIndex;
     if (index === questions[currentQuestionIndex].answerIndex) {
@@ -95,7 +93,6 @@ function QuizPage() {
     }, 2000);
     console.log(userResponses);
     setUserAnswerIndex(null);
-    handleMouseClick(false);
     return () => clearTimeout(timeStamp);
   };
 
