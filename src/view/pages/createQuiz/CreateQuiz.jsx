@@ -166,7 +166,11 @@ function CreateQuiz({ user }) {
                 </div>
               </div>
               <div className="btn__container">
-                <button type="submit" disabled={disabled} className="next__btn">
+                <button
+                  type="submit"
+                  disabled={disabled}
+                  className={disabled === false ? 'next__btn' : 'disable_btn'}
+                >
                   Next Question
                 </button>
                 <Link to="/admin/quizzes">

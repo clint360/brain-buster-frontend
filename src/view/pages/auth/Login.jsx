@@ -10,7 +10,6 @@ import myLogo from '../../../assets/images/logo.svg';
 import { saveToken } from '../../../utils';
 
 function Login() {
-  const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
   const navigate = useNavigate();
   const handleSubmit = async (event) => {
@@ -18,17 +17,14 @@ function Login() {
     const values = Object.fromEntries(
       new FormData(event.currentTarget).entries()
     );
-    try {
-      const { data } = await login(values.emailAddress, values.password);
-      if (data === 'Email or Password incorrect') {
-        setError('Invalid emailAdress or password');
-      } else {
-        console.log(values.emailAddress, values.password, data);
-        saveToken(data);
-        navigate('/admin/dashboard');
-      }
-    } finally {
-      setIsLoading(false);
+
+    const { data } = await login(values.emailAddress, values.password);
+    if (data === 'Email or Password incorrect') {
+      setError('Invalid emailAdress or password');
+    } else {
+      console.log(values.emailAddress, values.password, data);
+      saveToken(data);
+      navigate('/admin/dashboard');
     }
   };
   return (
@@ -56,7 +52,6 @@ function Login() {
                 <input name="password" type="password" min={8} required />{' '}
                 <br />
               </div>
-              {isLoading && <p>Loading...</p>}
               {error && <p className="error">{error}</p>}
               <div className="createAccountButton">
                 <Button title="Log In" />
