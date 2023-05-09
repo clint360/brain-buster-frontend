@@ -28,7 +28,7 @@ function CreateQuiz({ user }) {
     setOption4('');
     setNum(num + 1);
     console.log(values, selected, setSelected);
-    if (num === 10) {
+    if (num === 9) {
       setDisabled(true);
     }
   };
