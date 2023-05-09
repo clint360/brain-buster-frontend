@@ -17,7 +17,7 @@ function Signup() {
     console.log(values);
     await register(values);
     console.log(values);
-    navigate('/');
+    navigate('/login');
   };
   return (
     <div>
@@ -47,9 +47,7 @@ function Signup() {
                 <input type="password" name="password" required /> <br />
               </div>
               <div className="createAccountButton">
-                <Link to="/login">
-                  <Button type="submit" title="Create Account" />
-                </Link>
+                <Button type="submit" title="Create Account" />
               </div>
             </form>
           </div>
