@@ -70,10 +70,7 @@ function App() {
             <Route path="/admin/createQuiz" element={<CreateQuiz />} />
           </Route>
           <Route path="/user">
-            <Route
-              path="/user/quiz/instructions/:id/quizName"
-              element={<Instructions />}
-            />
+            <Route path="/user/quiz/instructions" element={<Instructions />} />
             <Route path="/user/info" element={<UserInfo />} />
             {quizTaker.username ? (
               <>
