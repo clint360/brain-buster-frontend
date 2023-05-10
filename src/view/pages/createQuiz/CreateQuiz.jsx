@@ -14,7 +14,8 @@ function CreateQuiz({ user }) {
   const [option3, setOption3] = useState('');
   const [option4, setOption4] = useState('');
   const [disabled, setDisabled] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [select, setSelect] = useState(false);
+  /* const [selected, setSelected] = useState(''); */
   const [num, setNum] = useState(1);
   const handleSubmit = async (event) => {
     event.preventDefault();
@@ -26,11 +27,17 @@ function CreateQuiz({ user }) {
     setOption2('');
     setOption3('');
     setOption4('');
+    if (option1 === '') {
+      setSelect(true);
+    }
     setNum(num + 1);
-    console.log(values, selected, setSelected);
     if (num === 9) {
       setDisabled(true);
     }
+    /* if (selected !== '') {
+      setSelect(true);
+    } */
+    /* console.log(select, setSelect); */
   };
   return (
     <AdminTemplate page="CreateQuiz">
@@ -154,14 +161,20 @@ function CreateQuiz({ user }) {
                   <p>Correct Answer</p>
                 </div>
                 <div className=" select__correctanswer ">
-                  <select required name="answer">
-                    <option value="{selected}">
+                  <select
+                    required
+                    name="answer"
+                    onChange={(event) => event.target.reset()}
+                  >
+                    <option value="">
                       Select correct Answer from the options below
                     </option>
-                    <option value="{option1}">{option1}</option>
-                    <option value="{option2}">{option2}</option>
-                    <option value="{option3}">{option3}</option>
-                    <option value="{option4}">{option4}</option>
+                    <option hidden={select} value={option1}>
+                      {option1}
+                    </option>
+                    <option value={option2}>{option2}</option>
+                    <option value={option3}>{option3}</option>
+                    <option value={option4}>{option4}</option>
                   </select>
                 </div>
               </div>

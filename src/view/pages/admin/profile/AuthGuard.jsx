@@ -3,6 +3,7 @@
 /* eslint-disable no-shadow */
 import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import Loading from '../../../../core/components/atoms/loading/Loading';
 import { getCurrentUser } from '../../../../api/auth';
 
 let currentUser;
@@ -24,7 +25,7 @@ function AuthGuard(Component) {
           navigate('/login', { replace: true });
         });
     }, [navigate, user]);
-    return user ? <Component {...props} user={user} /> : <>loading..</>;
+    return user ? <Component {...props} user={user} /> : <Loading />;
   }
   return Guard;
 }

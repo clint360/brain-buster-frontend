@@ -1,0 +1,275 @@
+.landing {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  /*  background-color: yellow; */
+}
+
+.firstcontainer {
+  width: 100%;
+  height: 87vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4%;
+  /*  background-color: red; */
+}
+
+.leftdetails {
+  width: 47%;
+  height: 70vh;
+  /* background-color: green; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.leftdetails__div1 {
+  width: 90%;
+  height: 300px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  font-family: 'Commissioner';
+  font-size: 78.5px;
+  font-weight: 700;
+  line-height: 90px;
+  letter-spacing: 2px;
+  text-align: left;
+  color: #1d4645;
+}
+
+.leftdetails__div1 span {
+  color: #e8522a;
+}
+
+.leftdetails__divp {
+  width: 90%;
+  height: fit-content;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  font-family: Commissioner;
+  font-size: 25px;
+  font-weight: 400;
+  line-height: 32px;
+  letter-spacing: 0px;
+  text-align: left;
+  color: #3f3f3f;
+  margin-top: 2%;
+}
+
+.started {
+  width: 90%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.rightdetails {
+  width: 45%;
+  height: fit-content;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /*   background-color: red; */
+}
+
+.rightdetails__img {
+  width: 780px;
+  height: 700px;
+  background-image: url('../../../assets/images/landing\ page\ main\ image.svg');
+  background-size: cover;
+  object-fit: cover;
+}
+
+.donate__cont {
+  height: fit-content;
+  width: 90%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.active__user {
+  width: 70%;
+  height: fit-content;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  flex-direction: column;
+  /* background-color: rebeccapurple; */
+}
+
+.active__user h2 {
+  font-family: 'Commissioner';
+  font-size: 28px;
+  font-weight: 600;
+  line-height: 5px;
+  letter-spacing: 0px;
+}
+
+.active__user p {
+  font-family: 'Commissioner';
+  font-size: 40px;
+  font-weight: 600;
+  letter-spacing: 1px;
+  color: #e8522a;
+}
+
+.donation {
+  width: 30%;
+  display: flex;
+  justify-content: center;
+  gap: 3%;
+  align-items: center;
+  background-color: #c9c3c3;
+}
+
+.donation i {
+  font-size: 25px;
+}
+
+.donation i:hover {
+  cursor: pointer;
+  color: #2e7a79;
+}
+
+.donation h5 {
+  font-size: 30px;
+  font-weight: 700;
+  color: #0f5050;
+}
+
+@media (max-width: 768px) {
+  .landing {
+    width: 100%;
+    height: fit-content;
+  }
+  .rightdetails {
+    display: none;
+  }
+
+  .leftdetails__div1 {
+    width: 95%;
+    height: 308px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    font-size: 64.5px;
+    text-align: left;
+    color: rgb(245, 240, 240);
+  }
+
+  .leftdetails {
+    width: 100%;
+    height: 90vh;
+    background-image: url('../../../assets/images/landing\ page\ main\ image.svg');
+    background-size: cover;
+    object-fit: cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    backdrop-filter: blur(8px) brightness(80%);
+    color: white;
+  }
+
+  .leftdetails {
+    width: 100%;
+    height: fit-content;
+  }
+  .firstcontainer {
+    width: 100%;
+    backdrop-filter: blur(10px) brightness(60%);
+  }
+
+  .leftdetails__divp {
+    margin-top: 13%;
+    color: white;
+  }
+
+  .active__user h2 {
+    font-size: 19px;
+    font-weight: 600;
+    line-height: 5px;
+    letter-spacing: 0px;
+    padding-top: 5%;
+  }
+
+  .donation {
+    height: 85px;
+    border-radius: 5px;
+  }
+}
+
+@media (max-width: 400px) {
+  .firstcontainer {
+    width: 100%;
+    height: fit-content;
+    overflow: hidden;
+  }
+
+  .leftdetails__div1 {
+    padding-top: 5%;
+    padding-left: 5%;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    height: fit-content;
+    font-size: 36.5px;
+    line-height: 50px;
+  }
+
+  .secondContainer__details h1 {
+    font-size: 47px;
+  }
+
+  .donate__cont {
+    height: fit-content;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .active__user {
+    width: 100%;
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  .active__user h2 {
+    font-size: 13.2px;
+    font-weight: 1000;
+    line-height: 19px;
+    letter-spacing: 1px;
+    padding-left: 3%;
+  }
+
+  .donation {
+    width: 80%;
+    height: 77px;
+    border-radius: 5px;
+    margin-bottom: 2%;
+  }
+
+  .donation:hover {
+    background-color: #eaeeee;
+    color: rgb(3, 3, 3);
+  }
+
+  .donation i {
+    font-size: 16px;
+  }
+
+  .donation h5 {
+    font-size: 25px;
+    font-weight: 700;
+  }
+}
