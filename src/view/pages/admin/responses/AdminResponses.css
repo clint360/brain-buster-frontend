@@ -1,0 +1,46 @@
+.result {
+  width: 100%;
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  background-color: yellow;
+}
+
+.nav {
+  width: 40%;
+  height: 70px;
+  background-color: aquamarine;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.search {
+    width: 98%;
+    height: 60px;
+    background-color: red;
+    display: flex;
+    align-items: center;
+}
+
+.search button {
+    border: none;
+    outline: none;
+    height: 58px;
+    padding: 1.3%;
+}
+
+.search button i{
+    color: black;
+    font-size: 26px;
+}
+
+.search input {
+    width: 98%;
+    height: 58px;
+    padding: 1.3%;
+    border: none;
+    outline: none;
+}

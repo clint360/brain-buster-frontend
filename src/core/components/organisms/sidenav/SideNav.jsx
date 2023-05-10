@@ -36,7 +36,7 @@ function SideNav({ page }) {
           <li style={{ background: activeBG('AdminResponses') }}>
             <Link to="/admin/responses">
               <i className="fa-solid fa-list-check"> </i>
-              <div>Responses</div>{' '}
+              <div>Reports</div>{' '}
             </Link>
           </li>
           <li style={{ background: activeBG('AdminProfile') }}>
