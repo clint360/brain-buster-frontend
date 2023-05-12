@@ -31,7 +31,8 @@ function AdminDashboard({ user }) {
     and activity summary"
       username={user.fullName}
       page="AdminDashboard"
-    ><div className="createnewquiz">
+    >
+      <div className="createnewquiz">
         <div>
           <i className="fa-sharp fa-solid fa-circle-plus fa-bounce" />
           <div>Create New Quiz</div>
