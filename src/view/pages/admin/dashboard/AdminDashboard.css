@@ -3,7 +3,6 @@
 }
 
 .displayquizzes h1 {
-    text-align: center;
     margin: 0;
     padding: 30px 0 0px 0;
     color: #1D4645;
@@ -30,7 +29,8 @@
 
 .createnewquiz {
     display: flex;
-    justify-content: flex-end;
+    justify-content: center;
+    padding: 40px 0px 0 0;
 }
 
 .createnewquiz div {
