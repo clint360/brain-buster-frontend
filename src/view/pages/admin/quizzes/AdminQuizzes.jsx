@@ -57,44 +57,35 @@ function AdminQuizzes({ user }) {
           </div>
         </div>
         <div className="quizPage__Historycontainer">
-          <h1>Recent Quiz Created </h1>
+          <h1> Quiz Created </h1>
           <div className="history__mainCont">
             <div className="historycont1">
-              <div className="quiz_img">
-                <div className="imgquiz">London Test</div>
-              </div>
-              <div className="quiz_details">
-                <div className="quiz_details__maintitile">
-                  <h2>Quiz name</h2>
+              <div className="imgtextcont">
+                <div className="quiz_img">
+                  <div className="imgquiz">London Test</div>
                 </div>
-                <p>Form 4 middle term Test</p>
-                <div className="testSubject">
-                  <span> subject: </span>
-                  <p>Computer Science</p>
+                <div className="quiz_details">
+                  <div className="quiz_details__maintitile">
+                    <h2>Quiz</h2>
+                  </div>
+                  <p>Form 4 middle term Test</p>
+                  <div className="testSubject">
+                    <span>Subject : </span> <span> Javascript</span>
+                  </div>
+                </div>
+              </div>
+              <div className="interval">
+                <div className="time">
+                  <i className="fa-solid fa-calendar" />
+                  <p>2 days ago</p>
+                </div>
+                <div className="shareTest">
+                  <p>Share</p>
+                  <i className="fa-solid fa-share" />
                 </div>
               </div>
             </div>
             <div className="historycont2">
-              <div className="historycont2__innercontainer">
-                <div className="time__interval">
-                  <div>
-                    <h3>Recent Activity</h3>
-                  </div>
-                  <p>Now</p>
-                </div>
-                <div className="number__question">
-                  <div>
-                    <h3>number of Questions</h3>
-                  </div>
-                  <p>10 questions</p>
-                </div>
-                <div className="time_frame">
-                  <div>
-                    <h3>Time frame per Questions</h3>
-                  </div>
-                  <p>20 sec</p>
-                </div>
-              </div>
               <div className="innercontainer__action">
                 {/* <button type="submit" className="edit">
                   Edit
