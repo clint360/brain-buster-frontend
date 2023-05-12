@@ -14,14 +14,13 @@
   align-items: center;
   justify-content: center;
   margin-top: 4%;
- /*  background-color: red; */
-
+  /*  background-color: red; */
 }
 
 .leftdetails {
   width: 47%;
   height: 70vh;
-   /* background-color: green; */
+  /* background-color: green; */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -133,6 +132,7 @@
 
 .donation i {
   font-size: 25px;
+  color: black;
 }
 
 .donation i:hover {

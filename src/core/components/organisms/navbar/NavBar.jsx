@@ -23,8 +23,9 @@ function NavBar() {
             <a href="#category">
               <li>Quizzes</li>
             </a>
-
-            <li className="service">Services</li>
+            <a href="#service">
+              <li className="service">Services</li>
+            </a>
           </ul>
         </div>
         <div className="navBtn">

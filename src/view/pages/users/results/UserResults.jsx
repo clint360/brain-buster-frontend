@@ -5,11 +5,13 @@
 /* eslint-disable no-unreachable-loop */
 import React, { useContext, useEffect, useState } from 'react';
 import { RWebShare } from 'react-web-share';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../../../../core/data/Context';
 import './UserResults.css';
 
 function UserResults() {
+  const routeParams = useParams();
+  const { quizName } = routeParams;
   const compare = (arr1, arr2) => {
     let total = 0;
     for (let i = 0; i < arr1.length; i++) {
@@ -49,8 +51,8 @@ function UserResults() {
           <div className="feedback-message">
             <p className="message">
               {results.percentage >= 50
-                ? `Great Job, ${quizTaker.username}! Here is how you performed in this quiz`
-                : `Nice Try ${quizTaker.username}! Here is how you performed in this quiz`}
+                ? `Great Job, ${quizTaker.studentName}! Here is how you performed in this quiz`
+                : `Nice Try ${quizTaker.studentName}! Here is how you performed in this quiz`}
             </p>
           </div>
           <hr className="line" />
@@ -105,9 +107,9 @@ function UserResults() {
               <div>
                 <RWebShare
                   data={{
-                    text: `Here is a summary of my Brain Buster ${quizInfo.name} Results. I scored ${results.userScore} points with a percentage of ${results.percentage}. I bet you can't challenge me`,
+                    text: `Here is a summary of my Brain Buster ${quizName} Results. I scored ${results.userScore} points with a percentage of ${results.percentage}. I bet you can't challenge me`,
                     url: 'http://localhost:3000',
-                    title: `${quizTaker.username}'s performance in Brain Buster - ${quizInfo.name}`,
+                    title: `${quizTaker.studentName}'s performance in Brain Buster - ${quizName}`,
                   }}
                 >
                   <button className="share-button" type="button">

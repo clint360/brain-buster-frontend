@@ -1,6 +1,7 @@
 /* eslint-disable react/prop-types */ /* eslint-disable no-console */ /*
 eslint-disable no-undef */
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import AdminTemplate from '../../templates/admin/admintemplate/AdminTemplate';
 import './createQuiz.css';
 import { setQuiz } from '../../../api/auth';
@@ -12,9 +13,10 @@ function CreateQuiz({ user }) {
   const [option2, setOption2] = useState('');
   const [option3, setOption3] = useState('');
   const [option4, setOption4] = useState('');
-  const [disabled, setDisabled] = useState(false);
-  const [selected, setSelected] = useState(false);
+  const [name, setName] = useState('');
+  const navigate = useNavigate();
   const [num, setNum] = useState(1);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -25,11 +27,17 @@ function CreateQuiz({ user }) {
     setOption2('');
     setOption3('');
     setOption4('');
+
     setNum(num + 1);
-    console.log(values, selected, setSelected);
-    if (num === 10) {
-      setDisabled(true);
+    if (num === 1) {
+      setName('Submit');
     }
+    if (num === 2) {
+      navigate(`/admin/quizzes/${values.quizName}/${values.quizTimer}`);
+    }
+
+    const dropDown = document.getElementById('options');
+    dropDown.selectedIndex = 0;
   };
   return (
     <AdminTemplate page="CreateQuiz">
@@ -153,22 +161,24 @@ function CreateQuiz({ user }) {
                   <p>Correct Answer</p>
                 </div>
                 <div className=" select__correctanswer ">
-                  <select required name="answer">
-                    <option value="{selected}">
+                  <select required name="answer" id="options">
+                    <option value="">
                       Select correct Answer from the options below
                     </option>
-                    <option value="{option1}">{option1}</option>
-                    <option value="{option2}">{option2}</option>
-                    <option value="{option3}">{option3}</option>
-                    <option value="{option4}">{option4}</option>
+                    <option value={option1}>{option1}</option>
+                    <option value={option2}>{option2}</option>
+                    <option value={option3}>{option3}</option>
+                    <option value={option4}>{option4}</option>
                   </select>
                 </div>
               </div>
               <div className="btn__container">
-                <button type="submit" disabled={disabled} className="next__btn">
-                  Next Question
+                <button
+                  type="submit"
+                  className={name === '' ? 'next__btn' : 'disable_btn'}
+                >
+                  {name === '' ? 'Next Question' : name}
                 </button>
-                {/* <button type="submit" className="sub__btn">submit</button> */}
               </div>
               <div className="firstquestion">
                 <div className="question__radio">

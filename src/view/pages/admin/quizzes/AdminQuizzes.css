@@ -49,7 +49,7 @@
 }
 
 .createQuiz__cont button {
-  width: 135px;
+  width: 145px;
   height: 55px;
   display: flex;
   align-items: center;
@@ -78,6 +78,7 @@
 
 .history__mainCont {
   width: 85%;
+  height: fit-content;
   padding-top: 2%;
   display: flex;
   flex-wrap: wrap;
@@ -92,33 +93,51 @@
   width: 95%;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   gap: 2.4%;
+  padding-left: 0.4%;
+  padding-right: 2%;
+  border: 1px solid rgb(216, 216, 216);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+}
+
+.imgtextcont {
+  width: 310px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2%;
+  /*  background-color: blue; */
 }
 
 .quiz_img {
-  width: 170px;
-  height: 170px;
+  width: 120px;
+  height: 120px;
   display: flex;
   align-items: center;
   border-radius: 5px;
-  background: url("https://gps.hslt.academy/wp-content/uploads/2020/06/History-quiz.jpg");
+  background: url('https://gps.hslt.academy/wp-content/uploads/2020/06/History-quiz.jpg');
   object-fit: cover;
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
 }
 
-
-
 .testSubject {
+  /* background-color: #06a172; */
   display: flex;
   align-items: center;
+  gap: 4%;
+}
+
+.quiz_details__maintitile h2 {
+  font-size: large;
+  font-weight: 300;
 }
 
 .historycont2 {
   width: 95%;
-  height: 25vh;
+  height: 29vh;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -136,90 +155,93 @@
   /* background-color: purple; */
 }
 
-.time__interval {
-  width: 270px;
-  height: 150px;
+.interval {
+  width: 40%;
   display: flex;
   align-items: center;
   justify-content: center;
-  flex-direction: column;
-  text-align: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  margin-top: 5px;
+  margin-bottom: 8px;
+  gap: 1%;
 }
 
-.number__question {
-  width: 270px;
-  height: 150px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-
-  text-align: center;
-}
-
-.time_frame {
-  width: 285px;
-  height: 150px;
-  text-align: center;
-  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-}
-
-.innercontainer__action {
-  width: 60%;
-  margin-top: 2%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5%;
-}
-
-.edit {
-  width: 100px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  font-size: large;
+.modalinput {
+  width: 250px;
+  padding: 11px;
   border: 1px solid gray;
-  border-radius: 4px;
-  background-color: gray;
-  cursor: pointer;
+  font-size: 20px;
 }
 
-.share {
-  width: 100px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 7px;
-  font-size: large;
-  border: 1px solid gray;
-  border-radius: 4px;
+.modalbtn {
+  padding: 18.5px 14px 14px;
+  background-color: #06a172;
+  border: none;
   color: white;
-  background-color: #353fc6;
-  cursor: pointer;
 }
 
-
-.delete {
-  width: 100px;
+.time {
+  width: 120px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 7px;
-  font-size: large;
-  border: 1px solid gray;
-  border-radius: 4px;
+  gap: 2.4%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.time i {
   color: black;
-  background-color: #a61010;
+  font-size: small;
+}
+
+.shareTest {
+  width: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4%;
+  height: 40px;
   cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.shareTest button {
+  border: none;
+  cursor: pointer;
+}
+
+.shareTest i {
+  color: black;
+  font-size: small;
+}
+
+.editTest {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.editTest i {
+  color: black;
+  font-size: small;
+}
+
+.deleteTest {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4%;
+  cursor: pointer;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.deleteTest i {
+  color: black;
+  font-size: small;
 }

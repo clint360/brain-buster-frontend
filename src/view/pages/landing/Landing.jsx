@@ -1,5 +1,5 @@
 import React from 'react';
-import './landing.css';
+import './Landing.css';
 import { Link } from 'react-router-dom';
 import MainImg from '../../../assets/images/particles.svg';
 import AboutCard from '../../../core/components/atoms/AboutCard/AboutCard';

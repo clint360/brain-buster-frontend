@@ -1,22 +1,29 @@
-import React, { useContext, useRef } from 'react';
-import { useNavigate } from 'react-router-dom';
+/* eslint-disable jsx-a11y/label-has-associated-control */
+/* eslint-disable no-console */
+/* eslint-disable no-undef */
+import React, { useContext } from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
+import { userInfo } from '../../../../api/auth';
+import './UserInfo.css';
 import myLogo from '../../../../assets/images/logo.svg';
 import Button from '../../../../core/components/atoms/Button';
 import { AppContext } from '../../../../core/data/Context';
 
 function UserInfo() {
   const { setQuizTaker } = useContext(AppContext);
-  const redirect = useNavigate();
-  const usernameRef = useRef();
-  const emailAddressRef = useRef();
-  const handleStartQuiz = () => {
-    const userInfo = {
-      username: usernameRef.current.value,
-      emailAddress: emailAddressRef.current.value,
-    };
-    setQuizTaker(userInfo);
-    if (userInfo.username !== '' && userInfo.emailAddress !== '') {
-      redirect('/user/quiz/test');
+  const navigate = useNavigate();
+  const routeParams = useParams();
+  const { userId, quizName, quizDuration } = routeParams;
+
+  const handleSubmit = async (event) => {
+    event.preventDefault();
+    const data = new FormData(event.currentTarget);
+    const values = Object.fromEntries(data.entries());
+    await userInfo(values);
+    console.log(values);
+    setQuizTaker(values);
+    if (values.studentName !== '' && values.emailAddress !== '') {
+      navigate(`/user/quiz/test/${userId}/${quizName}/${quizDuration}`);
     }
   };
   return (
@@ -31,17 +38,17 @@ function UserInfo() {
       </div>
       <div className="thePage">
         <div className="instructionsbox">
-          <div className="header">
+          <div className="infoHeader">
             <h1>Enter Your Information</h1>
             <span>Enter your information to get you started</span>
           </div>
-          <form action="" onSubmit={handleStartQuiz}>
+          <form action="" onSubmit={handleSubmit}>
             <div className="form">
-              <legend>Full Name</legend>
-              <input type="text" ref={usernameRef} required /> <br />
+              <label>Name</label>
+              <input type="text" name="studentName" required /> <br />
               <br />
-              <legend>Email</legend>
-              <input type="email" ref={emailAddressRef} required /> <br />
+              <label>Email</label>
+              <input type="email" name="emailAddress" required /> <br />
             </div>
             <div style={{ width: 'fit-content', margin: 'auto' }}>
               <Button

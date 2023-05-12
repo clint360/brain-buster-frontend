@@ -6,16 +6,22 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../../../../core/components/atoms/Button';
 import { AppContext } from '../../../../core/data/Context';
+import { quizQuestion } from '../../../../api/auth';
+import handleMouseClick from '../../errorpages/actions';
 import './QuizPage.css';
 
 function QuizPage() {
-  const { questions, setUserResponses, userResponses } = useContext(AppContext);
+  const { questions, setQuestions, setUserResponses, userResponses } =
+    useContext(AppContext);
+  const routeParams = useParams();
+  const { userId, quizName, quizDuration } = routeParams;
+  const quiz = { userId, quizName };
   const [timer, setTimer] = useState(15);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const quizTimePerQuestion = 20;
+  const quizTimePerQuestion = quizDuration;
   const [userAnswerIndex, setUserAnswerIndex] = useState(null);
   const [optionsBackgroundColor, setOptionsBackgroundColor] = useState(
     new Array(4).fill(null)
@@ -25,14 +31,31 @@ function QuizPage() {
   const wrongAnswerBackground = 'rgba(260, 216, 218, 1)';
   const [answered, setAnswered] = useState(false);
 
+  useEffect(() => {
+    setUserResponses([]);
+    quizQuestion(quiz).then(({ data }) => {
+      const arr = data.map((item, index) => {
+        const options = [
+          item.option1,
+          item.option2,
+          item.option3,
+          item.option4,
+        ];
+        return {
+          question: item.question,
+          options,
+          answerIndex: options.indexOf(item.answer),
+        };
+      });
+      setQuestions(arr);
+      console.log(arr);
+    });
+  }, []);
+
   const onOptionSelect = (index) => {
     setUserAnswerIndex(index);
     console.log('index', userAnswerIndex);
   };
-
-  useEffect(() => {
-    setUserResponses([]);
-  }, []);
 
   useEffect(() => {
     if (userAnswerIndex !== null) {
@@ -76,6 +99,7 @@ function QuizPage() {
   }, [userAnswerIndex]);
 
   const onNext = () => {
+    handleMouseClick(true);
     setUserResponses((prev) => [...prev, userAnswerIndex]);
     const index = userAnswerIndex;
     if (index === questions[currentQuestionIndex].answerIndex) {
@@ -93,6 +117,7 @@ function QuizPage() {
     }, 2000);
     console.log(userResponses);
     setUserAnswerIndex(null);
+    handleMouseClick(false);
     return () => clearTimeout(timeStamp);
   };
 
@@ -101,7 +126,7 @@ function QuizPage() {
     setOptionsBackgroundColor([null, null, null, null]);
     if (currentQuestionIndex > questions.length - 1) {
       console.log(userResponses);
-      navigate('/user/quiz/results');
+      navigate(`/user/quiz/results/${quizName}`);
     }
   }, [currentQuestionIndex]);
 
