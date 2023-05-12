@@ -80,18 +80,6 @@ function AdminQuizzes({ user }) {
                   <p>2 days ago</p>
                 </div>
                 <div className="shareTest">
-                  <p>Share</p>
-                  <i className="fa-solid fa-share" />
-                </div>
-              </div>
-            </div>
-            <div className="historycont2">
-              <div className="innercontainer__action">
-                {/* <button type="submit" className="edit">
-                  Edit
-                  <i className="fa-solid fa-pen-to-square" />
-                </button> */}
-                <div>
                   <button
                     type="submit"
                     className="share"
@@ -124,10 +112,14 @@ function AdminQuizzes({ user }) {
                     </button>
                   </ReactModal>
                 </div>
-                {/* <button type="submit" className="delete">
-                  <i className="fa-solid fa-trash-xmark" />
-                  Delete
-                </button> */}
+                <div className="editTest">
+                  <p>edit</p>
+                  <i className="fa-solid fa-pen-to-square" />
+                </div>
+                <div className="deleteTest">
+                  <p>delete</p>
+                  <i className="fa-solid fa-trash" />
+                </div>
               </div>
             </div>
           </div>

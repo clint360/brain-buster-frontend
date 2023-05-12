@@ -78,6 +78,7 @@
 
 .history__mainCont {
   width: 85%;
+  height: fit-content;
   padding-top: 2%;
   display: flex;
   flex-wrap: wrap;
@@ -106,7 +107,7 @@
   align-items: center;
   justify-content: center;
   gap: 2%;
- /*  background-color: blue; */
+  /*  background-color: blue; */
 }
 
 .quiz_img {
@@ -155,13 +156,12 @@
 }
 
 .interval {
-  width: 50%;
+  width: 45%;
   display: flex;
   align-items: center;
-  justify-content: center;
-  background-color: green;
- margin-top: 5px;
- margin-bottom: 8px;
+  justify-content: space-around;
+  margin-top: 5px;
+  margin-bottom: 8px;
 }
 
 .modalinput {
@@ -180,11 +180,12 @@
 
 .time {
   width: 120px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 2.4%;
-  background-color: yellow;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .time i {
@@ -198,10 +199,45 @@
   align-items: center;
   justify-content: center;
   gap: 2.4%;
-  background-color: yellow;
+  height: 40px;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.shareTest button {
+  border: none;
 }
 
 .shareTest i {
+  color: black;
+  font-size: small;
+}
+
+.editTest {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.editTest i {
+  color: black;
+  font-size: small;
+}
+
+.deleteTest {
+  width: 120px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2.4%;
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+}
+
+.deleteTest i {
   color: black;
   font-size: small;
 }
