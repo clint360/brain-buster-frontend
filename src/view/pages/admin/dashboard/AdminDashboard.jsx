@@ -1,3 +1,5 @@
+/* eslint-disable no-useless-concat */
+/* eslint-disable no-plusplus */
 /* eslint-disable react/prop-types */
 import React from 'react';
 import AdminQuizCard from '../../../../core/components/atoms/AdminQuizCard';
