@@ -6,24 +6,29 @@
 /* eslint-disable jsx-a11y/no-static-element-interactions */
 /* eslint-disable no-unused-vars */
 import React, { useState, useEffect, useContext } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 import Button from '../../../../core/components/atoms/Button';
 import { AppContext } from '../../../../core/data/Context';
+import { quizQuestion } from '../../../../api/auth';
 import './QuizPage.css';
 
 function QuizPage() {
-  const { questions, setUserResponses, userResponses } = useContext(AppContext);
+  const { questions, setQuestions, setUserResponses, userResponses } =
+    useContext(AppContext);
+  const routeParams = useParams();
+  const { userId, quizName, quizDuration } = routeParams;
+  const quiz = { userId, quizName };
   const [timer, setTimer] = useState(15);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
-  const quizTimePerQuestion = 20;
+  const quizTimePerQuestion = quizDuration;
   const [userAnswerIndex, setUserAnswerIndex] = useState(null);
   const [optionsBackgroundColor, setOptionsBackgroundColor] = useState(
     new Array(4).fill(null)
   );
+
   const navigate = useNavigate();
   const correctAnswerBackground = 'rgba(146, 244, 164, 1)';
   const wrongAnswerBackground = 'rgba(260, 216, 218, 1)';
-  const [answered, setAnswered] = useState(false);
 
   const onOptionSelect = (index) => {
     setUserAnswerIndex(index);
@@ -32,6 +37,23 @@ function QuizPage() {
 
   useEffect(() => {
     setUserResponses([]);
+    quizQuestion(quiz).then(({ data }) => {
+      const arr = data.map((item, index) => {
+        const options = [
+          item.option1,
+          item.option2,
+          item.option3,
+          item.option4,
+        ];
+        return {
+          question: item.question,
+          options,
+          userAnswerIndex: options.indexOf(item.answer),
+        };
+      });
+      setQuestions(arr);
+      console.log(arr);
+    });
   }, []);
 
   useEffect(() => {
@@ -101,7 +123,7 @@ function QuizPage() {
     setOptionsBackgroundColor([null, null, null, null]);
     if (currentQuestionIndex > questions.length - 1) {
       console.log(userResponses);
-      navigate('/user/quiz/results');
+      navigate(`/user/quiz/results/${quizName}`);
     }
   }, [currentQuestionIndex]);
 

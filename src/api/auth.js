@@ -19,3 +19,11 @@ export function updateUser(userUpdate) {
 export function setQuiz(quiz) {
   return httpClient.post('quiz/addQuiz', quiz);
 }
+
+export function userInfo(info) {
+  return httpClient.post('result/addResult', info);
+}
+
+export function quizQuestion(quiz) {
+  return httpClient.post('quiz/getAllQuestions', quiz);
+}

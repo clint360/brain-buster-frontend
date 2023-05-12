@@ -1,9 +1,10 @@
+/* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable no-unused-vars */
-import React, { useContext, useState, useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
+import React from 'react';
+import { useNavigate, useParams } from 'react-router-dom';
 import myLogo from '../../../../assets/images/logo.svg';
 import Button from '../../../../core/components/atoms/Button';
 import { AppContext } from '../../../../core/data/Context';
@@ -11,18 +12,12 @@ import { AppContext } from '../../../../core/data/Context';
 import './Instructions.css';
 
 function Instructions() {
-  const { questions, quizInfo } = useContext(AppContext);
-  const redirect = useNavigate();
-  const [quizDuration, setQuizDuration] = useState();
-  useEffect(() => {
-    const d = ((quizInfo.durationPerQuestion * questions.length) / 60).toFixed(
-      2
-    );
-    setQuizDuration(d);
-  }, []);
+  const routeParams = useParams();
+  const navigate = useNavigate();
+  const { userId, userName, quizName, quizDuration } = routeParams;
 
   const startQuiz = () => {
-    redirect('/user/info');
+    navigate(`/user/info/${userId}/${quizName}/${quizDuration}`);
   };
 
   return (
@@ -38,25 +33,23 @@ function Instructions() {
       <div className="thePage">
         <div className="instructionsbox">
           <div className="aboutquiz">
-            <h1>{quizInfo.name}</h1>
+            <h1>{quizName}</h1>
             <div className="someinfo">
-              <div>{questions.length} Questions</div>{' '}
+              <div>10 Questions</div>
               <div>
-                <i className="fa-regular fa-clock" /> 20 sec
-              </div>{' '}
+                <i className="fa-regular fa-clock" /> {quizDuration} sec
+              </div>
             </div>
-            <div className="authordiv">By {quizInfo.admin}</div>
+            <div className="authordiv">By {userName}</div>
           </div>
           <div className="instructions">
             <h1>Instructions</h1>
             <div className="inslist">
               <ul>
                 <li>
-                  You only have{' '}
-                  <span style={{ color: 'red' }}>
-                    {quizInfo.durationPerQuestion} seconds
-                  </span>{' '}
-                  for each question.{' '}
+                  You only have
+                  <span style={{ color: 'red' }}> {quizDuration} seconds </span>
+                  for each question.
                 </li>
                 <li>
                   You have to select an option before you can go to the next
@@ -77,7 +70,7 @@ function Instructions() {
                 onClick={() => {
                   window.close();
                 }}
-              />{' '}
+              />
             </div>
             <div>
               <Button

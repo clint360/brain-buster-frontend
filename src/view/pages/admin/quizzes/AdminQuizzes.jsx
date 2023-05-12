@@ -1,16 +1,20 @@
+/* eslint-disable react/prop-types */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useParams } from 'react-router-dom';
 import ReactModal from 'react-modal';
+import AuthGuard from '../profile/AuthGuard';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import './AdminQuizzes.css';
 
 // eslint-disable-next-line react/prop-types
-function AdminQuizzes({ copyText }) {
-  console.log(copyText);
+function AdminQuizzes({ user }) {
   const [isOpen, setIsOpen] = useState(false);
-
+  const routeParams = useParams();
+  const { quizName, quizDuration } = routeParams;
+  console.log(quizName);
+  const copyText = `http://localhost:3001/user/quiz/instructions/${user.id}/${user.fullName}/${quizName}/${quizDuration}`;
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToclipBoard = () => {
@@ -142,4 +146,4 @@ function AdminQuizzes({ copyText }) {
   );
 }
 
-export default AdminQuizzes;
+export default AuthGuard(AdminQuizzes);

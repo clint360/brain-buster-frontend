@@ -28,7 +28,7 @@ function SideNav({ page }) {
             </Link>
           </li>
           <li style={{ background: activeBG('AdminQuizzes') }}>
-            <Link to="/admin/quizzes">
+            <Link to="/admin/quizzes/:quizName/:quizDuration">
               <i className="fa-solid fa-clipboard-question"> </i>
               <div>Quizzes</div>{' '}
             </Link>

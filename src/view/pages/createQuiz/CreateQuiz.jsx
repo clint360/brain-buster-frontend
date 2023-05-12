@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */ /* eslint-disable no-console */ /*
 eslint-disable no-undef */
 import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import AdminTemplate from '../../templates/admin/admintemplate/AdminTemplate';
 import './createQuiz.css';
 import { setQuiz } from '../../../api/auth';
@@ -13,10 +13,10 @@ function CreateQuiz({ user }) {
   const [option2, setOption2] = useState('');
   const [option3, setOption3] = useState('');
   const [option4, setOption4] = useState('');
-  const [disabled, setDisabled] = useState(false);
-  const [select, setSelect] = useState(false);
-  /* const [selected, setSelected] = useState(''); */
+  const [name, setName] = useState('');
+  const navigate = useNavigate();
   const [num, setNum] = useState(1);
+
   const handleSubmit = async (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
@@ -27,17 +27,17 @@ function CreateQuiz({ user }) {
     setOption2('');
     setOption3('');
     setOption4('');
-    if (option1 === '') {
-      setSelect(true);
-    }
+
     setNum(num + 1);
-    if (num === 9) {
-      setDisabled(true);
+    if (num === 1) {
+      setName('Submit');
     }
-    /* if (selected !== '') {
-      setSelect(true);
-    } */
-    /* console.log(select, setSelect); */
+    if (num === 2) {
+      navigate(`/admin/quizzes/${values.quizName}/${values.quizTimer}`);
+    }
+
+    const dropDown = document.getElementById('options');
+    dropDown.selectedIndex = 0;
   };
   return (
     <AdminTemplate page="CreateQuiz">
@@ -161,17 +161,11 @@ function CreateQuiz({ user }) {
                   <p>Correct Answer</p>
                 </div>
                 <div className=" select__correctanswer ">
-                  <select
-                    required
-                    name="answer"
-                    onChange={(event) => event.target.reset()}
-                  >
+                  <select required name="answer" id="options">
                     <option value="">
                       Select correct Answer from the options below
                     </option>
-                    <option hidden={select} value={option1}>
-                      {option1}
-                    </option>
+                    <option value={option1}>{option1}</option>
                     <option value={option2}>{option2}</option>
                     <option value={option3}>{option3}</option>
                     <option value={option4}>{option4}</option>
@@ -181,16 +175,10 @@ function CreateQuiz({ user }) {
               <div className="btn__container">
                 <button
                   type="submit"
-                  disabled={disabled}
-                  className={disabled === false ? 'next__btn' : 'disable_btn'}
+                  className={name === '' ? 'next__btn' : 'disable_btn'}
                 >
-                  Next Question
+                  {name === '' ? 'Next Question' : name}
                 </button>
-                <Link to="/admin/quizzes">
-                  <button type="button" className="sub__btn">
-                    submit
-                  </button>
-                </Link>
               </div>
               <div className="firstquestion">
                 <div className="question__radio">

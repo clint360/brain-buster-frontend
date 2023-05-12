@@ -29,15 +29,9 @@ import CreateQuiz from './view/pages/createQuiz/CreateQuiz';
 
 function App() {
   const [userResponses, setUserResponses] = useState([]);
-  const [quizInfo, setQuizInfo] = useState({
-    admin: 'Chia Clint Animbom',
-    name: 'JavaScript Excercise',
-    durationPerQuestion: 20,
-    quizImageURL: '',
-  });
   const [questions, setQuestions] = useState(questionsModel);
   const [quizTaker, setQuizTaker] = useState({
-    username: null,
+    studentName: null,
     emailAddress: null,
   });
 
@@ -47,9 +41,9 @@ function App() {
         userResponses,
         setUserResponses,
         questions,
+        setQuestions,
         quizTaker,
         setQuizTaker,
-        quizInfo,
       }}
     >
       <Router>
@@ -61,26 +55,34 @@ function App() {
             <Route path="/admin/dashboard" element={<AdminDashboard />} />
             <Route path="/admin/profile" element={<AdminProfile />} />
             <Route
-              path="/admin/quizzes"
-              element={
-                <AdminQuizzes copyText="http://localhost:3001/user/quiz/instructions" />
-              }
+              path="/admin/quizzes/:quizName/:quizDuration"
+              element={<AdminQuizzes />}
             />
             <Route path="/admin/responses" element={<AdminResponses />} />
             <Route path="/admin/createQuiz" element={<CreateQuiz />} />
           </Route>
           <Route path="/user">
             <Route
-              path="/user/quiz/instructions/:id/quizName"
+              path="/user/quiz/instructions/:userId/:userName/:quizName/:quizDuration"
               element={<Instructions />}
             />
-            <Route path="/user/info" element={<UserInfo />} />
-            {quizTaker.username ? (
+            <Route
+              path="/user/info/:userId/:quizName/:quizDuration"
+              element={<UserInfo />}
+            />
+            {quizTaker.studentName ? (
               <>
                 <Route path="/user/quiz">
-                  <Route index path="/user/quiz/test" element={<QuizPage />} />
+                  <Route
+                    index
+                    path="/user/quiz/test/:userId/:quizName/:quizDuration"
+                    element={<QuizPage />}
+                  />
                 </Route>
-                <Route path="/user/quiz/results" element={<UserResults />} />
+                <Route
+                  path="/user/quiz/results/:quizName"
+                  element={<UserResults />}
+                />
               </>
             ) : (
               <Route path="*" element={<ErrorPage />} />
