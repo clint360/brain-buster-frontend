@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   flex-direction: column;
-/*   background-color: yellow; */
+  /*   background-color: yellow; */
 }
 
 .navbare {
@@ -13,7 +13,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
- /*  background-color: yellow; */
+  /*  background-color: yellow; */
   margin-top: 2%;
   margin-bottom: 2.3%;
   gap: 1.2%;
@@ -68,13 +68,18 @@
 }
 
 .table {
-  width: 40%;
-  /* background-color: red; */
+  width: 48%;
+  height: 35vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(255, 245, 245);
 }
 
 table {
   border-collapse: collapse;
-  width: 100%;
+  width: 98%;
+  background-color: white;
 }
 
 .header {
