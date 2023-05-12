@@ -112,10 +112,10 @@ function AdminQuizzes({ user }) {
                     </button>
                   </ReactModal>
                 </div>
-                <div className="editTest">
+                {/*  <div className="editTest">
                   <p>edit</p>
                   <i className="fa-solid fa-pen-to-square" />
-                </div>
+                </div> */}
                 <div className="deleteTest">
                   <p>delete</p>
                   <i className="fa-solid fa-trash" />
