@@ -156,12 +156,13 @@
 }
 
 .interval {
-  width: 45%;
+  width: 40%;
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: center;
   margin-top: 5px;
   margin-bottom: 8px;
+  gap: 1%;
 }
 
 .modalinput {
@@ -200,11 +201,13 @@
   justify-content: center;
   gap: 2.4%;
   height: 40px;
+  cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
 .shareTest button {
   border: none;
+  cursor: pointer;
 }
 
 .shareTest i {
@@ -234,6 +237,7 @@
   align-items: center;
   justify-content: center;
   gap: 2.4%;
+  cursor: pointer;
   box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
