@@ -14,7 +14,7 @@ function AdminQuizzes({ user }) {
   const routeParams = useParams();
   const { quizName, quizDuration } = routeParams;
   console.log(quizName);
-  const copyText = `http://localhost:3001/user/quiz/instructions/${user.id}/${user.fullName}/${quizName}/${quizDuration}`;
+  const copyText = `http://localhost:3000/user/quiz/instructions/${user.id}/${user.fullName}/${quizName}/${quizDuration}`;
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToclipBoard = () => {

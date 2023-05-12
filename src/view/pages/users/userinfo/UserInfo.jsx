@@ -38,7 +38,7 @@ function UserInfo() {
       </div>
       <div className="thePage">
         <div className="instructionsbox">
-          <div className="header">
+          <div className="infoHeader">
             <h1>Enter Your Information</h1>
             <span>Enter your information to get you started</span>
           </div>

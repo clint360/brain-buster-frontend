@@ -31,11 +31,6 @@ function QuizPage() {
   const wrongAnswerBackground = 'rgba(260, 216, 218, 1)';
   const [answered, setAnswered] = useState(false);
 
-  const onOptionSelect = (index) => {
-    setUserAnswerIndex(index);
-    console.log('index', userAnswerIndex);
-  };
-
   useEffect(() => {
     setUserResponses([]);
     quizQuestion(quiz).then(({ data }) => {
@@ -49,13 +44,18 @@ function QuizPage() {
         return {
           question: item.question,
           options,
-          userAnswerIndex: options.indexOf(item.answer),
+          answerIndex: options.indexOf(item.answer),
         };
       });
       setQuestions(arr);
       console.log(arr);
     });
   }, []);
+
+  const onOptionSelect = (index) => {
+    setUserAnswerIndex(index);
+    console.log('index', userAnswerIndex);
+  };
 
   useEffect(() => {
     if (userAnswerIndex !== null) {
@@ -126,7 +126,7 @@ function QuizPage() {
     setOptionsBackgroundColor([null, null, null, null]);
     if (currentQuestionIndex > questions.length - 1) {
       console.log(userResponses);
-      navigate('/user/quiz/results');
+      navigate(`/user/quiz/results/${quizName}`);
     }
   }, [currentQuestionIndex]);
 
