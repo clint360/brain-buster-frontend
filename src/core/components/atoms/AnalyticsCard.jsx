@@ -10,8 +10,8 @@ function AnalyticsCard({ number, title, backgroundGradient }) {
   });
 
   const cardStyle = {
-    height: '125px',
-    width: '125px',
+    height: '160px',
+    width: '145px',
     background: backgroundGradient(),
     borderRadius: '10px',
     textAlign: 'center',

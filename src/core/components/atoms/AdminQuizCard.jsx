@@ -5,8 +5,8 @@ import React from 'react';
 
 function AdminQuizCard({ quizName, quizImageURL, onClick }) {
   const cardStyle = {
-    height: '125px',
-    width: '125px',
+    height: '160px',
+    width: '145px',
     background: 'white',
     borderRadius: '10px',
     textAlign: 'center',
