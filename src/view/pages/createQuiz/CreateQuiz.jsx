@@ -29,10 +29,10 @@ function CreateQuiz({ user }) {
     setOption4('');
 
     setNum(num + 1);
-    if (num === 1) {
+    if (num === 9) {
       setName('Submit');
     }
-    if (num === 2) {
+    if (num === 10) {
       navigate(`/admin/quizzes/${values.quizName}/${values.quizTimer}`);
     }
 
