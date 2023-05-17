@@ -16,7 +16,7 @@ function AdminQuizzes({ user }) {
   const routeParams = useParams();
   const { quizName, quizDuration } = routeParams;
 
-  const copyText = `http://localhost:3000/user/quiz/instructions/${user.id}/${user.fullName}/${quizName}/${quizDuration}`;
+  const copyText = `https://brain-buster-frontend.vercel.app/user/quiz/instructions/${user.id}/${user.fullName}/${quizName}/${quizDuration}`;
   const [isCopied, setIsCopied] = useState(false);
 
   const copyToclipBoard = () => {
