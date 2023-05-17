@@ -48,8 +48,8 @@ function Landing() {
         </div>
       </div>
       <AboutCard />
-      <Advert />
       <Category />
+      <Advert />
       <Footer />
     </div>
   );
