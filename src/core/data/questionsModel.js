@@ -1,5 +1,10 @@
 const questionsModel = [
   {
+    question: '',
+    options: [],
+    answerIndex: 0,
+  },
+  /* {
     question: 'What is JavaScript?',
     options: [
       'JavaScript is a scripting language used to make the website interactive',
@@ -112,7 +117,7 @@ const questionsModel = [
     ],
     answerIndex: 3,
     userAnswerIndex: null,
-  },
+  }, */
 ];
 
 export default questionsModel;

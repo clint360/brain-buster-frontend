@@ -1,3 +1,4 @@
+/* eslint-disable consistent-return */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
 /* eslint-disable jsx-a11y/label-has-associated-control */
@@ -8,17 +9,22 @@ import './Auth.css';
 import { login } from '../../../api/auth';
 import myLogo from '../../../assets/images/logo.svg';
 import { saveToken } from '../../../utils';
+import Loading from '../../../core/components/atoms/loading/Loading';
 
 function Login() {
   const [error, setError] = useState('');
   const navigate = useNavigate();
+  const [loading, setLoading] = useState(false);
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     const values = Object.fromEntries(
       new FormData(event.currentTarget).entries()
     );
 
     const { data } = await login(values.emailAddress, values.password);
+
+    setLoading(false);
     if (data === 'Email or Password incorrect') {
       setError('Invalid emailAdress or password');
     } else {
@@ -27,6 +33,9 @@ function Login() {
       navigate('/admin/dashboard');
     }
   };
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div>
       <div className="logo_head">

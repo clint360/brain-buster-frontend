@@ -20,10 +20,18 @@ export function setQuiz(quiz) {
   return httpClient.post('quiz/addQuiz', quiz);
 }
 
-export function userInfo(info) {
+export function useInfo(info) {
   return httpClient.post('result/addResult', info);
 }
 
 export function quizQuestion(quiz) {
   return httpClient.post('quiz/getAllQuestions', quiz);
+}
+
+export function userInfoUpdate(userResult, emailAddress) {
+  return httpClient.put(`result/${emailAddress}`, userResult);
+}
+
+export function userResults() {
+  return httpClient.get(`result/getAllResults`);
 }

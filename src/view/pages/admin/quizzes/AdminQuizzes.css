@@ -116,7 +116,7 @@
   display: flex;
   align-items: center;
   border-radius: 5px;
-  background: url('https://gps.hslt.academy/wp-content/uploads/2020/06/History-quiz.jpg');
+  background: url('https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOGOwKKcixa5Qbn-r2SgeauvUJl3xYtAKamg&usqp=CAU');
   object-fit: cover;
   background-size: cover;
   background-repeat: no-repeat;
@@ -130,9 +130,10 @@
   gap: 4%;
 }
 
-.quiz_details__maintitile h2 {
-  font-size: large;
-  font-weight: 300;
+.quiz_details__maintitile h2,
+.quizInfo {
+  font-size: 18px;
+  font-weight: bold;
 }
 
 .historycont2 {

@@ -22,11 +22,11 @@ function ErrorPage() {
                 The page you are trying to access does not exist
               </p>
             </div>
-            <div className="reload-button">
+            {/*  <div className="reload-button">
               <button className="reload-page" type="button">
                 Reload page
               </button>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

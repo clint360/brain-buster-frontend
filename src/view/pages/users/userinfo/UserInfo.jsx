@@ -1,31 +1,42 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-console */
 /* eslint-disable no-undef */
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { useNavigate, useParams } from 'react-router-dom';
-import { userInfo } from '../../../../api/auth';
+import { useInfo } from '../../../../api/auth';
 import './UserInfo.css';
 import myLogo from '../../../../assets/images/logo.svg';
 import Button from '../../../../core/components/atoms/Button';
 import { AppContext } from '../../../../core/data/Context';
+import Loading from '../../../../core/components/atoms/loading/Loading';
 
 function UserInfo() {
   const { setQuizTaker } = useContext(AppContext);
   const navigate = useNavigate();
   const routeParams = useParams();
   const { userId, quizName, quizDuration } = routeParams;
+  const [error, setError] = useState('');
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (event) => {
     event.preventDefault();
+    setLoading(true);
     const data = new FormData(event.currentTarget);
     const values = Object.fromEntries(data.entries());
-    await userInfo(values);
+    const feedback = await useInfo(values);
     console.log(values);
     setQuizTaker(values);
-    if (values.studentName !== '' && values.emailAddress !== '') {
+
+    if (feedback.data.name !== 'SequelizeUniqueConstraintError') {
       navigate(`/user/quiz/test/${userId}/${quizName}/${quizDuration}`);
     }
+    setLoading(false);
+    setError('This email address already exist');
   };
+
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div>
       <div className="logo_head">
@@ -50,6 +61,7 @@ function UserInfo() {
               <label>Email</label>
               <input type="email" name="emailAddress" required /> <br />
             </div>
+            {error && <p className="error">{error}</p>}
             <div style={{ width: 'fit-content', margin: 'auto' }}>
               <Button
                 title="    Start Now    "

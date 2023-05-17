@@ -1,9 +1,13 @@
+/* eslint-disable jsx-a11y/no-static-element-interactions */
+/* eslint-disable jsx-a11y/click-events-have-key-events */
+/* eslint-disable no-undef */
 /* eslint-disable react/prop-types */
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import './Sidenav.css';
 import myLogo from '../../../../assets/images/logo.svg';
+import { deleteToken } from '../../../../utils';
 
 function SideNav({ page }) {
   function activeBG(activePage) {
@@ -12,7 +16,11 @@ function SideNav({ page }) {
     }
     return 'transparent';
   }
-
+  const navigate = useNavigate();
+  const Logout = () => {
+    deleteToken();
+    navigate('/login');
+  };
   return (
     <div className="sidenav">
       <div className="logodiv">
@@ -47,7 +55,7 @@ function SideNav({ page }) {
           </li>
           <li>
             <i className="fa-solid fa-right-from-bracket"> </i>
-            <div>Log Out</div>{' '}
+            <div onClick={Logout}>Log Out</div>
           </li>
         </ul>
       </div>
