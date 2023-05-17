@@ -11,9 +11,11 @@ import './AdminQuizzes.css';
 // eslint-disable-next-line react/prop-types
 function AdminQuizzes({ user }) {
   const [isOpen, setIsOpen] = useState(false);
+  /* const [name, setName] = useState();
+  const [duration, set] = useState(); */
   const routeParams = useParams();
   const { quizName, quizDuration } = routeParams;
-  console.log(quizName);
+
   const copyText = `http://localhost:3000/user/quiz/instructions/${user.id}/${user.fullName}/${quizName}/${quizDuration}`;
   const [isCopied, setIsCopied] = useState(false);
 
@@ -61,17 +63,12 @@ function AdminQuizzes({ user }) {
           <div className="history__mainCont">
             <div className="historycont1">
               <div className="imgtextcont">
-                <div className="quiz_img">
-                  <div className="imgquiz">London Test</div>
-                </div>
+                <div className="quiz_img" />
                 <div className="quiz_details">
                   <div className="quiz_details__maintitile">
-                    <h2>Quiz</h2>
+                    <h2>Quiz name : </h2>
                   </div>
-                  <p>Form 4 middle term Test</p>
-                  <div className="testSubject">
-                    <span>Subject : </span> <span> Javascript</span>
-                  </div>
+                  <p className="quizInfo">Questions : 10 </p>
                 </div>
               </div>
               <div className="interval">

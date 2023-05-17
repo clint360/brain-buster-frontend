@@ -18,7 +18,7 @@ function Button({ title, borderColor, color, background, onClick, type }) {
     justifyContent: 'center',
     minWidth: '150px',
     textAlign: 'center',
-    width: 'auto',
+    width: '100%',
     cursor: 'pointer',
   };
   return (

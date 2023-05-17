@@ -2,6 +2,7 @@
 /* eslint-disable no-plusplus */
 /* eslint-disable react/prop-types */
 import React from 'react';
+import { Link } from 'react-router-dom';
 import AdminQuizCard from '../../../../core/components/atoms/AdminQuizCard';
 import AnalyticsCard from '../../../../core/components/atoms/AnalyticsCard';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
@@ -35,10 +36,12 @@ function AdminDashboard({ user }) {
       page="AdminDashboard"
     >
       <div className="createnewquiz">
-        <div>
-          <i className="fa-sharp fa-solid fa-circle-plus fa-bounce" />
-          <div>Create New Quiz</div>
-        </div>
+        <Link to="/admin/createQuiz">
+          <div>
+            <i className="fa-sharp fa-solid fa-circle-plus fa-bounce" />
+            <div>Create New Quiz</div>
+          </div>
+        </Link>
       </div>
       <div className="analytics" />
       <div className="displayquizzes">

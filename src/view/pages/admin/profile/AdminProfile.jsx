@@ -1,34 +1,25 @@
+/* eslint-disable no-restricted-globals */
 /* eslint-disable no-console */
 /* eslint-disable react/prop-types */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable no-undef */
-import React, { useRef } from 'react';
-/* import { useNavigate } from 'react-router-dom'; */
+import React from 'react';
 import Button from '../../../../core/components/atoms/Button';
 import AdminTemplate from '../../../templates/admin/admintemplate/AdminTemplate';
 import AuthGuard from './AuthGuard';
 import { updateUser } from '../../../../api/auth';
-/* import { deleteToken } from '../../../../utils'; */
 
 function AdminProfile({ user }) {
-  /* const [loading, setLoading] = useState(false); */
-  /* const navigate = useNavigate(); */
-  const bioRef = useRef(null);
-
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
     const data = new FormData(e.currentTarget);
-    const UserBio = bioRef.current.value;
     const values = Object.fromEntries(data.entries());
-    const update = { id: user.id, ...values, bio: UserBio };
+    const update = { id: user.id, ...values };
     console.log(update);
     await updateUser(update);
-    setLoading(true);
-
-    setTimeout(() => {
-      setLoading(false);
-    }, 2000);
   };
+
   return (
     <div>
       <AdminTemplate
@@ -38,29 +29,10 @@ function AdminProfile({ user }) {
       >
         <div className="adminPage">
           <div className="admininformation">
-            <div className="column">
-              <div className="profile_pic_container">
-                <div className="circle">J.D</div>
-              </div>
-              <div className="aboutyou">
-                <label>Bio</label>
-                <div className="textareadiv">
-                  <textarea
-                    name="bio"
-                    id="bio"
-                    cols="30"
-                    rows="10"
-                    placeholder="Write your about here"
-                    defaultValue={user.bio}
-                    ref={bioRef}
-                  />
-                </div>
-              </div>
-            </div>
             <form action="" onSubmit={handleSubmit}>
               <div className="column">
                 <div className="field">
-                  <label>Name</label>
+                  <label className="label">Name</label>
                   <div className="input_block">
                     <i className="fa-solid fa-user" />
                     <input
@@ -71,7 +43,7 @@ function AdminProfile({ user }) {
                   </div>
                 </div>
                 <div className="field">
-                  <label>Email</label>
+                  <label className="label">Email</label>
                   <div className="input_block">
                     <i className="fa-solid fa-envelope" />
                     <input
@@ -83,7 +55,7 @@ function AdminProfile({ user }) {
                   </div>
                 </div>
                 <div className="field">
-                  <label>Password</label>
+                  <label className="label">Password</label>
                   <div className="input_block">
                     <i className="fa-solid fa-lock" />
                     <input
@@ -94,32 +66,24 @@ function AdminProfile({ user }) {
                     />
                   </div>
                 </div>
+                <div className="aboutyou">
+                  <label className="label">Bio</label>
+                  <div className="textareadiv">
+                    <textarea
+                      name="bio"
+                      id="bio"
+                      cols="30"
+                      rows="10"
+                      placeholder="Write your about here"
+                      defaultValue={user.bio}
+                    />
+                  </div>
+                </div>
                 <div className="action">
                   <Button type="submit" title="Update" />
                 </div>
               </div>
             </form>
-            <div className="column">
-              <div className="column3">
-                <label>Actions</label>
-                <div className="action">
-                  <Button
-                    title="Reset"
-                    background="#E8522A"
-                    borderColor="#E8522A"
-                    type="button"
-                  />
-                </div>
-                <div className="action">
-                  <Button
-                    type="button"
-                    title="Log Out"
-                    background="white"
-                    color="#1D4645"
-                  />
-                </div>
-              </div>
-            </div>
           </div>
         </div>
       </AdminTemplate>

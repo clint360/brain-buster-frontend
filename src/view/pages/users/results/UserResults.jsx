@@ -8,9 +8,11 @@ import { RWebShare } from 'react-web-share';
 import { useNavigate, useParams } from 'react-router-dom';
 import { AppContext } from '../../../../core/data/Context';
 import './UserResults.css';
+import { userInfoUpdate } from '../../../../api/auth';
 
 function UserResults() {
   const routeParams = useParams();
+  const [result, setResult] = useState('Failed');
   const { quizName } = routeParams;
   const compare = (arr1, arr2) => {
     let total = 0;
@@ -34,7 +36,21 @@ function UserResults() {
     percentage:
       (compare(userResponses, questionAnswers) / questions.length) * 100,
   });
-
+  useEffect(() => {
+    if (results.percentage >= 50) {
+      setResult('Passed');
+    }
+    const update = {
+      attemps: results.numberOfQuestionsAttempted,
+      earnPoints: results.userScore,
+      quizResult: result,
+      quizName,
+    };
+    async function Updates() {
+      await userInfoUpdate(update, quizTaker.emailAddress);
+    }
+    Updates();
+  }, [result]);
   return (
     <div>
       <div className="whole">
@@ -98,9 +114,7 @@ function UserResults() {
                 <p className="total-content">Quiz Result:</p>
               </div>
               <div className="number">
-                <p className="sub-number">
-                  {results.percentage >= 50 ? 'Passed' : 'Failed'}
-                </p>
+                <p className="sub-number">{result}</p>
               </div>
             </div>
             <div className="quiz-result-buttons">
