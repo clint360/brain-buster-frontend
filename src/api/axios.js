@@ -5,7 +5,7 @@
 import axios from 'axios';
 import { readToken } from '../utils';
 
-const API_BASE_URL = 'http://localhost:3000/';
+const API_BASE_URL = 'https://brainbuster.onrender.com';
 
 /* 'https://brainbuster.onrender.com' */
 
